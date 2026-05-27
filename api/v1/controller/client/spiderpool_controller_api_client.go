@@ -10,7 +10,6 @@ package client
 
 import (
 	"github.com/go-openapi/runtime"
-	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
 	"github.com/spidernet-io/spiderpool/api/v1/controller/client/controller"
@@ -34,45 +33,30 @@ var DefaultSchemes = []string{"http"}
 
 // NewHTTPClient creates a new spiderpool controller API HTTP client.
 func NewHTTPClient(formats strfmt.Registry) *SpiderpoolControllerAPI {
-	return NewHTTPClientWithConfig(formats, nil)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewHTTPClientWithConfig creates a new spiderpool controller API HTTP client,
 // using a customizable transport config.
 func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *SpiderpoolControllerAPI {
+	_ = "STUB: not implemented"
 	// ensure nullable parameters have default
-	if cfg == nil {
-		cfg = DefaultTransportConfig()
-	}
-
-	// create transport and client
-	transport := httptransport.New(cfg.Host, cfg.BasePath, cfg.Schemes)
-	return New(transport, formats)
+	return nil
 }
+
+// create transport and client
 
 // New creates a new spiderpool controller API client
 func New(transport runtime.ClientTransport, formats strfmt.Registry) *SpiderpoolControllerAPI {
+	_ = "STUB: not implemented"
 	// ensure nullable parameters have default
-	if formats == nil {
-		formats = strfmt.Default
-	}
-
-	cli := new(SpiderpoolControllerAPI)
-	cli.Transport = transport
-	cli.Controller = controller.New(transport, formats)
-	cli.Runtime = runtimeops.New(transport, formats)
-	return cli
+	return nil
 }
 
 // DefaultTransportConfig creates a TransportConfig with the
 // default settings taken from the meta section of the spec file.
-func DefaultTransportConfig() *TransportConfig {
-	return &TransportConfig{
-		Host:     DefaultHost,
-		BasePath: DefaultBasePath,
-		Schemes:  DefaultSchemes,
-	}
-}
+func DefaultTransportConfig() *TransportConfig { _ = "STUB: not implemented"; return nil }
 
 // TransportConfig contains the transport related info,
 // found in the meta section of the spec file.
@@ -85,22 +69,22 @@ type TransportConfig struct {
 // WithHost overrides the default host,
 // provided by the meta section of the spec file.
 func (cfg *TransportConfig) WithHost(host string) *TransportConfig {
-	cfg.Host = host
-	return cfg
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WithBasePath overrides the default basePath,
 // provided by the meta section of the spec file.
 func (cfg *TransportConfig) WithBasePath(basePath string) *TransportConfig {
-	cfg.BasePath = basePath
-	return cfg
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WithSchemes overrides the default schemes,
 // provided by the meta section of the spec file.
 func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
-	cfg.Schemes = schemes
-	return cfg
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SpiderpoolControllerAPI is a client for spiderpool controller API
@@ -114,7 +98,6 @@ type SpiderpoolControllerAPI struct {
 
 // SetTransport changes the transport on the client and all its subresources
 func (c *SpiderpoolControllerAPI) SetTransport(transport runtime.ClientTransport) {
-	c.Transport = transport
-	c.Controller.SetTransport(transport)
-	c.Runtime.SetTransport(transport)
+	_ = "STUB: not implemented"
+	return
 }

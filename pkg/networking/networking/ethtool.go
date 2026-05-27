@@ -3,16 +3,7 @@
 
 package networking
 
-import (
-	"github.com/safchain/ethtool"
-)
-
 func EthtoolGetBusInfoByInterfaceName(ifName string) (string, error) {
-	ethHandle, err := ethtool.NewEthtool()
-	if err != nil {
-		return "", err
-	}
-	defer ethHandle.Close()
-
-	return ethHandle.BusInfo(ifName)
+	_ = "STUB: not implemented"
+	return "", nil
 }

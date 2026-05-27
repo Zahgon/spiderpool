@@ -5,6 +5,4 @@ package cmd
 
 import "github.com/containernetworking/cni/pkg/skel"
 
-func CmdDel(args *skel.CmdArgs) error {
-	return nil
-}
+func CmdDel(args *skel.CmdArgs) error { _ = "STUB: not implemented"; return nil }

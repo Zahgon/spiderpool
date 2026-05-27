@@ -4,13 +4,14 @@ package framework
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/spidernet-io/e2eframework/tools"
 	corev1 "k8s.io/api/core/v1"
 	api_errors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	apitypes "k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"time"
 )
 
 func (f *Framework) GetConfigmap(name, namespace string) (*corev1.ConfigMap, error) {

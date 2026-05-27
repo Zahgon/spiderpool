@@ -33,33 +33,28 @@ type GetWorkloadendpointOK struct {
 }
 
 // NewGetWorkloadendpointOK creates GetWorkloadendpointOK with default headers values
-func NewGetWorkloadendpointOK() *GetWorkloadendpointOK {
-
-	return &GetWorkloadendpointOK{}
-}
+func NewGetWorkloadendpointOK() *GetWorkloadendpointOK { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the get workloadendpoint o k response
 func (o *GetWorkloadendpointOK) WithPayload(payload *models.WorkloadEndpointStatus) *GetWorkloadendpointOK {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the get workloadendpoint o k response
 func (o *GetWorkloadendpointOK) SetPayload(payload *models.WorkloadEndpointStatus) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *GetWorkloadendpointOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(200)
-	if o.Payload != nil {
-		payload := o.Payload
-		if err := producer.Produce(rw, payload); err != nil {
-			panic(err) // let the recovery middleware deal with this
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // GetWorkloadendpointBadRequestCode is the HTTP code returned for type GetWorkloadendpointBadRequest
 const GetWorkloadendpointBadRequestCode int = 400
@@ -79,30 +74,30 @@ type GetWorkloadendpointBadRequest struct {
 
 // NewGetWorkloadendpointBadRequest creates GetWorkloadendpointBadRequest with default headers values
 func NewGetWorkloadendpointBadRequest() *GetWorkloadendpointBadRequest {
-
-	return &GetWorkloadendpointBadRequest{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WithPayload adds the payload to the get workloadendpoint bad request response
 func (o *GetWorkloadendpointBadRequest) WithPayload(payload models.Error) *GetWorkloadendpointBadRequest {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the get workloadendpoint bad request response
 func (o *GetWorkloadendpointBadRequest) SetPayload(payload models.Error) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *GetWorkloadendpointBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(400)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // GetWorkloadendpointNotFoundCode is the HTTP code returned for type GetWorkloadendpointNotFound
 const GetWorkloadendpointNotFoundCode int = 404
@@ -122,30 +117,30 @@ type GetWorkloadendpointNotFound struct {
 
 // NewGetWorkloadendpointNotFound creates GetWorkloadendpointNotFound with default headers values
 func NewGetWorkloadendpointNotFound() *GetWorkloadendpointNotFound {
-
-	return &GetWorkloadendpointNotFound{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WithPayload adds the payload to the get workloadendpoint not found response
 func (o *GetWorkloadendpointNotFound) WithPayload(payload models.Error) *GetWorkloadendpointNotFound {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the get workloadendpoint not found response
 func (o *GetWorkloadendpointNotFound) SetPayload(payload models.Error) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *GetWorkloadendpointNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(404)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // GetWorkloadendpointInternalServerErrorCode is the HTTP code returned for type GetWorkloadendpointInternalServerError
 const GetWorkloadendpointInternalServerErrorCode int = 500
@@ -165,27 +160,27 @@ type GetWorkloadendpointInternalServerError struct {
 
 // NewGetWorkloadendpointInternalServerError creates GetWorkloadendpointInternalServerError with default headers values
 func NewGetWorkloadendpointInternalServerError() *GetWorkloadendpointInternalServerError {
-
-	return &GetWorkloadendpointInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WithPayload adds the payload to the get workloadendpoint internal server error response
 func (o *GetWorkloadendpointInternalServerError) WithPayload(payload models.Error) *GetWorkloadendpointInternalServerError {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the get workloadendpoint internal server error response
 func (o *GetWorkloadendpointInternalServerError) SetPayload(payload models.Error) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *GetWorkloadendpointInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(500)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this

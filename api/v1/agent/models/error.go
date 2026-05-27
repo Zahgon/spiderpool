@@ -21,10 +21,13 @@ type Error string
 
 // Validate validates this error
 func (m Error) Validate(formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+
+	// ContextValidate validates this error based on context it is used
 	return nil
 }
 
-// ContextValidate validates this error based on context it is used
 func (m Error) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 	return nil
 }

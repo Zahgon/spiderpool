@@ -4,13 +4,8 @@
 package types
 
 import (
-	"fmt"
-	"strings"
-
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	apitypes "k8s.io/apimachinery/pkg/types"
-
-	stringutil "github.com/spidernet-io/spiderpool/pkg/utils/string"
 )
 
 type PodStatus string
@@ -61,22 +56,7 @@ type PodSubnetAnnoConfig struct {
 	ReclaimIPPool   bool
 }
 
-func (in *PodSubnetAnnoConfig) String() string {
-	if in == nil {
-		return "nil"
-	}
-
-	s := strings.Join([]string{
-		`&PodSubnetAnnoConfig{`,
-		`MultipleSubnets` + fmt.Sprintf("%v", in.MultipleSubnets) + `,`,
-		`SingleSubnet:` + strings.Replace(strings.Replace(in.SingleSubnet.String(), "AnnoSubnetItem", "", 1), `&`, ``, 1) + `,`,
-		`FlexibleIPNum:` + stringutil.ValueToStringGenerated(in.FlexibleIPNum) + `,`,
-		`AssignIPNumber:` + fmt.Sprintf("%v", in.AssignIPNum) + `,`,
-		`ReclaimIPPool:` + fmt.Sprintf("%v", in.ReclaimIPPool) + `,`,
-		`}`,
-	}, "")
-	return s
-}
+func (in *PodSubnetAnnoConfig) String() string { _ = "STUB: not implemented"; return "" }
 
 // AnnoSubnetItem describes the SpiderSubnet CR names and NIC
 type AnnoSubnetItem struct {
@@ -85,18 +65,7 @@ type AnnoSubnetItem struct {
 	IPv6      []string `json:"ipv6,omitempty"`
 }
 
-func (in *AnnoSubnetItem) String() string {
-	if in == nil {
-		return "nil"
-	}
-
-	return fmt.Sprintf(
-		"&AnnoSubnetItem{Interface:%v,IPv4:%v,IPv6:%v}",
-		in.Interface,
-		in.IPv4,
-		in.IPv6,
-	)
-}
+func (in *AnnoSubnetItem) String() string { _ = "STUB: not implemented"; return "" }
 
 // AutoPoolProperty describes Auto-created IPPool's properties
 type AutoPoolProperty struct {

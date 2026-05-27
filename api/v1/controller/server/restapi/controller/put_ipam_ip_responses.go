@@ -26,18 +26,15 @@ type PutIpamIPOK struct {
 }
 
 // NewPutIpamIPOK creates PutIpamIPOK with default headers values
-func NewPutIpamIPOK() *PutIpamIPOK {
-
-	return &PutIpamIPOK{}
-}
+func NewPutIpamIPOK() *PutIpamIPOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *PutIpamIPOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // PutIpamIPInternalServerErrorCode is the HTTP code returned for type PutIpamIPInternalServerError
 const PutIpamIPInternalServerErrorCode int = 500
@@ -52,14 +49,14 @@ type PutIpamIPInternalServerError struct {
 
 // NewPutIpamIPInternalServerError creates PutIpamIPInternalServerError with default headers values
 func NewPutIpamIPInternalServerError() *PutIpamIPInternalServerError {
-
-	return &PutIpamIPInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WriteResponse to the client
 func (o *PutIpamIPInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(500)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses

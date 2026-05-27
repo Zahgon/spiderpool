@@ -26,18 +26,15 @@ type GetRuntimeLivenessOK struct {
 }
 
 // NewGetRuntimeLivenessOK creates GetRuntimeLivenessOK with default headers values
-func NewGetRuntimeLivenessOK() *GetRuntimeLivenessOK {
-
-	return &GetRuntimeLivenessOK{}
-}
+func NewGetRuntimeLivenessOK() *GetRuntimeLivenessOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *GetRuntimeLivenessOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // GetRuntimeLivenessInternalServerErrorCode is the HTTP code returned for type GetRuntimeLivenessInternalServerError
 const GetRuntimeLivenessInternalServerErrorCode int = 500
@@ -52,14 +49,14 @@ type GetRuntimeLivenessInternalServerError struct {
 
 // NewGetRuntimeLivenessInternalServerError creates GetRuntimeLivenessInternalServerError with default headers values
 func NewGetRuntimeLivenessInternalServerError() *GetRuntimeLivenessInternalServerError {
-
-	return &GetRuntimeLivenessInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WriteResponse to the client
 func (o *GetRuntimeLivenessInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(500)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses

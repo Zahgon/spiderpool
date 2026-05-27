@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
 	"github.com/spidernet-io/spiderpool/api/v1/agent/models"
@@ -27,34 +25,27 @@ import (
 // Default values are not hydrated, since defaults are normally applied by the API server side.
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
-func NewDeleteIpamIPParams() *DeleteIpamIPParams {
-	return &DeleteIpamIPParams{
-		timeout: cr.DefaultTimeout,
-	}
-}
+func NewDeleteIpamIPParams() *DeleteIpamIPParams { _ = "STUB: not implemented"; return nil }
 
 // NewDeleteIpamIPParamsWithTimeout creates a new DeleteIpamIPParams object
 // with the ability to set a timeout on a request.
 func NewDeleteIpamIPParamsWithTimeout(timeout time.Duration) *DeleteIpamIPParams {
-	return &DeleteIpamIPParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewDeleteIpamIPParamsWithContext creates a new DeleteIpamIPParams object
 // with the ability to set a context for a request.
 func NewDeleteIpamIPParamsWithContext(ctx context.Context) *DeleteIpamIPParams {
-	return &DeleteIpamIPParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewDeleteIpamIPParamsWithHTTPClient creates a new DeleteIpamIPParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteIpamIPParamsWithHTTPClient(client *http.Client) *DeleteIpamIPParams {
-	return &DeleteIpamIPParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -78,76 +69,65 @@ type DeleteIpamIPParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteIpamIPParams) WithDefaults() *DeleteIpamIPParams {
-	o.SetDefaults()
-	return o
+	_ = "STUB: not implemented"
+	return nil
+
+	// SetDefaults hydrates default values in the delete ipam IP params (not the query body).
+	//
+	// All values with no default are reset to their zero value.
 }
 
-// SetDefaults hydrates default values in the delete ipam IP params (not the query body).
-//
-// All values with no default are reset to their zero value.
 func (o *DeleteIpamIPParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the delete ipam IP params
 func (o *DeleteIpamIPParams) WithTimeout(timeout time.Duration) *DeleteIpamIPParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the delete ipam IP params
-func (o *DeleteIpamIPParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
-}
+func (o *DeleteIpamIPParams) SetTimeout(timeout time.Duration) { _ = "STUB: not implemented"; return }
 
 // WithContext adds the context to the delete ipam IP params
 func (o *DeleteIpamIPParams) WithContext(ctx context.Context) *DeleteIpamIPParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the delete ipam IP params
 func (o *DeleteIpamIPParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the delete ipam IP params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the delete ipam IP params
 func (o *DeleteIpamIPParams) WithHTTPClient(client *http.Client) *DeleteIpamIPParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the delete ipam IP params
-func (o *DeleteIpamIPParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
-}
+func (o *DeleteIpamIPParams) SetHTTPClient(client *http.Client) { _ = "STUB: not implemented"; return }
 
 // WithIpamDelArgs adds the ipamDelArgs to the delete ipam IP params
 func (o *DeleteIpamIPParams) WithIpamDelArgs(ipamDelArgs *models.IpamDelArgs) *DeleteIpamIPParams {
-	o.SetIpamDelArgs(ipamDelArgs)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetIpamDelArgs adds the ipamDelArgs to the delete ipam IP params
 func (o *DeleteIpamIPParams) SetIpamDelArgs(ipamDelArgs *models.IpamDelArgs) {
-	o.IpamDelArgs = ipamDelArgs
+	_ = "STUB: not implemented"
+	return
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteIpamIPParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-	if o.IpamDelArgs != nil {
-		if err := r.SetBodyParam(o.IpamDelArgs); err != nil {
-			return err
-		}
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

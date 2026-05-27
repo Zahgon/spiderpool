@@ -15,5 +15,6 @@ type _unixGetAgentHealth struct{}
 
 // Handle handles GET requests for /ipam/healthy .
 func (g *_unixGetAgentHealth) Handle(params connectivity.GetIpamHealthyParams) middleware.Responder {
-	return connectivity.NewGetIpamHealthyOK()
+	_ = "STUB: not implemented"
+	return *new(middleware.Responder)
 }

@@ -11,7 +11,6 @@ package controller
 import (
 	"net/http"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime/middleware"
 )
 
@@ -19,14 +18,16 @@ import (
 //
 // There are no default values defined in the spec.
 func NewPutIpamIPParams() PutIpamIPParams {
+	_ = "STUB: not implemented"
+	return *
 
-	return PutIpamIPParams{}
+	// PutIpamIPParams contains all the bound params for the put ipam IP operation
+	// typically these are obtained from a http.Request
+	//
+	// swagger:parameters PutIpamIP
+	new(PutIpamIPParams)
 }
 
-// PutIpamIPParams contains all the bound params for the put ipam IP operation
-// typically these are obtained from a http.Request
-//
-// swagger:parameters PutIpamIP
 type PutIpamIPParams struct {
 
 	// HTTP Request Object
@@ -38,12 +39,6 @@ type PutIpamIPParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewPutIpamIPParams() beforehand.
 func (o *PutIpamIPParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
-	var res []error
-
-	o.HTTPRequest = r
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

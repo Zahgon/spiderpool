@@ -7,7 +7,6 @@ package v2beta1
 
 import (
 	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
-	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"
 )
@@ -30,20 +29,20 @@ type spiderMultusConfigLister struct {
 
 // NewSpiderMultusConfigLister returns a new SpiderMultusConfigLister.
 func NewSpiderMultusConfigLister(indexer cache.Indexer) SpiderMultusConfigLister {
-	return &spiderMultusConfigLister{indexer: indexer}
+	_ = "STUB: not implemented"
+	return *new(SpiderMultusConfigLister)
 }
 
 // List lists all SpiderMultusConfigs in the indexer.
 func (s *spiderMultusConfigLister) List(selector labels.Selector) (ret []*v2beta1.SpiderMultusConfig, err error) {
-	err = cache.ListAll(s.indexer, selector, func(m interface{}) {
-		ret = append(ret, m.(*v2beta1.SpiderMultusConfig))
-	})
-	return ret, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SpiderMultusConfigs returns an object that can list and get SpiderMultusConfigs.
 func (s *spiderMultusConfigLister) SpiderMultusConfigs(namespace string) SpiderMultusConfigNamespaceLister {
-	return spiderMultusConfigNamespaceLister{indexer: s.indexer, namespace: namespace}
+	_ = "STUB: not implemented"
+	return *new(SpiderMultusConfigNamespaceLister)
 }
 
 // SpiderMultusConfigNamespaceLister helps list and get SpiderMultusConfigs.
@@ -67,20 +66,12 @@ type spiderMultusConfigNamespaceLister struct {
 
 // List lists all SpiderMultusConfigs in the indexer for a given namespace.
 func (s spiderMultusConfigNamespaceLister) List(selector labels.Selector) (ret []*v2beta1.SpiderMultusConfig, err error) {
-	err = cache.ListAllByNamespace(s.indexer, s.namespace, selector, func(m interface{}) {
-		ret = append(ret, m.(*v2beta1.SpiderMultusConfig))
-	})
-	return ret, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Get retrieves the SpiderMultusConfig from the indexer for a given namespace and name.
 func (s spiderMultusConfigNamespaceLister) Get(name string) (*v2beta1.SpiderMultusConfig, error) {
-	obj, exists, err := s.indexer.GetByKey(s.namespace + "/" + name)
-	if err != nil {
-		return nil, err
-	}
-	if !exists {
-		return nil, errors.NewNotFound(v2beta1.Resource("spidermultusconfig"), name)
-	}
-	return obj.(*v2beta1.SpiderMultusConfig), nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

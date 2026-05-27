@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
@@ -25,34 +23,27 @@ import (
 // Default values are not hydrated, since defaults are normally applied by the API server side.
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
-func NewGetIpamStatusParams() *GetIpamStatusParams {
-	return &GetIpamStatusParams{
-		timeout: cr.DefaultTimeout,
-	}
-}
+func NewGetIpamStatusParams() *GetIpamStatusParams { _ = "STUB: not implemented"; return nil }
 
 // NewGetIpamStatusParamsWithTimeout creates a new GetIpamStatusParams object
 // with the ability to set a timeout on a request.
 func NewGetIpamStatusParamsWithTimeout(timeout time.Duration) *GetIpamStatusParams {
-	return &GetIpamStatusParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetIpamStatusParamsWithContext creates a new GetIpamStatusParams object
 // with the ability to set a context for a request.
 func NewGetIpamStatusParamsWithContext(ctx context.Context) *GetIpamStatusParams {
-	return &GetIpamStatusParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetIpamStatusParamsWithHTTPClient creates a new GetIpamStatusParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetIpamStatusParamsWithHTTPClient(client *http.Client) *GetIpamStatusParams {
-	return &GetIpamStatusParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -72,60 +63,53 @@ type GetIpamStatusParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetIpamStatusParams) WithDefaults() *GetIpamStatusParams {
-	o.SetDefaults()
-	return o
+	_ = "STUB: not implemented"
+	return nil
+
+	// SetDefaults hydrates default values in the get ipam status params (not the query body).
+	//
+	// All values with no default are reset to their zero value.
 }
 
-// SetDefaults hydrates default values in the get ipam status params (not the query body).
-//
-// All values with no default are reset to their zero value.
 func (o *GetIpamStatusParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the get ipam status params
 func (o *GetIpamStatusParams) WithTimeout(timeout time.Duration) *GetIpamStatusParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the get ipam status params
-func (o *GetIpamStatusParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
-}
+func (o *GetIpamStatusParams) SetTimeout(timeout time.Duration) { _ = "STUB: not implemented"; return }
 
 // WithContext adds the context to the get ipam status params
 func (o *GetIpamStatusParams) WithContext(ctx context.Context) *GetIpamStatusParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the get ipam status params
 func (o *GetIpamStatusParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the get ipam status params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the get ipam status params
 func (o *GetIpamStatusParams) WithHTTPClient(client *http.Client) *GetIpamStatusParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the get ipam status params
-func (o *GetIpamStatusParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
-}
+func (o *GetIpamStatusParams) SetHTTPClient(client *http.Client) { _ = "STUB: not implemented"; return }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetIpamStatusParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

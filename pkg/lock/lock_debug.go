@@ -7,15 +7,12 @@
 package lock
 
 import (
-	"bytes"
 	"fmt"
 	"io"
 	"os"
-	"runtime/debug"
 	"time"
 
 	deadlock "github.com/sasha-s/go-deadlock"
-	"go.uber.org/zap"
 
 	"github.com/spidernet-io/spiderpool/pkg/logutils"
 )
@@ -49,78 +46,35 @@ type internalRWMutex struct {
 	t time.Time
 }
 
-func (i *internalRWMutex) Lock() {
-	i.RWMutex.Lock()
-	i.t = time.Now()
-}
+func (i *internalRWMutex) Lock() { _ = "STUB: not implemented"; return }
 
-func (i *internalRWMutex) Unlock() {
-	if sec := time.Since(i.t).Seconds(); sec >= SelfishThresholdSec {
-		printStackTo(sec, debug.Stack(), OutputWriter)
-	}
-	i.RWMutex.Unlock()
-}
+func (i *internalRWMutex) Unlock() { _ = "STUB: not implemented"; return }
 
-func (i *internalRWMutex) UnlockIgnoreTime() {
-	i.RWMutex.Unlock()
-}
+func (i *internalRWMutex) UnlockIgnoreTime() { _ = "STUB: not implemented"; return }
 
-func (i *internalRWMutex) RLock() {
-	i.RWMutex.RLock()
-}
+func (i *internalRWMutex) RLock() { _ = "STUB: not implemented"; return }
 
-func (i *internalRWMutex) RUnlock() {
-	i.RWMutex.RUnlock()
-}
+func (i *internalRWMutex) RUnlock() { _ = "STUB: not implemented"; return }
 
 type internalMutex struct {
 	deadlock.Mutex
 	time.Time
 }
 
-func (i *internalMutex) Lock() {
-	i.Mutex.Lock()
-	i.Time = time.Now()
-}
+func (i *internalMutex) Lock() { _ = "STUB: not implemented"; return }
 
-func (i *internalMutex) Unlock() {
-	if sec := time.Since(i.Time).Seconds(); sec >= SelfishThresholdSec {
-		printStackTo(sec, debug.Stack(), OutputWriter)
-	}
-	i.Mutex.Unlock()
-}
+func (i *internalMutex) Unlock() { _ = "STUB: not implemented"; return }
 
-func (i *internalMutex) UnlockIgnoreTime() {
-	i.Mutex.Unlock()
-}
+func (i *internalMutex) UnlockIgnoreTime() { _ = "STUB: not implemented"; return }
 
-func printStackTo(sec float64, stack []byte, writer io.Writer) {
-	goRoutineNumber := []byte("0")
-	newLines := 0
+func printStackTo(sec float64, stack []byte, writer io.Writer) { _ = "STUB: not implemented"; return }
 
-	if bytes.Equal([]byte("goroutine"), stack[:len("goroutine")]) {
-		newLines = bytes.Count(stack, []byte{'\n'})
-		goroutineLine := bytes.IndexRune(stack, '[')
-		goRoutineNumber = stack[:goroutineLine]
-	}
+// A stack trace is usually in the following format:
+// goroutine 1432 [running]:
+// runtime/debug.Stack(0xc424c4a370, 0xc421f7f750, 0x1)
+//   /usr/local/go/src/runtime/debug/stack.go:24 +0xa7
+//   ...
+// To know which trace belongs to which go routine we will append the
+// go routine number to every line of the stack trace.
 
-	logger.With(
-		zap.Float64("Seconds", sec),
-		zap.String("Goroutine", string(goRoutineNumber[len("goroutine"):len(goRoutineNumber)-1])),
-	).Warn(selfishThresholdMsg)
-
-	// A stack trace is usually in the following format:
-	// goroutine 1432 [running]:
-	// runtime/debug.Stack(0xc424c4a370, 0xc421f7f750, 0x1)
-	//   /usr/local/go/src/runtime/debug/stack.go:24 +0xa7
-	//   ...
-	// To know which trace belongs to which go routine we will append the
-	// go routine number to every line of the stack trace.
-	writer.Write(bytes.Replace(
-		stack,
-		[]byte{'\n'},
-		append([]byte{'\n'}, goRoutineNumber...),
-		// Don't replace the last '\n'
-		newLines-1),
-	)
-}
+// Don't replace the last '\n'

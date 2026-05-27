@@ -27,6 +27,4 @@ func main() {
 		"Spiderpool IPAM "+version)
 }
 
-func cmdCheck(args *skel.CmdArgs) error {
-	return nil
-}
+func cmdCheck(args *skel.CmdArgs) error { _ = "STUB: not implemented"; return nil }

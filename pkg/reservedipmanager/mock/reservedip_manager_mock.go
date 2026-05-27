@@ -10,7 +10,6 @@ package mock_reservedipmanager
 import (
 	context "context"
 	net "net"
-	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
 	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
@@ -31,62 +30,49 @@ type MockReservedIPManagerMockRecorder struct {
 
 // NewMockReservedIPManager creates a new mock instance.
 func NewMockReservedIPManager(ctrl *gomock.Controller) *MockReservedIPManager {
-	mock := &MockReservedIPManager{ctrl: ctrl}
-	mock.recorder = &MockReservedIPManagerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockReservedIPManager) EXPECT() *MockReservedIPManagerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// AssembleReservedIPs mocks base method.
+	return nil
 }
 
-// AssembleReservedIPs mocks base method.
 func (m *MockReservedIPManager) AssembleReservedIPs(ctx context.Context, version types.IPVersion) ([]net.IP, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AssembleReservedIPs", ctx, version)
-	ret0, _ := ret[0].([]net.IP)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AssembleReservedIPs indicates an expected call of AssembleReservedIPs.
 func (mr *MockReservedIPManagerMockRecorder) AssembleReservedIPs(ctx, version interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AssembleReservedIPs", reflect.TypeOf((*MockReservedIPManager)(nil).AssembleReservedIPs), ctx, version)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetReservedIPByName mocks base method.
 func (m *MockReservedIPManager) GetReservedIPByName(ctx context.Context, rIPName string, cached bool) (*v2beta1.SpiderReservedIP, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetReservedIPByName", ctx, rIPName, cached)
-	ret0, _ := ret[0].(*v2beta1.SpiderReservedIP)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetReservedIPByName indicates an expected call of GetReservedIPByName.
 func (mr *MockReservedIPManagerMockRecorder) GetReservedIPByName(ctx, rIPName, cached interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetReservedIPByName", reflect.TypeOf((*MockReservedIPManager)(nil).GetReservedIPByName), ctx, rIPName, cached)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListReservedIPs mocks base method.
 func (m *MockReservedIPManager) ListReservedIPs(ctx context.Context, cached bool, opts ...client.ListOption) (*v2beta1.SpiderReservedIPList, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, cached}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ListReservedIPs", varargs...)
-	ret0, _ := ret[0].(*v2beta1.SpiderReservedIPList)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListReservedIPs indicates an expected call of ListReservedIPs.
 func (mr *MockReservedIPManagerMockRecorder) ListReservedIPs(ctx, cached interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, cached}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListReservedIPs", reflect.TypeOf((*MockReservedIPManager)(nil).ListReservedIPs), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }

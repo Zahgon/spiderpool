@@ -4,14 +4,12 @@
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"net"
 	"os"
 	"path/filepath"
 
 	"github.com/containernetworking/cni/pkg/types"
-	"github.com/spidernet-io/spiderpool/pkg/constant"
 	"github.com/spidernet-io/spiderpool/pkg/logutils"
 )
 
@@ -72,27 +70,4 @@ type IPAMConfig struct {
 }
 
 // LoadNetConf converts input (i.e. stdin) to NetConf.
-func LoadNetConf(argsStdin []byte) (*NetConf, error) {
-	netConf := &NetConf{}
-
-	err := json.Unmarshal(argsStdin, netConf)
-	if nil != err {
-		return nil, fmt.Errorf("failed to parse CNI network configuration: %w", err)
-	}
-
-	if netConf.IPAM.LogLevel == "" {
-		netConf.IPAM.LogLevel = DefaultLogLevelStr
-	}
-
-	if netConf.IPAM.IPAMUnixSocketPath == "" {
-		netConf.IPAM.IPAMUnixSocketPath = constant.DefaultIPAMUnixSocketPath
-	}
-
-	for _, vers := range SupportCNIVersions {
-		if netConf.CNIVersion == vers {
-			return netConf, nil
-		}
-	}
-
-	return nil, fmt.Errorf("unsupported specified CNI version %s, the CNI versions supported by Spiderpool: %v", netConf.CNIVersion, SupportCNIVersions)
-}
+func LoadNetConf(argsStdin []byte) (*NetConf, error) { _ = "STUB: not implemented"; return nil, nil }

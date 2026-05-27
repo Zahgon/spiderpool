@@ -9,8 +9,6 @@ package runtime
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
@@ -22,28 +20,12 @@ type GetRuntimeReadinessReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetRuntimeReadinessReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewGetRuntimeReadinessOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewGetRuntimeReadinessInternalServerError()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewGetRuntimeReadinessOK creates a GetRuntimeReadinessOK with default headers values
-func NewGetRuntimeReadinessOK() *GetRuntimeReadinessOK {
-	return &GetRuntimeReadinessOK{}
-}
+func NewGetRuntimeReadinessOK() *GetRuntimeReadinessOK { _ = "STUB: not implemented"; return nil }
 
 /*
 GetRuntimeReadinessOK describes a response with status code 200, with default header values.
@@ -55,50 +37,56 @@ type GetRuntimeReadinessOK struct {
 
 // IsSuccess returns true when this get runtime readiness o k response has a 2xx status code
 func (o *GetRuntimeReadinessOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get runtime readiness o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this get runtime readiness o k response has a 3xx status code
 func (o *GetRuntimeReadinessOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get runtime readiness o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get runtime readiness o k response has a 4xx status code
 func (o *GetRuntimeReadinessOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get runtime readiness o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get runtime readiness o k response has a 5xx status code
 func (o *GetRuntimeReadinessOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get runtime readiness o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this get runtime readiness o k response a status code equal to that given
 func (o *GetRuntimeReadinessOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the get runtime readiness o k response
+	return false
 }
 
-// Code gets the status code for the get runtime readiness o k response
-func (o *GetRuntimeReadinessOK) Code() int {
-	return 200
-}
+func (o *GetRuntimeReadinessOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetRuntimeReadinessOK) Error() string {
-	return fmt.Sprintf("[GET /runtime/readiness][%d] getRuntimeReadinessOK ", 200)
-}
+func (o *GetRuntimeReadinessOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetRuntimeReadinessOK) String() string {
-	return fmt.Sprintf("[GET /runtime/readiness][%d] getRuntimeReadinessOK ", 200)
-}
+func (o *GetRuntimeReadinessOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetRuntimeReadinessOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
+	// NewGetRuntimeReadinessInternalServerError creates a GetRuntimeReadinessInternalServerError with default headers values
 	return nil
 }
 
-// NewGetRuntimeReadinessInternalServerError creates a GetRuntimeReadinessInternalServerError with default headers values
 func NewGetRuntimeReadinessInternalServerError() *GetRuntimeReadinessInternalServerError {
-	return &GetRuntimeReadinessInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -111,43 +99,53 @@ type GetRuntimeReadinessInternalServerError struct {
 
 // IsSuccess returns true when this get runtime readiness internal server error response has a 2xx status code
 func (o *GetRuntimeReadinessInternalServerError) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get runtime readiness internal server error response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get runtime readiness internal server error response has a 3xx status code
 func (o *GetRuntimeReadinessInternalServerError) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get runtime readiness internal server error response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get runtime readiness internal server error response has a 4xx status code
 func (o *GetRuntimeReadinessInternalServerError) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get runtime readiness internal server error response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get runtime readiness internal server error response has a 5xx status code
 func (o *GetRuntimeReadinessInternalServerError) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get runtime readiness internal server error response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this get runtime readiness internal server error response a status code equal to that given
 func (o *GetRuntimeReadinessInternalServerError) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get runtime readiness internal server error response
 }
 
-// Code gets the status code for the get runtime readiness internal server error response
-func (o *GetRuntimeReadinessInternalServerError) Code() int {
-	return 500
-}
+func (o *GetRuntimeReadinessInternalServerError) Code() int { _ = "STUB: not implemented"; return 0 }
 
 func (o *GetRuntimeReadinessInternalServerError) Error() string {
-	return fmt.Sprintf("[GET /runtime/readiness][%d] getRuntimeReadinessInternalServerError ", 500)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetRuntimeReadinessInternalServerError) String() string {
-	return fmt.Sprintf("[GET /runtime/readiness][%d] getRuntimeReadinessInternalServerError ", 500)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetRuntimeReadinessInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
+	_ = "STUB: not implemented"
 	return nil
 }

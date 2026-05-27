@@ -11,10 +11,7 @@ package models
 import (
 	"context"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // IpamBatchDelArgs IPAM release IPs information
@@ -47,85 +44,42 @@ type IpamBatchDelArgs struct {
 
 // Validate validates this ipam batch del args
 func (m *IpamBatchDelArgs) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateContainerID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodNamespace(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodUID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamBatchDelArgs) validateContainerID(formats strfmt.Registry) error {
-
-	if err := validate.Required("containerID", "body", m.ContainerID); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamBatchDelArgs) validatePodName(formats strfmt.Registry) error {
-
-	if err := validate.Required("podName", "body", m.PodName); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamBatchDelArgs) validatePodNamespace(formats strfmt.Registry) error {
-
-	if err := validate.Required("podNamespace", "body", m.PodNamespace); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamBatchDelArgs) validatePodUID(formats strfmt.Registry) error {
-
-	if err := validate.Required("podUID", "body", m.PodUID); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // ContextValidate validates this ipam batch del args based on context it is used
 func (m *IpamBatchDelArgs) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+
+	// MarshalBinary interface implementation
 	return nil
 }
 
-// MarshalBinary interface implementation
 func (m *IpamBatchDelArgs) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnmarshalBinary interface implementation
-func (m *IpamBatchDelArgs) UnmarshalBinary(b []byte) error {
-	var res IpamBatchDelArgs
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
+func (m *IpamBatchDelArgs) UnmarshalBinary(b []byte) error { _ = "STUB: not implemented"; return nil }

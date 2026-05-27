@@ -19,17 +19,20 @@ type PutIpamIPHandlerFunc func(PutIpamIPParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn PutIpamIPHandlerFunc) Handle(params PutIpamIPParams) middleware.Responder {
-	return fn(params)
+	_ = "STUB: not implemented"
+
+	// PutIpamIPHandler interface for that can handle valid put ipam IP params
+	return *new(middleware.Responder)
 }
 
-// PutIpamIPHandler interface for that can handle valid put ipam IP params
 type PutIpamIPHandler interface {
 	Handle(PutIpamIPParams) middleware.Responder
 }
 
 // NewPutIpamIP creates a new http.Handler for the put ipam IP operation
 func NewPutIpamIP(ctx *middleware.Context, handler PutIpamIPHandler) *PutIpamIP {
-	return &PutIpamIP{Context: ctx, Handler: handler}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -45,17 +48,10 @@ type PutIpamIP struct {
 }
 
 func (o *PutIpamIP) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	route, rCtx, _ := o.Context.RouteInfo(r)
-	if rCtx != nil {
-		*r = *rCtx
-	}
-	var Params = NewPutIpamIPParams()
-	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
-		o.Context.Respond(rw, r, route.Produces, route, err)
-		return
-	}
-
-	res := o.Handler.Handle(Params) // actually handle the request
-	o.Context.Respond(rw, r, route.Produces, route, res)
-
+	_ = "STUB: not implemented"
+	return
 }
+
+// bind params
+
+// actually handle the request

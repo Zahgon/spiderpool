@@ -9,8 +9,6 @@ package runtime
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
@@ -22,28 +20,12 @@ type GetRuntimeStartupReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetRuntimeStartupReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewGetRuntimeStartupOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewGetRuntimeStartupInternalServerError()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewGetRuntimeStartupOK creates a GetRuntimeStartupOK with default headers values
-func NewGetRuntimeStartupOK() *GetRuntimeStartupOK {
-	return &GetRuntimeStartupOK{}
-}
+func NewGetRuntimeStartupOK() *GetRuntimeStartupOK { _ = "STUB: not implemented"; return nil }
 
 /*
 GetRuntimeStartupOK describes a response with status code 200, with default header values.
@@ -55,50 +37,56 @@ type GetRuntimeStartupOK struct {
 
 // IsSuccess returns true when this get runtime startup o k response has a 2xx status code
 func (o *GetRuntimeStartupOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get runtime startup o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this get runtime startup o k response has a 3xx status code
 func (o *GetRuntimeStartupOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get runtime startup o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get runtime startup o k response has a 4xx status code
 func (o *GetRuntimeStartupOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get runtime startup o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get runtime startup o k response has a 5xx status code
 func (o *GetRuntimeStartupOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get runtime startup o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this get runtime startup o k response a status code equal to that given
 func (o *GetRuntimeStartupOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the get runtime startup o k response
+	return false
 }
 
-// Code gets the status code for the get runtime startup o k response
-func (o *GetRuntimeStartupOK) Code() int {
-	return 200
-}
+func (o *GetRuntimeStartupOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetRuntimeStartupOK) Error() string {
-	return fmt.Sprintf("[GET /runtime/startup][%d] getRuntimeStartupOK ", 200)
-}
+func (o *GetRuntimeStartupOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetRuntimeStartupOK) String() string {
-	return fmt.Sprintf("[GET /runtime/startup][%d] getRuntimeStartupOK ", 200)
-}
+func (o *GetRuntimeStartupOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetRuntimeStartupOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
+	// NewGetRuntimeStartupInternalServerError creates a GetRuntimeStartupInternalServerError with default headers values
 	return nil
 }
 
-// NewGetRuntimeStartupInternalServerError creates a GetRuntimeStartupInternalServerError with default headers values
 func NewGetRuntimeStartupInternalServerError() *GetRuntimeStartupInternalServerError {
-	return &GetRuntimeStartupInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -111,43 +99,50 @@ type GetRuntimeStartupInternalServerError struct {
 
 // IsSuccess returns true when this get runtime startup internal server error response has a 2xx status code
 func (o *GetRuntimeStartupInternalServerError) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get runtime startup internal server error response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get runtime startup internal server error response has a 3xx status code
 func (o *GetRuntimeStartupInternalServerError) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get runtime startup internal server error response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get runtime startup internal server error response has a 4xx status code
 func (o *GetRuntimeStartupInternalServerError) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get runtime startup internal server error response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get runtime startup internal server error response has a 5xx status code
 func (o *GetRuntimeStartupInternalServerError) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get runtime startup internal server error response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this get runtime startup internal server error response a status code equal to that given
 func (o *GetRuntimeStartupInternalServerError) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get runtime startup internal server error response
 }
 
-// Code gets the status code for the get runtime startup internal server error response
-func (o *GetRuntimeStartupInternalServerError) Code() int {
-	return 500
-}
+func (o *GetRuntimeStartupInternalServerError) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetRuntimeStartupInternalServerError) Error() string {
-	return fmt.Sprintf("[GET /runtime/startup][%d] getRuntimeStartupInternalServerError ", 500)
-}
+func (o *GetRuntimeStartupInternalServerError) Error() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetRuntimeStartupInternalServerError) String() string {
-	return fmt.Sprintf("[GET /runtime/startup][%d] getRuntimeStartupInternalServerError ", 500)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetRuntimeStartupInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
+	_ = "STUB: not implemented"
 	return nil
 }

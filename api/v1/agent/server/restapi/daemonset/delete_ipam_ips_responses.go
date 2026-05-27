@@ -28,18 +28,15 @@ type DeleteIpamIpsOK struct {
 }
 
 // NewDeleteIpamIpsOK creates DeleteIpamIpsOK with default headers values
-func NewDeleteIpamIpsOK() *DeleteIpamIpsOK {
-
-	return &DeleteIpamIpsOK{}
-}
+func NewDeleteIpamIpsOK() *DeleteIpamIpsOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *DeleteIpamIpsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // DeleteIpamIpsFailureCode is the HTTP code returned for type DeleteIpamIpsFailure
 const DeleteIpamIpsFailureCode int = 500
@@ -58,31 +55,24 @@ type DeleteIpamIpsFailure struct {
 }
 
 // NewDeleteIpamIpsFailure creates DeleteIpamIpsFailure with default headers values
-func NewDeleteIpamIpsFailure() *DeleteIpamIpsFailure {
-
-	return &DeleteIpamIpsFailure{}
-}
+func NewDeleteIpamIpsFailure() *DeleteIpamIpsFailure { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the delete ipam ips failure response
 func (o *DeleteIpamIpsFailure) WithPayload(payload models.Error) *DeleteIpamIpsFailure {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the delete ipam ips failure response
-func (o *DeleteIpamIpsFailure) SetPayload(payload models.Error) {
-	o.Payload = payload
-}
+func (o *DeleteIpamIpsFailure) SetPayload(payload models.Error) { _ = "STUB: not implemented"; return }
 
 // WriteResponse to the client
 func (o *DeleteIpamIpsFailure) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(500)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // DeleteIpamIpsStatus521Code is the HTTP code returned for type DeleteIpamIpsStatus521
 const DeleteIpamIpsStatus521Code int = 521
@@ -101,31 +91,28 @@ type DeleteIpamIpsStatus521 struct {
 }
 
 // NewDeleteIpamIpsStatus521 creates DeleteIpamIpsStatus521 with default headers values
-func NewDeleteIpamIpsStatus521() *DeleteIpamIpsStatus521 {
-
-	return &DeleteIpamIpsStatus521{}
-}
+func NewDeleteIpamIpsStatus521() *DeleteIpamIpsStatus521 { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the delete ipam ips status521 response
 func (o *DeleteIpamIpsStatus521) WithPayload(payload models.Error) *DeleteIpamIpsStatus521 {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the delete ipam ips status521 response
 func (o *DeleteIpamIpsStatus521) SetPayload(payload models.Error) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *DeleteIpamIpsStatus521) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(521)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // DeleteIpamIpsStatus522Code is the HTTP code returned for type DeleteIpamIpsStatus522
 const DeleteIpamIpsStatus522Code int = 522
@@ -144,28 +131,25 @@ type DeleteIpamIpsStatus522 struct {
 }
 
 // NewDeleteIpamIpsStatus522 creates DeleteIpamIpsStatus522 with default headers values
-func NewDeleteIpamIpsStatus522() *DeleteIpamIpsStatus522 {
-
-	return &DeleteIpamIpsStatus522{}
-}
+func NewDeleteIpamIpsStatus522() *DeleteIpamIpsStatus522 { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the delete ipam ips status522 response
 func (o *DeleteIpamIpsStatus522) WithPayload(payload models.Error) *DeleteIpamIpsStatus522 {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the delete ipam ips status522 response
 func (o *DeleteIpamIpsStatus522) SetPayload(payload models.Error) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *DeleteIpamIpsStatus522) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(522)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this

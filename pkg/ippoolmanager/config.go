@@ -15,10 +15,6 @@ type IPPoolManagerConfig struct {
 }
 
 func setDefaultsForIPPoolManagerConfig(config IPPoolManagerConfig) IPPoolManagerConfig {
-	if config.MaxAllocatedIPs == nil {
-		maxAllocatedIPs := defaultMaxAllocatedIPs
-		config.MaxAllocatedIPs = &maxAllocatedIPs
-	}
-
-	return config
+	_ = "STUB: not implemented"
+	return *new(IPPoolManagerConfig)
 }

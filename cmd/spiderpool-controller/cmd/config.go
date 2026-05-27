@@ -5,16 +5,10 @@ package cmd
 
 import (
 	"context"
-	"fmt"
 	"net/http"
-	"os"
-	"path"
-	"strconv"
-	"strings"
 
 	"github.com/spf13/pflag"
 	"go.uber.org/atomic"
-	"gopkg.in/yaml.v2"
 	"k8s.io/client-go/dynamic"
 	"k8s.io/client-go/kubernetes"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -205,88 +199,23 @@ type ControllerContext struct {
 
 // BindControllerDaemonFlags bind controller cli daemon flags
 func (cc *ControllerContext) BindControllerDaemonFlags(flags *pflag.FlagSet) {
-	flags.StringVar(&cc.Cfg.ConfigPath, "config-path", "/tmp/spiderpool/config-map/conf.yml", "spiderpool-controller configmap file")
-	flags.StringVar(&cc.Cfg.TLSServerCertPath, "tls-server-cert", "", "file path of server cert")
-	flags.StringVar(&cc.Cfg.TLSServerKeyPath, "tls-server-key", "", "file path of server key")
+	_ = "STUB: not implemented"
+	return
 }
 
 // ParseConfiguration set the env to AgentConfiguration
-func ParseConfiguration() error {
-	var result string
+func ParseConfiguration() error { _ = "STUB: not implemented"; return nil }
 
-	for i := range envInfo {
-		env, ok := os.LookupEnv(envInfo[i].envName)
-		if ok {
-			result = strings.TrimSpace(env)
-		} else {
-			// if no env and required, set it to default value.
-			result = envInfo[i].defaultValue
-		}
-		if len(result) == 0 {
-			if envInfo[i].required {
-				logger.Fatal(fmt.Sprintf("empty value of %s", envInfo[i].envName))
-			} else {
-				// if no env and none-required, just use the empty value.
-				continue
-			}
-		}
+// if no env and required, set it to default value.
 
-		if envInfo[i].associateStrKey != nil {
-			*(envInfo[i].associateStrKey) = result
-		} else if envInfo[i].associateBoolKey != nil {
-			b, err := strconv.ParseBool(result)
-			if nil != err {
-				return fmt.Errorf("error: %s require a bool value, but get %s", envInfo[i].envName, result)
-			}
-			*(envInfo[i].associateBoolKey) = b
-		} else if envInfo[i].associateIntKey != nil {
-			intVal, err := strconv.Atoi(result)
-			if nil != err {
-				return fmt.Errorf("error: %s require a int value, but get %s", envInfo[i].envName, result)
-			}
-			*(envInfo[i].associateIntKey) = intVal
-		} else {
-			return fmt.Errorf("error: %s doesn't match any controller context", envInfo[i].envName)
-		}
-	}
-
-	return nil
-}
+// if no env and none-required, just use the empty value.
 
 // VerifyConfig after retrieve all config
-func (cc *ControllerContext) VerifyConfig() error {
-	dir := path.Dir(cc.Cfg.TLSServerCertPath)
-	_, err := os.Stat(dir)
-	if nil != err {
-		return fmt.Errorf("failed to get Cert path '%s', error: %w", dir, err)
-	}
+func (cc *ControllerContext) VerifyConfig() error { _ = "STUB: not implemented"; return nil }
 
-	// cert file
-	_, err = os.Stat(cc.Cfg.TLSServerCertPath)
-	if nil != err {
-		return fmt.Errorf("failed to check whether Cert file '%s' exists, error: %w", cc.Cfg.TLSServerCertPath, err)
-	}
+// cert file
 
-	// key file
-	_, err = os.Stat(cc.Cfg.TLSServerKeyPath)
-	if nil != err {
-		return fmt.Errorf("failed to check whether Cert Key file '%s' exists, error: %w", cc.Cfg.TLSServerKeyPath, err)
-	}
-
-	return nil
-}
+// key file
 
 // LoadConfigmap reads configmap data from cli flag config-path
-func (cc *ControllerContext) LoadConfigmap() error {
-	configmapBytes, err := os.ReadFile(cc.Cfg.ConfigPath)
-	if nil != err {
-		return fmt.Errorf("failed to read configmap file, error: %w", err)
-	}
-
-	err = yaml.Unmarshal(configmapBytes, &cc.Cfg.SpiderpoolConfigmapConfig)
-	if nil != err {
-		return fmt.Errorf("failed to parse configmap, error: %w", err)
-	}
-
-	return nil
-}
+func (cc *ControllerContext) LoadConfigmap() error { _ = "STUB: not implemented"; return nil }

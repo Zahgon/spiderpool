@@ -11,10 +11,7 @@ package models
 import (
 	"context"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // IpamDelArgs IPAM release IP information
@@ -48,98 +45,44 @@ type IpamDelArgs struct {
 
 // Validate validates this ipam del args
 func (m *IpamDelArgs) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateContainerID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateIfName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodNamespace(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodUID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamDelArgs) validateContainerID(formats strfmt.Registry) error {
-
-	if err := validate.Required("containerID", "body", m.ContainerID); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamDelArgs) validateIfName(formats strfmt.Registry) error {
-
-	if err := validate.Required("ifName", "body", m.IfName); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamDelArgs) validatePodName(formats strfmt.Registry) error {
-
-	if err := validate.Required("podName", "body", m.PodName); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamDelArgs) validatePodNamespace(formats strfmt.Registry) error {
-
-	if err := validate.Required("podNamespace", "body", m.PodNamespace); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IpamDelArgs) validatePodUID(formats strfmt.Registry) error {
-
-	if err := validate.Required("podUID", "body", m.PodUID); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // ContextValidate validates this ipam del args based on context it is used
 func (m *IpamDelArgs) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+
+	// MarshalBinary interface implementation
 	return nil
 }
 
-// MarshalBinary interface implementation
-func (m *IpamDelArgs) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
+func (m *IpamDelArgs) MarshalBinary() ([]byte, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // UnmarshalBinary interface implementation
-func (m *IpamDelArgs) UnmarshalBinary(b []byte) error {
-	var res IpamDelArgs
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
+func (m *IpamDelArgs) UnmarshalBinary(b []byte) error { _ = "STUB: not implemented"; return nil }

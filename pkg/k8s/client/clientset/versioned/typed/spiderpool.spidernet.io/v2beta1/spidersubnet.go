@@ -7,10 +7,8 @@ package v2beta1
 
 import (
 	"context"
-	"time"
 
 	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
-	scheme "github.com/spidernet-io/spiderpool/pkg/k8s/client/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -44,128 +42,61 @@ type spiderSubnets struct {
 
 // newSpiderSubnets returns a SpiderSubnets
 func newSpiderSubnets(c *SpiderpoolV2beta1Client) *spiderSubnets {
-	return &spiderSubnets{
-		client: c.RESTClient(),
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Get takes name of the spiderSubnet, and returns the corresponding spiderSubnet object, and an error if there is any.
 func (c *spiderSubnets) Get(ctx context.Context, name string, options v1.GetOptions) (result *v2beta1.SpiderSubnet, err error) {
-	result = &v2beta1.SpiderSubnet{}
-	err = c.client.Get().
-		Resource("spidersubnets").
-		Name(name).
-		VersionedParams(&options, scheme.ParameterCodec).
-		Do(ctx).
-		Into(result)
-	return
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // List takes label and field selectors, and returns the list of SpiderSubnets that match those selectors.
 func (c *spiderSubnets) List(ctx context.Context, opts v1.ListOptions) (result *v2beta1.SpiderSubnetList, err error) {
-	var timeout time.Duration
-	if opts.TimeoutSeconds != nil {
-		timeout = time.Duration(*opts.TimeoutSeconds) * time.Second
-	}
-	result = &v2beta1.SpiderSubnetList{}
-	err = c.client.Get().
-		Resource("spidersubnets").
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Timeout(timeout).
-		Do(ctx).
-		Into(result)
-	return
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Watch returns a watch.Interface that watches the requested spiderSubnets.
 func (c *spiderSubnets) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error) {
-	var timeout time.Duration
-	if opts.TimeoutSeconds != nil {
-		timeout = time.Duration(*opts.TimeoutSeconds) * time.Second
-	}
-	opts.Watch = true
-	return c.client.Get().
-		Resource("spidersubnets").
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Timeout(timeout).
-		Watch(ctx)
+	_ = "STUB: not implemented"
+	return *new(watch.Interface), nil
 }
 
 // Create takes the representation of a spiderSubnet and creates it.  Returns the server's representation of the spiderSubnet, and an error, if there is any.
 func (c *spiderSubnets) Create(ctx context.Context, spiderSubnet *v2beta1.SpiderSubnet, opts v1.CreateOptions) (result *v2beta1.SpiderSubnet, err error) {
-	result = &v2beta1.SpiderSubnet{}
-	err = c.client.Post().
-		Resource("spidersubnets").
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Body(spiderSubnet).
-		Do(ctx).
-		Into(result)
-	return
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Update takes the representation of a spiderSubnet and updates it. Returns the server's representation of the spiderSubnet, and an error, if there is any.
 func (c *spiderSubnets) Update(ctx context.Context, spiderSubnet *v2beta1.SpiderSubnet, opts v1.UpdateOptions) (result *v2beta1.SpiderSubnet, err error) {
-	result = &v2beta1.SpiderSubnet{}
-	err = c.client.Put().
-		Resource("spidersubnets").
-		Name(spiderSubnet.Name).
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Body(spiderSubnet).
-		Do(ctx).
-		Into(result)
-	return
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UpdateStatus was generated because the type contains a Status member.
 // Add a +genclient:noStatus comment above the type to avoid generating UpdateStatus().
 func (c *spiderSubnets) UpdateStatus(ctx context.Context, spiderSubnet *v2beta1.SpiderSubnet, opts v1.UpdateOptions) (result *v2beta1.SpiderSubnet, err error) {
-	result = &v2beta1.SpiderSubnet{}
-	err = c.client.Put().
-		Resource("spidersubnets").
-		Name(spiderSubnet.Name).
-		SubResource("status").
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Body(spiderSubnet).
-		Do(ctx).
-		Into(result)
-	return
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Delete takes name of the spiderSubnet and deletes it. Returns an error if one occurs.
 func (c *spiderSubnets) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
-	return c.client.Delete().
-		Resource("spidersubnets").
-		Name(name).
-		Body(&opts).
-		Do(ctx).
-		Error()
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteCollection deletes a collection of objects.
 func (c *spiderSubnets) DeleteCollection(ctx context.Context, opts v1.DeleteOptions, listOpts v1.ListOptions) error {
-	var timeout time.Duration
-	if listOpts.TimeoutSeconds != nil {
-		timeout = time.Duration(*listOpts.TimeoutSeconds) * time.Second
-	}
-	return c.client.Delete().
-		Resource("spidersubnets").
-		VersionedParams(&listOpts, scheme.ParameterCodec).
-		Timeout(timeout).
-		Body(&opts).
-		Do(ctx).
-		Error()
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Patch applies the patch and returns the patched spiderSubnet.
 func (c *spiderSubnets) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v2beta1.SpiderSubnet, err error) {
-	result = &v2beta1.SpiderSubnet{}
-	err = c.client.Patch(pt).
-		Resource("spidersubnets").
-		Name(name).
-		SubResource(subresources...).
-		VersionedParams(&opts, scheme.ParameterCodec).
-		Body(data).
-		Do(ctx).
-		Into(result)
-	return
+	_ = "STUB: not implemented"
+	return nil, nil
 }

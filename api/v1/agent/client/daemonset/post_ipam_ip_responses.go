@@ -9,9 +9,6 @@ package daemonset
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-	"io"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
@@ -25,28 +22,12 @@ type PostIpamIPReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PostIpamIPReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewPostIpamIPOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewPostIpamIPFailure()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewPostIpamIPOK creates a PostIpamIPOK with default headers values
-func NewPostIpamIPOK() *PostIpamIPOK {
-	return &PostIpamIPOK{}
-}
+func NewPostIpamIPOK() *PostIpamIPOK { _ = "STUB: not implemented"; return nil }
 
 /*
 PostIpamIPOK describes a response with status code 200, with default header values.
@@ -59,62 +40,57 @@ type PostIpamIPOK struct {
 
 // IsSuccess returns true when this post ipam Ip o k response has a 2xx status code
 func (o *PostIpamIPOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this post ipam Ip o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this post ipam Ip o k response has a 3xx status code
 func (o *PostIpamIPOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this post ipam Ip o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this post ipam Ip o k response has a 4xx status code
 func (o *PostIpamIPOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this post ipam Ip o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this post ipam Ip o k response has a 5xx status code
 func (o *PostIpamIPOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this post ipam Ip o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this post ipam Ip o k response a status code equal to that given
 func (o *PostIpamIPOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the post ipam Ip o k response
+	return false
 }
 
-// Code gets the status code for the post ipam Ip o k response
-func (o *PostIpamIPOK) Code() int {
-	return 200
-}
+func (o *PostIpamIPOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *PostIpamIPOK) Error() string {
-	return fmt.Sprintf("[POST /ipam/ip][%d] postIpamIpOK  %+v", 200, o.Payload)
-}
+func (o *PostIpamIPOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *PostIpamIPOK) String() string {
-	return fmt.Sprintf("[POST /ipam/ip][%d] postIpamIpOK  %+v", 200, o.Payload)
-}
+func (o *PostIpamIPOK) String() string { _ = "STUB: not implemented"; return "" }
 
-func (o *PostIpamIPOK) GetPayload() *models.IpamAddResponse {
-	return o.Payload
-}
+func (o *PostIpamIPOK) GetPayload() *models.IpamAddResponse { _ = "STUB: not implemented"; return nil }
 
 func (o *PostIpamIPOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	o.Payload = new(models.IpamAddResponse)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
+// response payload
+
 // NewPostIpamIPFailure creates a PostIpamIPFailure with default headers values
-func NewPostIpamIPFailure() *PostIpamIPFailure {
-	return &PostIpamIPFailure{}
-}
+func NewPostIpamIPFailure() *PostIpamIPFailure { _ = "STUB: not implemented"; return nil }
 
 /*
 PostIpamIPFailure describes a response with status code 500, with default header values.
@@ -127,52 +103,54 @@ type PostIpamIPFailure struct {
 
 // IsSuccess returns true when this post ipam Ip failure response has a 2xx status code
 func (o *PostIpamIPFailure) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this post ipam Ip failure response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this post ipam Ip failure response has a 3xx status code
 func (o *PostIpamIPFailure) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this post ipam Ip failure response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this post ipam Ip failure response has a 4xx status code
 func (o *PostIpamIPFailure) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this post ipam Ip failure response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this post ipam Ip failure response has a 5xx status code
 func (o *PostIpamIPFailure) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this post ipam Ip failure response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this post ipam Ip failure response a status code equal to that given
 func (o *PostIpamIPFailure) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the post ipam Ip failure response
+	return false
 }
 
-// Code gets the status code for the post ipam Ip failure response
-func (o *PostIpamIPFailure) Code() int {
-	return 500
-}
+func (o *PostIpamIPFailure) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *PostIpamIPFailure) Error() string {
-	return fmt.Sprintf("[POST /ipam/ip][%d] postIpamIpFailure  %+v", 500, o.Payload)
-}
+func (o *PostIpamIPFailure) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *PostIpamIPFailure) String() string {
-	return fmt.Sprintf("[POST /ipam/ip][%d] postIpamIpFailure  %+v", 500, o.Payload)
-}
+func (o *PostIpamIPFailure) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *PostIpamIPFailure) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *PostIpamIPFailure) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }

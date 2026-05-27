@@ -4,31 +4,15 @@
 package ipam
 
 import (
-	"fmt"
-
 	spiderpoolv2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
 	"github.com/spidernet-io/spiderpool/pkg/types"
 )
 
 type ToBeAllocateds []*ToBeAllocated
 
-func (tt *ToBeAllocateds) Pools() []string {
-	var pools []string
-	for _, t := range *tt {
-		pools = append(pools, t.Pools()...)
-	}
+func (tt *ToBeAllocateds) Pools() []string { _ = "STUB: not implemented"; return nil }
 
-	return pools
-}
-
-func (tt *ToBeAllocateds) Candidates() []*PoolCandidate {
-	var candidates []*PoolCandidate
-	for _, t := range *tt {
-		candidates = append(candidates, t.PoolCandidates...)
-	}
-
-	return candidates
-}
+func (tt *ToBeAllocateds) Candidates() []*PoolCandidate { _ = "STUB: not implemented"; return nil }
 
 type ToBeAllocated struct {
 	NIC            string
@@ -36,18 +20,9 @@ type ToBeAllocated struct {
 	PoolCandidates []*PoolCandidate
 }
 
-func (t *ToBeAllocated) Pools() []string {
-	var pools []string
-	for _, c := range t.PoolCandidates {
-		pools = append(pools, c.Pools...)
-	}
+func (t *ToBeAllocated) Pools() []string { _ = "STUB: not implemented"; return nil }
 
-	return pools
-}
-
-func (t *ToBeAllocated) String() string {
-	return fmt.Sprintf("%+v", *t)
-}
+func (t *ToBeAllocated) String() string { _ = "STUB: not implemented"; return "" }
 
 type PoolCandidate struct {
 	IPVersion types.IPVersion
@@ -55,21 +30,13 @@ type PoolCandidate struct {
 	PToIPPool PoolNameToIPPool
 }
 
-func (c *PoolCandidate) String() string {
-	return fmt.Sprintf("%+v", *c)
-}
+func (c *PoolCandidate) String() string { _ = "STUB: not implemented"; return "" }
 
 type PoolNameToIPPool map[string]*spiderpoolv2beta1.SpiderIPPool
 
 func (pp *PoolNameToIPPool) IPPools() []*spiderpoolv2beta1.SpiderIPPool {
-	var ipPools []*spiderpoolv2beta1.SpiderIPPool
-	for _, p := range *pp {
-		ipPools = append(ipPools, p)
-	}
-
-	return ipPools
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (pp PoolNameToIPPool) String() string {
-	return "*"
-}
+func (pp PoolNameToIPPool) String() string { _ = "STUB: not implemented"; return "" }

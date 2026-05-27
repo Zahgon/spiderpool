@@ -20,26 +20,6 @@ limitations under the License.
 // Package string provides string utility functions.
 package string
 
-import (
-	"fmt"
-	"reflect"
-	"strings"
-)
+func ValueToStringGenerated(v interface{}) string { _ = "STUB: not implemented"; return "" }
 
-func ValueToStringGenerated(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-
-func ParseNsAndName(s string) (ns, name string) {
-	s = strings.TrimSpace(s)
-	r := strings.Split(s, "/")
-	if len(r) != 2 {
-		return "", ""
-	}
-	return r[0], r[1]
-}
+func ParseNsAndName(s string) (ns, name string) { _ = "STUB: not implemented"; return "", "" }

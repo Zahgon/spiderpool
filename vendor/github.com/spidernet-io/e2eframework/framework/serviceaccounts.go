@@ -4,9 +4,10 @@ package framework
 
 import (
 	"context"
+	"time"
+
 	corev1 "k8s.io/api/core/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"time"
 )
 
 func (f *Framework) GetServiceAccount(saName, namespace string) (*corev1.ServiceAccount, error) {

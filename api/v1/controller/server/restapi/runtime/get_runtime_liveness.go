@@ -19,17 +19,20 @@ type GetRuntimeLivenessHandlerFunc func(GetRuntimeLivenessParams) middleware.Res
 
 // Handle executing the request and returning a response
 func (fn GetRuntimeLivenessHandlerFunc) Handle(params GetRuntimeLivenessParams) middleware.Responder {
-	return fn(params)
+	_ = "STUB: not implemented"
+
+	// GetRuntimeLivenessHandler interface for that can handle valid get runtime liveness params
+	return *new(middleware.Responder)
 }
 
-// GetRuntimeLivenessHandler interface for that can handle valid get runtime liveness params
 type GetRuntimeLivenessHandler interface {
 	Handle(GetRuntimeLivenessParams) middleware.Responder
 }
 
 // NewGetRuntimeLiveness creates a new http.Handler for the get runtime liveness operation
 func NewGetRuntimeLiveness(ctx *middleware.Context, handler GetRuntimeLivenessHandler) *GetRuntimeLiveness {
-	return &GetRuntimeLiveness{Context: ctx, Handler: handler}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -45,17 +48,10 @@ type GetRuntimeLiveness struct {
 }
 
 func (o *GetRuntimeLiveness) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	route, rCtx, _ := o.Context.RouteInfo(r)
-	if rCtx != nil {
-		*r = *rCtx
-	}
-	var Params = NewGetRuntimeLivenessParams()
-	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
-		o.Context.Respond(rw, r, route.Produces, route, err)
-		return
-	}
-
-	res := o.Handler.Handle(Params) // actually handle the request
-	o.Context.Respond(rw, r, route.Produces, route, res)
-
+	_ = "STUB: not implemented"
+	return
 }
+
+// bind params
+
+// actually handle the request

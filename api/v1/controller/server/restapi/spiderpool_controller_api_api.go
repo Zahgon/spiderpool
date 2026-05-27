@@ -9,11 +9,8 @@ package restapi
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
 	"net/http"
-	"strings"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/loads"
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/runtime/middleware"
@@ -28,45 +25,8 @@ import (
 
 // NewSpiderpoolControllerAPIAPI creates a new SpiderpoolControllerAPI instance
 func NewSpiderpoolControllerAPIAPI(spec *loads.Document) *SpiderpoolControllerAPIAPI {
-	return &SpiderpoolControllerAPIAPI{
-		handlers:            make(map[string]map[string]http.Handler),
-		formats:             strfmt.Default,
-		defaultConsumes:     "application/json",
-		defaultProduces:     "application/json",
-		customConsumers:     make(map[string]runtime.Consumer),
-		customProducers:     make(map[string]runtime.Producer),
-		PreServerShutdown:   func() {},
-		ServerShutdown:      func() {},
-		spec:                spec,
-		useSwaggerUI:        false,
-		ServeError:          errors.ServeError,
-		BasicAuthenticator:  security.BasicAuth,
-		APIKeyAuthenticator: security.APIKeyAuth,
-		BearerAuthenticator: security.BearerAuth,
-
-		JSONConsumer: runtime.JSONConsumer(),
-
-		JSONProducer: runtime.JSONProducer(),
-
-		ControllerGetIpamStatusHandler: controller.GetIpamStatusHandlerFunc(func(params controller.GetIpamStatusParams) middleware.Responder {
-			return middleware.NotImplemented("operation controller.GetIpamStatus has not yet been implemented")
-		}),
-		RuntimeGetRuntimeLivenessHandler: runtimeops.GetRuntimeLivenessHandlerFunc(func(params runtimeops.GetRuntimeLivenessParams) middleware.Responder {
-			return middleware.NotImplemented("operation runtime.GetRuntimeLiveness has not yet been implemented")
-		}),
-		RuntimeGetRuntimeReadinessHandler: runtimeops.GetRuntimeReadinessHandlerFunc(func(params runtimeops.GetRuntimeReadinessParams) middleware.Responder {
-			return middleware.NotImplemented("operation runtime.GetRuntimeReadiness has not yet been implemented")
-		}),
-		RuntimeGetRuntimeStartupHandler: runtimeops.GetRuntimeStartupHandlerFunc(func(params runtimeops.GetRuntimeStartupParams) middleware.Responder {
-			return middleware.NotImplemented("operation runtime.GetRuntimeStartup has not yet been implemented")
-		}),
-		ControllerPostIpamGcIpsHandler: controller.PostIpamGcIpsHandlerFunc(func(params controller.PostIpamGcIpsParams) middleware.Responder {
-			return middleware.NotImplemented("operation controller.PostIpamGcIps has not yet been implemented")
-		}),
-		ControllerPutIpamIPHandler: controller.PutIpamIPHandlerFunc(func(params controller.PutIpamIPParams) middleware.Responder {
-			return middleware.NotImplemented("operation controller.PutIpamIP has not yet been implemented")
-		}),
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*SpiderpoolControllerAPIAPI Spiderpool Controller */
@@ -135,233 +95,129 @@ type SpiderpoolControllerAPIAPI struct {
 }
 
 // UseRedoc for documentation at /docs
-func (o *SpiderpoolControllerAPIAPI) UseRedoc() {
-	o.useSwaggerUI = false
-}
+func (o *SpiderpoolControllerAPIAPI) UseRedoc() { _ = "STUB: not implemented"; return }
 
 // UseSwaggerUI for documentation at /docs
-func (o *SpiderpoolControllerAPIAPI) UseSwaggerUI() {
-	o.useSwaggerUI = true
-}
+func (o *SpiderpoolControllerAPIAPI) UseSwaggerUI() { _ = "STUB: not implemented"; return }
 
 // SetDefaultProduces sets the default produces media type
 func (o *SpiderpoolControllerAPIAPI) SetDefaultProduces(mediaType string) {
-	o.defaultProduces = mediaType
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetDefaultConsumes returns the default consumes media type
 func (o *SpiderpoolControllerAPIAPI) SetDefaultConsumes(mediaType string) {
-	o.defaultConsumes = mediaType
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetSpec sets a spec that will be served for the clients.
 func (o *SpiderpoolControllerAPIAPI) SetSpec(spec *loads.Document) {
-	o.spec = spec
+	_ = "STUB: not implemented"
+
+	// DefaultProduces returns the default produces media type
+	return
 }
 
-// DefaultProduces returns the default produces media type
-func (o *SpiderpoolControllerAPIAPI) DefaultProduces() string {
-	return o.defaultProduces
-}
+func (o *SpiderpoolControllerAPIAPI) DefaultProduces() string { _ = "STUB: not implemented"; return "" }
 
 // DefaultConsumes returns the default consumes media type
-func (o *SpiderpoolControllerAPIAPI) DefaultConsumes() string {
-	return o.defaultConsumes
-}
+func (o *SpiderpoolControllerAPIAPI) DefaultConsumes() string { _ = "STUB: not implemented"; return "" }
 
 // Formats returns the registered string formats
 func (o *SpiderpoolControllerAPIAPI) Formats() strfmt.Registry {
-	return o.formats
+	_ = "STUB: not implemented"
+
+	// RegisterFormat registers a custom format validator
+	return *new(strfmt.Registry)
 }
 
-// RegisterFormat registers a custom format validator
 func (o *SpiderpoolControllerAPIAPI) RegisterFormat(name string, format strfmt.Format, validator strfmt.Validator) {
-	o.formats.Add(name, format, validator)
+	_ = "STUB: not implemented"
+	return
 }
 
 // Validate validates the registrations in the SpiderpoolControllerAPIAPI
-func (o *SpiderpoolControllerAPIAPI) Validate() error {
-	var unregistered []string
-
-	if o.JSONConsumer == nil {
-		unregistered = append(unregistered, "JSONConsumer")
-	}
-
-	if o.JSONProducer == nil {
-		unregistered = append(unregistered, "JSONProducer")
-	}
-
-	if o.ControllerGetIpamStatusHandler == nil {
-		unregistered = append(unregistered, "controller.GetIpamStatusHandler")
-	}
-	if o.RuntimeGetRuntimeLivenessHandler == nil {
-		unregistered = append(unregistered, "runtime.GetRuntimeLivenessHandler")
-	}
-	if o.RuntimeGetRuntimeReadinessHandler == nil {
-		unregistered = append(unregistered, "runtime.GetRuntimeReadinessHandler")
-	}
-	if o.RuntimeGetRuntimeStartupHandler == nil {
-		unregistered = append(unregistered, "runtime.GetRuntimeStartupHandler")
-	}
-	if o.ControllerPostIpamGcIpsHandler == nil {
-		unregistered = append(unregistered, "controller.PostIpamGcIpsHandler")
-	}
-	if o.ControllerPutIpamIPHandler == nil {
-		unregistered = append(unregistered, "controller.PutIpamIPHandler")
-	}
-
-	if len(unregistered) > 0 {
-		return fmt.Errorf("missing registration: %s", strings.Join(unregistered, ", "))
-	}
-
-	return nil
-}
+func (o *SpiderpoolControllerAPIAPI) Validate() error { _ = "STUB: not implemented"; return nil }
 
 // ServeErrorFor gets a error handler for a given operation id
 func (o *SpiderpoolControllerAPIAPI) ServeErrorFor(operationID string) func(http.ResponseWriter, *http.Request, error) {
-	return o.ServeError
+	_ = "STUB: not implemented"
+	return nil
+
+	// AuthenticatorsFor gets the authenticators for the specified security schemes
 }
 
-// AuthenticatorsFor gets the authenticators for the specified security schemes
 func (o *SpiderpoolControllerAPIAPI) AuthenticatorsFor(schemes map[string]spec.SecurityScheme) map[string]runtime.Authenticator {
+	_ = "STUB: not implemented"
+
+	// Authorizer returns the registered authorizer
 	return nil
 }
 
-// Authorizer returns the registered authorizer
 func (o *SpiderpoolControllerAPIAPI) Authorizer() runtime.Authorizer {
-	return nil
+	_ = "STUB: not implemented"
+
+	// ConsumersFor gets the consumers for the specified media types.
+	// MIME type parameters are ignored here.
+	return *new(runtime.Authorizer)
 }
 
-// ConsumersFor gets the consumers for the specified media types.
-// MIME type parameters are ignored here.
 func (o *SpiderpoolControllerAPIAPI) ConsumersFor(mediaTypes []string) map[string]runtime.Consumer {
-	result := make(map[string]runtime.Consumer, len(mediaTypes))
-	for _, mt := range mediaTypes {
-		switch mt {
-		case "application/json":
-			result["application/json"] = o.JSONConsumer
-		}
-
-		if c, ok := o.customConsumers[mt]; ok {
-			result[mt] = c
-		}
-	}
-	return result
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ProducersFor gets the producers for the specified media types.
 // MIME type parameters are ignored here.
 func (o *SpiderpoolControllerAPIAPI) ProducersFor(mediaTypes []string) map[string]runtime.Producer {
-	result := make(map[string]runtime.Producer, len(mediaTypes))
-	for _, mt := range mediaTypes {
-		switch mt {
-		case "application/json":
-			result["application/json"] = o.JSONProducer
-		}
-
-		if p, ok := o.customProducers[mt]; ok {
-			result[mt] = p
-		}
-	}
-	return result
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // HandlerFor gets a http.Handler for the provided operation method and path
 func (o *SpiderpoolControllerAPIAPI) HandlerFor(method, path string) (http.Handler, bool) {
-	if o.handlers == nil {
-		return nil, false
-	}
-	um := strings.ToUpper(method)
-	if _, ok := o.handlers[um]; !ok {
-		return nil, false
-	}
-	if path == "/" {
-		path = ""
-	}
-	h, ok := o.handlers[um][path]
-	return h, ok
+	_ = "STUB: not implemented"
+	return *new(http.Handler), false
 }
 
 // Context returns the middleware context for the spiderpool controller API API
 func (o *SpiderpoolControllerAPIAPI) Context() *middleware.Context {
-	if o.context == nil {
-		o.context = middleware.NewRoutableContext(o.spec, o, nil)
-	}
-
-	return o.context
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (o *SpiderpoolControllerAPIAPI) initHandlerCache() {
-	o.Context() // don't care about the result, just that the initialization happened
-	if o.handlers == nil {
-		o.handlers = make(map[string]map[string]http.Handler)
-	}
-
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/ipam/status"] = controller.NewGetIpamStatus(o.context, o.ControllerGetIpamStatusHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/runtime/liveness"] = runtimeops.NewGetRuntimeLiveness(o.context, o.RuntimeGetRuntimeLivenessHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/runtime/readiness"] = runtimeops.NewGetRuntimeReadiness(o.context, o.RuntimeGetRuntimeReadinessHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/runtime/startup"] = runtimeops.NewGetRuntimeStartup(o.context, o.RuntimeGetRuntimeStartupHandler)
-	if o.handlers["POST"] == nil {
-		o.handlers["POST"] = make(map[string]http.Handler)
-	}
-	o.handlers["POST"]["/ipam/gc_ips"] = controller.NewPostIpamGcIps(o.context, o.ControllerPostIpamGcIpsHandler)
-	if o.handlers["PUT"] == nil {
-		o.handlers["PUT"] = make(map[string]http.Handler)
-	}
-	o.handlers["PUT"]["/ipam/ip"] = controller.NewPutIpamIP(o.context, o.ControllerPutIpamIPHandler)
+	_ = "STUB: not implemented"
+	// don't care about the result, just that the initialization happened
+	return
 }
 
 // Serve creates a http handler to serve the API over HTTP
 // can be used directly in http.ListenAndServe(":8000", api.Serve(nil))
 func (o *SpiderpoolControllerAPIAPI) Serve(builder middleware.Builder) http.Handler {
-	o.Init()
-
-	if o.Middleware != nil {
-		return o.Middleware(builder)
-	}
-	if o.useSwaggerUI {
-		return o.context.APIHandlerSwaggerUI(builder)
-	}
-	return o.context.APIHandler(builder)
+	_ = "STUB: not implemented"
+	return *new(http.Handler)
 }
 
 // Init allows you to just initialize the handler cache, you can then recompose the middleware as you see fit
-func (o *SpiderpoolControllerAPIAPI) Init() {
-	if len(o.handlers) == 0 {
-		o.initHandlerCache()
-	}
-}
+func (o *SpiderpoolControllerAPIAPI) Init() { _ = "STUB: not implemented"; return }
 
 // RegisterConsumer allows you to add (or override) a consumer for a media type.
 func (o *SpiderpoolControllerAPIAPI) RegisterConsumer(mediaType string, consumer runtime.Consumer) {
-	o.customConsumers[mediaType] = consumer
+	_ = "STUB: not implemented"
+	return
 }
 
 // RegisterProducer allows you to add (or override) a producer for a media type.
 func (o *SpiderpoolControllerAPIAPI) RegisterProducer(mediaType string, producer runtime.Producer) {
-	o.customProducers[mediaType] = producer
+	_ = "STUB: not implemented"
+	return
 }
 
 // AddMiddlewareFor adds a http middleware to existing handler
 func (o *SpiderpoolControllerAPIAPI) AddMiddlewareFor(method, path string, builder middleware.Builder) {
-	um := strings.ToUpper(method)
-	if path == "/" {
-		path = ""
-	}
-	o.Init()
-	if h, ok := o.handlers[um][path]; ok {
-		o.handlers[method][path] = builder(h)
-	}
+	_ = "STUB: not implemented"
+	return
 }

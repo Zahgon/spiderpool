@@ -9,9 +9,6 @@ package daemonset
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-	"io"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
@@ -25,40 +22,12 @@ type DeleteIpamIpsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteIpamIpsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewDeleteIpamIpsOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewDeleteIpamIpsFailure()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	case 521:
-		result := NewDeleteIpamIpsStatus521()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	case 522:
-		result := NewDeleteIpamIpsStatus522()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewDeleteIpamIpsOK creates a DeleteIpamIpsOK with default headers values
-func NewDeleteIpamIpsOK() *DeleteIpamIpsOK {
-	return &DeleteIpamIpsOK{}
-}
+func NewDeleteIpamIpsOK() *DeleteIpamIpsOK { _ = "STUB: not implemented"; return nil }
 
 /*
 DeleteIpamIpsOK describes a response with status code 200, with default header values.
@@ -70,51 +39,54 @@ type DeleteIpamIpsOK struct {
 
 // IsSuccess returns true when this delete ipam ips o k response has a 2xx status code
 func (o *DeleteIpamIpsOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this delete ipam ips o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this delete ipam ips o k response has a 3xx status code
 func (o *DeleteIpamIpsOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this delete ipam ips o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this delete ipam ips o k response has a 4xx status code
 func (o *DeleteIpamIpsOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this delete ipam ips o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this delete ipam ips o k response has a 5xx status code
 func (o *DeleteIpamIpsOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this delete ipam ips o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this delete ipam ips o k response a status code equal to that given
 func (o *DeleteIpamIpsOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the delete ipam ips o k response
+	return false
 }
 
-// Code gets the status code for the delete ipam ips o k response
-func (o *DeleteIpamIpsOK) Code() int {
-	return 200
-}
+func (o *DeleteIpamIpsOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *DeleteIpamIpsOK) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsOK ", 200)
-}
+func (o *DeleteIpamIpsOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *DeleteIpamIpsOK) String() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsOK ", 200)
-}
+func (o *DeleteIpamIpsOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *DeleteIpamIpsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
+	// NewDeleteIpamIpsFailure creates a DeleteIpamIpsFailure with default headers values
 	return nil
 }
 
-// NewDeleteIpamIpsFailure creates a DeleteIpamIpsFailure with default headers values
-func NewDeleteIpamIpsFailure() *DeleteIpamIpsFailure {
-	return &DeleteIpamIpsFailure{}
-}
+func NewDeleteIpamIpsFailure() *DeleteIpamIpsFailure { _ = "STUB: not implemented"; return nil }
 
 /*
 DeleteIpamIpsFailure describes a response with status code 500, with default header values.
@@ -127,60 +99,60 @@ type DeleteIpamIpsFailure struct {
 
 // IsSuccess returns true when this delete ipam ips failure response has a 2xx status code
 func (o *DeleteIpamIpsFailure) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this delete ipam ips failure response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this delete ipam ips failure response has a 3xx status code
 func (o *DeleteIpamIpsFailure) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this delete ipam ips failure response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this delete ipam ips failure response has a 4xx status code
 func (o *DeleteIpamIpsFailure) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this delete ipam ips failure response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this delete ipam ips failure response has a 5xx status code
 func (o *DeleteIpamIpsFailure) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this delete ipam ips failure response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this delete ipam ips failure response a status code equal to that given
 func (o *DeleteIpamIpsFailure) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the delete ipam ips failure response
+	return false
 }
 
-// Code gets the status code for the delete ipam ips failure response
-func (o *DeleteIpamIpsFailure) Code() int {
-	return 500
-}
+func (o *DeleteIpamIpsFailure) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *DeleteIpamIpsFailure) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsFailure  %+v", 500, o.Payload)
-}
+func (o *DeleteIpamIpsFailure) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *DeleteIpamIpsFailure) String() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsFailure  %+v", 500, o.Payload)
-}
+func (o *DeleteIpamIpsFailure) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *DeleteIpamIpsFailure) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *DeleteIpamIpsFailure) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }
 
 // NewDeleteIpamIpsStatus521 creates a DeleteIpamIpsStatus521 with default headers values
-func NewDeleteIpamIpsStatus521() *DeleteIpamIpsStatus521 {
-	return &DeleteIpamIpsStatus521{}
-}
+func NewDeleteIpamIpsStatus521() *DeleteIpamIpsStatus521 { _ = "STUB: not implemented"; return nil }
 
 /*
 DeleteIpamIpsStatus521 describes a response with status code 521, with default header values.
@@ -193,60 +165,60 @@ type DeleteIpamIpsStatus521 struct {
 
 // IsSuccess returns true when this delete ipam ips status521 response has a 2xx status code
 func (o *DeleteIpamIpsStatus521) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this delete ipam ips status521 response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this delete ipam ips status521 response has a 3xx status code
 func (o *DeleteIpamIpsStatus521) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this delete ipam ips status521 response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this delete ipam ips status521 response has a 4xx status code
 func (o *DeleteIpamIpsStatus521) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this delete ipam ips status521 response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this delete ipam ips status521 response has a 5xx status code
 func (o *DeleteIpamIpsStatus521) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this delete ipam ips status521 response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this delete ipam ips status521 response a status code equal to that given
 func (o *DeleteIpamIpsStatus521) IsCode(code int) bool {
-	return code == 521
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the delete ipam ips status521 response
+	return false
 }
 
-// Code gets the status code for the delete ipam ips status521 response
-func (o *DeleteIpamIpsStatus521) Code() int {
-	return 521
-}
+func (o *DeleteIpamIpsStatus521) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *DeleteIpamIpsStatus521) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsStatus521  %+v", 521, o.Payload)
-}
+func (o *DeleteIpamIpsStatus521) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *DeleteIpamIpsStatus521) String() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsStatus521  %+v", 521, o.Payload)
-}
+func (o *DeleteIpamIpsStatus521) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *DeleteIpamIpsStatus521) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *DeleteIpamIpsStatus521) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }
 
 // NewDeleteIpamIpsStatus522 creates a DeleteIpamIpsStatus522 with default headers values
-func NewDeleteIpamIpsStatus522() *DeleteIpamIpsStatus522 {
-	return &DeleteIpamIpsStatus522{}
-}
+func NewDeleteIpamIpsStatus522() *DeleteIpamIpsStatus522 { _ = "STUB: not implemented"; return nil }
 
 /*
 DeleteIpamIpsStatus522 describes a response with status code 522, with default header values.
@@ -259,52 +231,54 @@ type DeleteIpamIpsStatus522 struct {
 
 // IsSuccess returns true when this delete ipam ips status522 response has a 2xx status code
 func (o *DeleteIpamIpsStatus522) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this delete ipam ips status522 response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this delete ipam ips status522 response has a 3xx status code
 func (o *DeleteIpamIpsStatus522) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this delete ipam ips status522 response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this delete ipam ips status522 response has a 4xx status code
 func (o *DeleteIpamIpsStatus522) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this delete ipam ips status522 response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this delete ipam ips status522 response has a 5xx status code
 func (o *DeleteIpamIpsStatus522) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this delete ipam ips status522 response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this delete ipam ips status522 response a status code equal to that given
 func (o *DeleteIpamIpsStatus522) IsCode(code int) bool {
-	return code == 522
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the delete ipam ips status522 response
+	return false
 }
 
-// Code gets the status code for the delete ipam ips status522 response
-func (o *DeleteIpamIpsStatus522) Code() int {
-	return 522
-}
+func (o *DeleteIpamIpsStatus522) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *DeleteIpamIpsStatus522) Error() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsStatus522  %+v", 522, o.Payload)
-}
+func (o *DeleteIpamIpsStatus522) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *DeleteIpamIpsStatus522) String() string {
-	return fmt.Sprintf("[DELETE /ipam/ips][%d] deleteIpamIpsStatus522  %+v", 522, o.Payload)
-}
+func (o *DeleteIpamIpsStatus522) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *DeleteIpamIpsStatus522) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *DeleteIpamIpsStatus522) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }

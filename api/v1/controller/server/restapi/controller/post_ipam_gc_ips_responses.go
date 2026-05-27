@@ -26,18 +26,15 @@ type PostIpamGcIpsOK struct {
 }
 
 // NewPostIpamGcIpsOK creates PostIpamGcIpsOK with default headers values
-func NewPostIpamGcIpsOK() *PostIpamGcIpsOK {
-
-	return &PostIpamGcIpsOK{}
-}
+func NewPostIpamGcIpsOK() *PostIpamGcIpsOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *PostIpamGcIpsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // PostIpamGcIpsInternalServerErrorCode is the HTTP code returned for type PostIpamGcIpsInternalServerError
 const PostIpamGcIpsInternalServerErrorCode int = 500
@@ -52,14 +49,14 @@ type PostIpamGcIpsInternalServerError struct {
 
 // NewPostIpamGcIpsInternalServerError creates PostIpamGcIpsInternalServerError with default headers values
 func NewPostIpamGcIpsInternalServerError() *PostIpamGcIpsInternalServerError {
-
-	return &PostIpamGcIpsInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WriteResponse to the client
 func (o *PostIpamGcIpsInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(500)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses

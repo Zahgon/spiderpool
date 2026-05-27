@@ -16,24 +16,28 @@ type FakeSpiderpoolV2beta1 struct {
 }
 
 func (c *FakeSpiderpoolV2beta1) SpiderCoordinators() v2beta1.SpiderCoordinatorInterface {
-	return &FakeSpiderCoordinators{c}
+	_ = "STUB: not implemented"
+	return *new(v2beta1.SpiderCoordinatorInterface)
 }
 
 func (c *FakeSpiderpoolV2beta1) SpiderIPPools() v2beta1.SpiderIPPoolInterface {
-	return &FakeSpiderIPPools{c}
+	_ = "STUB: not implemented"
+	return *new(v2beta1.SpiderIPPoolInterface)
 }
 
 func (c *FakeSpiderpoolV2beta1) SpiderMultusConfigs(namespace string) v2beta1.SpiderMultusConfigInterface {
-	return &FakeSpiderMultusConfigs{c, namespace}
+	_ = "STUB: not implemented"
+	return *new(v2beta1.SpiderMultusConfigInterface)
 }
 
 func (c *FakeSpiderpoolV2beta1) SpiderSubnets() v2beta1.SpiderSubnetInterface {
-	return &FakeSpiderSubnets{c}
+	_ = "STUB: not implemented"
+	return *new(v2beta1.SpiderSubnetInterface)
 }
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeSpiderpoolV2beta1) RESTClient() rest.Interface {
-	var ret *rest.RESTClient
-	return ret
+	_ = "STUB: not implemented"
+	return *new(rest.Interface)
 }

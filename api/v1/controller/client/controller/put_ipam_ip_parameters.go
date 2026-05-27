@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
@@ -25,34 +23,27 @@ import (
 // Default values are not hydrated, since defaults are normally applied by the API server side.
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
-func NewPutIpamIPParams() *PutIpamIPParams {
-	return &PutIpamIPParams{
-		timeout: cr.DefaultTimeout,
-	}
-}
+func NewPutIpamIPParams() *PutIpamIPParams { _ = "STUB: not implemented"; return nil }
 
 // NewPutIpamIPParamsWithTimeout creates a new PutIpamIPParams object
 // with the ability to set a timeout on a request.
 func NewPutIpamIPParamsWithTimeout(timeout time.Duration) *PutIpamIPParams {
-	return &PutIpamIPParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewPutIpamIPParamsWithContext creates a new PutIpamIPParams object
 // with the ability to set a context for a request.
 func NewPutIpamIPParamsWithContext(ctx context.Context) *PutIpamIPParams {
-	return &PutIpamIPParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewPutIpamIPParamsWithHTTPClient creates a new PutIpamIPParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPutIpamIPParamsWithHTTPClient(client *http.Client) *PutIpamIPParams {
-	return &PutIpamIPParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -71,61 +62,50 @@ type PutIpamIPParams struct {
 // WithDefaults hydrates default values in the put ipam IP params (not the query body).
 //
 // All values with no default are reset to their zero value.
-func (o *PutIpamIPParams) WithDefaults() *PutIpamIPParams {
-	o.SetDefaults()
-	return o
-}
+func (o *PutIpamIPParams) WithDefaults() *PutIpamIPParams { _ = "STUB: not implemented"; return nil }
 
 // SetDefaults hydrates default values in the put ipam IP params (not the query body).
 //
 // All values with no default are reset to their zero value.
 func (o *PutIpamIPParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the put ipam IP params
 func (o *PutIpamIPParams) WithTimeout(timeout time.Duration) *PutIpamIPParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the put ipam IP params
-func (o *PutIpamIPParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
-}
+func (o *PutIpamIPParams) SetTimeout(timeout time.Duration) { _ = "STUB: not implemented"; return }
 
 // WithContext adds the context to the put ipam IP params
 func (o *PutIpamIPParams) WithContext(ctx context.Context) *PutIpamIPParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the put ipam IP params
 func (o *PutIpamIPParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the put ipam IP params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the put ipam IP params
 func (o *PutIpamIPParams) WithHTTPClient(client *http.Client) *PutIpamIPParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the put ipam IP params
-func (o *PutIpamIPParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
-}
+func (o *PutIpamIPParams) SetHTTPClient(client *http.Client) { _ = "STUB: not implemented"; return }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PutIpamIPParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

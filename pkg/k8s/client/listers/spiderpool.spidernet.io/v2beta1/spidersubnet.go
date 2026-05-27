@@ -7,7 +7,6 @@ package v2beta1
 
 import (
 	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
-	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"
 )
@@ -31,25 +30,18 @@ type spiderSubnetLister struct {
 
 // NewSpiderSubnetLister returns a new SpiderSubnetLister.
 func NewSpiderSubnetLister(indexer cache.Indexer) SpiderSubnetLister {
-	return &spiderSubnetLister{indexer: indexer}
+	_ = "STUB: not implemented"
+	return *new(SpiderSubnetLister)
 }
 
 // List lists all SpiderSubnets in the indexer.
 func (s *spiderSubnetLister) List(selector labels.Selector) (ret []*v2beta1.SpiderSubnet, err error) {
-	err = cache.ListAll(s.indexer, selector, func(m interface{}) {
-		ret = append(ret, m.(*v2beta1.SpiderSubnet))
-	})
-	return ret, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Get retrieves the SpiderSubnet from the index for a given name.
 func (s *spiderSubnetLister) Get(name string) (*v2beta1.SpiderSubnet, error) {
-	obj, exists, err := s.indexer.GetByKey(name)
-	if err != nil {
-		return nil, err
-	}
-	if !exists {
-		return nil, errors.NewNotFound(v2beta1.Resource("spidersubnet"), name)
-	}
-	return obj.(*v2beta1.SpiderSubnet), nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

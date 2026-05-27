@@ -9,9 +9,6 @@ package daemonset
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-	"io"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
@@ -25,40 +22,12 @@ type GetWorkloadendpointReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetWorkloadendpointReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewGetWorkloadendpointOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 400:
-		result := NewGetWorkloadendpointBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	case 404:
-		result := NewGetWorkloadendpointNotFound()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	case 500:
-		result := NewGetWorkloadendpointInternalServerError()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewGetWorkloadendpointOK creates a GetWorkloadendpointOK with default headers values
-func NewGetWorkloadendpointOK() *GetWorkloadendpointOK {
-	return &GetWorkloadendpointOK{}
-}
+func NewGetWorkloadendpointOK() *GetWorkloadendpointOK { _ = "STUB: not implemented"; return nil }
 
 /*
 GetWorkloadendpointOK describes a response with status code 200, with default header values.
@@ -71,61 +40,62 @@ type GetWorkloadendpointOK struct {
 
 // IsSuccess returns true when this get workloadendpoint o k response has a 2xx status code
 func (o *GetWorkloadendpointOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get workloadendpoint o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this get workloadendpoint o k response has a 3xx status code
 func (o *GetWorkloadendpointOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get workloadendpoint o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get workloadendpoint o k response has a 4xx status code
 func (o *GetWorkloadendpointOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get workloadendpoint o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get workloadendpoint o k response has a 5xx status code
 func (o *GetWorkloadendpointOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get workloadendpoint o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this get workloadendpoint o k response a status code equal to that given
 func (o *GetWorkloadendpointOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the get workloadendpoint o k response
+	return false
 }
 
-// Code gets the status code for the get workloadendpoint o k response
-func (o *GetWorkloadendpointOK) Code() int {
-	return 200
-}
+func (o *GetWorkloadendpointOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetWorkloadendpointOK) Error() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointOK  %+v", 200, o.Payload)
-}
+func (o *GetWorkloadendpointOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetWorkloadendpointOK) String() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointOK  %+v", 200, o.Payload)
-}
+func (o *GetWorkloadendpointOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetWorkloadendpointOK) GetPayload() *models.WorkloadEndpointStatus {
-	return o.Payload
-}
-
-func (o *GetWorkloadendpointOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	o.Payload = new(models.WorkloadEndpointStatus)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
+func (o *GetWorkloadendpointOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+	return nil
+}
+
+// response payload
+
 // NewGetWorkloadendpointBadRequest creates a GetWorkloadendpointBadRequest with default headers values
 func NewGetWorkloadendpointBadRequest() *GetWorkloadendpointBadRequest {
-	return &GetWorkloadendpointBadRequest{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -139,59 +109,62 @@ type GetWorkloadendpointBadRequest struct {
 
 // IsSuccess returns true when this get workloadendpoint bad request response has a 2xx status code
 func (o *GetWorkloadendpointBadRequest) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get workloadendpoint bad request response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get workloadendpoint bad request response has a 3xx status code
 func (o *GetWorkloadendpointBadRequest) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get workloadendpoint bad request response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get workloadendpoint bad request response has a 4xx status code
 func (o *GetWorkloadendpointBadRequest) IsClientError() bool {
-	return true
-}
+	_ = "STUB: not implemented"
 
-// IsServerError returns true when this get workloadendpoint bad request response has a 5xx status code
-func (o *GetWorkloadendpointBadRequest) IsServerError() bool {
+	// IsServerError returns true when this get workloadendpoint bad request response has a 5xx status code
 	return false
 }
 
-// IsCode returns true when this get workloadendpoint bad request response a status code equal to that given
+func (o *GetWorkloadendpointBadRequest) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get workloadendpoint bad request response a status code equal to that given
+	return false
+}
+
 func (o *GetWorkloadendpointBadRequest) IsCode(code int) bool {
-	return code == 400
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get workloadendpoint bad request response
 }
 
-// Code gets the status code for the get workloadendpoint bad request response
-func (o *GetWorkloadendpointBadRequest) Code() int {
-	return 400
-}
+func (o *GetWorkloadendpointBadRequest) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetWorkloadendpointBadRequest) Error() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointBadRequest  %+v", 400, o.Payload)
-}
+func (o *GetWorkloadendpointBadRequest) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetWorkloadendpointBadRequest) String() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointBadRequest  %+v", 400, o.Payload)
-}
+func (o *GetWorkloadendpointBadRequest) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetWorkloadendpointBadRequest) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *GetWorkloadendpointBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }
 
 // NewGetWorkloadendpointNotFound creates a GetWorkloadendpointNotFound with default headers values
 func NewGetWorkloadendpointNotFound() *GetWorkloadendpointNotFound {
-	return &GetWorkloadendpointNotFound{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -205,59 +178,62 @@ type GetWorkloadendpointNotFound struct {
 
 // IsSuccess returns true when this get workloadendpoint not found response has a 2xx status code
 func (o *GetWorkloadendpointNotFound) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get workloadendpoint not found response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get workloadendpoint not found response has a 3xx status code
 func (o *GetWorkloadendpointNotFound) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get workloadendpoint not found response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get workloadendpoint not found response has a 4xx status code
 func (o *GetWorkloadendpointNotFound) IsClientError() bool {
-	return true
-}
+	_ = "STUB: not implemented"
 
-// IsServerError returns true when this get workloadendpoint not found response has a 5xx status code
-func (o *GetWorkloadendpointNotFound) IsServerError() bool {
+	// IsServerError returns true when this get workloadendpoint not found response has a 5xx status code
 	return false
 }
 
-// IsCode returns true when this get workloadendpoint not found response a status code equal to that given
+func (o *GetWorkloadendpointNotFound) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get workloadendpoint not found response a status code equal to that given
+	return false
+}
+
 func (o *GetWorkloadendpointNotFound) IsCode(code int) bool {
-	return code == 404
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get workloadendpoint not found response
 }
 
-// Code gets the status code for the get workloadendpoint not found response
-func (o *GetWorkloadendpointNotFound) Code() int {
-	return 404
-}
+func (o *GetWorkloadendpointNotFound) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetWorkloadendpointNotFound) Error() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointNotFound  %+v", 404, o.Payload)
-}
+func (o *GetWorkloadendpointNotFound) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetWorkloadendpointNotFound) String() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointNotFound  %+v", 404, o.Payload)
-}
+func (o *GetWorkloadendpointNotFound) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetWorkloadendpointNotFound) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *GetWorkloadendpointNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }
 
 // NewGetWorkloadendpointInternalServerError creates a GetWorkloadendpointInternalServerError with default headers values
 func NewGetWorkloadendpointInternalServerError() *GetWorkloadendpointInternalServerError {
-	return &GetWorkloadendpointInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -271,52 +247,60 @@ type GetWorkloadendpointInternalServerError struct {
 
 // IsSuccess returns true when this get workloadendpoint internal server error response has a 2xx status code
 func (o *GetWorkloadendpointInternalServerError) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get workloadendpoint internal server error response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get workloadendpoint internal server error response has a 3xx status code
 func (o *GetWorkloadendpointInternalServerError) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get workloadendpoint internal server error response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get workloadendpoint internal server error response has a 4xx status code
 func (o *GetWorkloadendpointInternalServerError) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get workloadendpoint internal server error response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get workloadendpoint internal server error response has a 5xx status code
 func (o *GetWorkloadendpointInternalServerError) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get workloadendpoint internal server error response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this get workloadendpoint internal server error response a status code equal to that given
 func (o *GetWorkloadendpointInternalServerError) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get workloadendpoint internal server error response
 }
 
-// Code gets the status code for the get workloadendpoint internal server error response
-func (o *GetWorkloadendpointInternalServerError) Code() int {
-	return 500
-}
+func (o *GetWorkloadendpointInternalServerError) Code() int { _ = "STUB: not implemented"; return 0 }
 
 func (o *GetWorkloadendpointInternalServerError) Error() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointInternalServerError  %+v", 500, o.Payload)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetWorkloadendpointInternalServerError) String() string {
-	return fmt.Sprintf("[GET /workloadendpoint][%d] getWorkloadendpointInternalServerError  %+v", 500, o.Payload)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetWorkloadendpointInternalServerError) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *GetWorkloadendpointInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }

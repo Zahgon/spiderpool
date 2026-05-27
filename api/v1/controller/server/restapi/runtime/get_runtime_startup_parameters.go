@@ -11,7 +11,6 @@ package runtime
 import (
 	"net/http"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime/middleware"
 )
 
@@ -19,8 +18,8 @@ import (
 //
 // There are no default values defined in the spec.
 func NewGetRuntimeStartupParams() GetRuntimeStartupParams {
-
-	return GetRuntimeStartupParams{}
+	_ = "STUB: not implemented"
+	return *new(GetRuntimeStartupParams)
 }
 
 // GetRuntimeStartupParams contains all the bound params for the get runtime startup operation
@@ -38,12 +37,6 @@ type GetRuntimeStartupParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewGetRuntimeStartupParams() beforehand.
 func (o *GetRuntimeStartupParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
-	var res []error
-
-	o.HTTPRequest = r
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

@@ -9,11 +9,8 @@ package restapi
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
 	"net/http"
-	"strings"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/loads"
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/runtime/middleware"
@@ -29,57 +26,8 @@ import (
 
 // NewSpiderpoolAgentAPIAPI creates a new SpiderpoolAgentAPI instance
 func NewSpiderpoolAgentAPIAPI(spec *loads.Document) *SpiderpoolAgentAPIAPI {
-	return &SpiderpoolAgentAPIAPI{
-		handlers:            make(map[string]map[string]http.Handler),
-		formats:             strfmt.Default,
-		defaultConsumes:     "application/json",
-		defaultProduces:     "application/json",
-		customConsumers:     make(map[string]runtime.Consumer),
-		customProducers:     make(map[string]runtime.Producer),
-		PreServerShutdown:   func() {},
-		ServerShutdown:      func() {},
-		spec:                spec,
-		useSwaggerUI:        false,
-		ServeError:          errors.ServeError,
-		BasicAuthenticator:  security.BasicAuth,
-		APIKeyAuthenticator: security.APIKeyAuth,
-		BearerAuthenticator: security.BearerAuth,
-
-		JSONConsumer: runtime.JSONConsumer(),
-
-		JSONProducer: runtime.JSONProducer(),
-
-		DaemonsetDeleteIpamIPHandler: daemonset.DeleteIpamIPHandlerFunc(func(params daemonset.DeleteIpamIPParams) middleware.Responder {
-			return middleware.NotImplemented("operation daemonset.DeleteIpamIP has not yet been implemented")
-		}),
-		DaemonsetDeleteIpamIpsHandler: daemonset.DeleteIpamIpsHandlerFunc(func(params daemonset.DeleteIpamIpsParams) middleware.Responder {
-			return middleware.NotImplemented("operation daemonset.DeleteIpamIps has not yet been implemented")
-		}),
-		DaemonsetGetCoordinatorConfigHandler: daemonset.GetCoordinatorConfigHandlerFunc(func(params daemonset.GetCoordinatorConfigParams) middleware.Responder {
-			return middleware.NotImplemented("operation daemonset.GetCoordinatorConfig has not yet been implemented")
-		}),
-		ConnectivityGetIpamHealthyHandler: connectivity.GetIpamHealthyHandlerFunc(func(params connectivity.GetIpamHealthyParams) middleware.Responder {
-			return middleware.NotImplemented("operation connectivity.GetIpamHealthy has not yet been implemented")
-		}),
-		RuntimeGetRuntimeLivenessHandler: runtimeops.GetRuntimeLivenessHandlerFunc(func(params runtimeops.GetRuntimeLivenessParams) middleware.Responder {
-			return middleware.NotImplemented("operation runtime.GetRuntimeLiveness has not yet been implemented")
-		}),
-		RuntimeGetRuntimeReadinessHandler: runtimeops.GetRuntimeReadinessHandlerFunc(func(params runtimeops.GetRuntimeReadinessParams) middleware.Responder {
-			return middleware.NotImplemented("operation runtime.GetRuntimeReadiness has not yet been implemented")
-		}),
-		RuntimeGetRuntimeStartupHandler: runtimeops.GetRuntimeStartupHandlerFunc(func(params runtimeops.GetRuntimeStartupParams) middleware.Responder {
-			return middleware.NotImplemented("operation runtime.GetRuntimeStartup has not yet been implemented")
-		}),
-		DaemonsetGetWorkloadendpointHandler: daemonset.GetWorkloadendpointHandlerFunc(func(params daemonset.GetWorkloadendpointParams) middleware.Responder {
-			return middleware.NotImplemented("operation daemonset.GetWorkloadendpoint has not yet been implemented")
-		}),
-		DaemonsetPostIpamIPHandler: daemonset.PostIpamIPHandlerFunc(func(params daemonset.PostIpamIPParams) middleware.Responder {
-			return middleware.NotImplemented("operation daemonset.PostIpamIP has not yet been implemented")
-		}),
-		DaemonsetPostIpamIpsHandler: daemonset.PostIpamIpsHandlerFunc(func(params daemonset.PostIpamIpsParams) middleware.Responder {
-			return middleware.NotImplemented("operation daemonset.PostIpamIps has not yet been implemented")
-		}),
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*SpiderpoolAgentAPIAPI Spiderpool Agent */
@@ -156,261 +104,129 @@ type SpiderpoolAgentAPIAPI struct {
 }
 
 // UseRedoc for documentation at /docs
-func (o *SpiderpoolAgentAPIAPI) UseRedoc() {
-	o.useSwaggerUI = false
-}
+func (o *SpiderpoolAgentAPIAPI) UseRedoc() { _ = "STUB: not implemented"; return }
 
 // UseSwaggerUI for documentation at /docs
-func (o *SpiderpoolAgentAPIAPI) UseSwaggerUI() {
-	o.useSwaggerUI = true
-}
+func (o *SpiderpoolAgentAPIAPI) UseSwaggerUI() { _ = "STUB: not implemented"; return }
 
 // SetDefaultProduces sets the default produces media type
 func (o *SpiderpoolAgentAPIAPI) SetDefaultProduces(mediaType string) {
-	o.defaultProduces = mediaType
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetDefaultConsumes returns the default consumes media type
 func (o *SpiderpoolAgentAPIAPI) SetDefaultConsumes(mediaType string) {
-	o.defaultConsumes = mediaType
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetSpec sets a spec that will be served for the clients.
 func (o *SpiderpoolAgentAPIAPI) SetSpec(spec *loads.Document) {
-	o.spec = spec
+	_ = "STUB: not implemented"
+
+	// DefaultProduces returns the default produces media type
+	return
 }
 
-// DefaultProduces returns the default produces media type
-func (o *SpiderpoolAgentAPIAPI) DefaultProduces() string {
-	return o.defaultProduces
-}
+func (o *SpiderpoolAgentAPIAPI) DefaultProduces() string { _ = "STUB: not implemented"; return "" }
 
 // DefaultConsumes returns the default consumes media type
-func (o *SpiderpoolAgentAPIAPI) DefaultConsumes() string {
-	return o.defaultConsumes
-}
+func (o *SpiderpoolAgentAPIAPI) DefaultConsumes() string { _ = "STUB: not implemented"; return "" }
 
 // Formats returns the registered string formats
 func (o *SpiderpoolAgentAPIAPI) Formats() strfmt.Registry {
-	return o.formats
+	_ = "STUB: not implemented"
+
+	// RegisterFormat registers a custom format validator
+	return *new(strfmt.Registry)
 }
 
-// RegisterFormat registers a custom format validator
 func (o *SpiderpoolAgentAPIAPI) RegisterFormat(name string, format strfmt.Format, validator strfmt.Validator) {
-	o.formats.Add(name, format, validator)
+	_ = "STUB: not implemented"
+	return
 }
 
 // Validate validates the registrations in the SpiderpoolAgentAPIAPI
-func (o *SpiderpoolAgentAPIAPI) Validate() error {
-	var unregistered []string
-
-	if o.JSONConsumer == nil {
-		unregistered = append(unregistered, "JSONConsumer")
-	}
-
-	if o.JSONProducer == nil {
-		unregistered = append(unregistered, "JSONProducer")
-	}
-
-	if o.DaemonsetDeleteIpamIPHandler == nil {
-		unregistered = append(unregistered, "daemonset.DeleteIpamIPHandler")
-	}
-	if o.DaemonsetDeleteIpamIpsHandler == nil {
-		unregistered = append(unregistered, "daemonset.DeleteIpamIpsHandler")
-	}
-	if o.DaemonsetGetCoordinatorConfigHandler == nil {
-		unregistered = append(unregistered, "daemonset.GetCoordinatorConfigHandler")
-	}
-	if o.ConnectivityGetIpamHealthyHandler == nil {
-		unregistered = append(unregistered, "connectivity.GetIpamHealthyHandler")
-	}
-	if o.RuntimeGetRuntimeLivenessHandler == nil {
-		unregistered = append(unregistered, "runtime.GetRuntimeLivenessHandler")
-	}
-	if o.RuntimeGetRuntimeReadinessHandler == nil {
-		unregistered = append(unregistered, "runtime.GetRuntimeReadinessHandler")
-	}
-	if o.RuntimeGetRuntimeStartupHandler == nil {
-		unregistered = append(unregistered, "runtime.GetRuntimeStartupHandler")
-	}
-	if o.DaemonsetGetWorkloadendpointHandler == nil {
-		unregistered = append(unregistered, "daemonset.GetWorkloadendpointHandler")
-	}
-	if o.DaemonsetPostIpamIPHandler == nil {
-		unregistered = append(unregistered, "daemonset.PostIpamIPHandler")
-	}
-	if o.DaemonsetPostIpamIpsHandler == nil {
-		unregistered = append(unregistered, "daemonset.PostIpamIpsHandler")
-	}
-
-	if len(unregistered) > 0 {
-		return fmt.Errorf("missing registration: %s", strings.Join(unregistered, ", "))
-	}
-
-	return nil
-}
+func (o *SpiderpoolAgentAPIAPI) Validate() error { _ = "STUB: not implemented"; return nil }
 
 // ServeErrorFor gets a error handler for a given operation id
 func (o *SpiderpoolAgentAPIAPI) ServeErrorFor(operationID string) func(http.ResponseWriter, *http.Request, error) {
-	return o.ServeError
+	_ = "STUB: not implemented"
+	return nil
+
+	// AuthenticatorsFor gets the authenticators for the specified security schemes
 }
 
-// AuthenticatorsFor gets the authenticators for the specified security schemes
 func (o *SpiderpoolAgentAPIAPI) AuthenticatorsFor(schemes map[string]spec.SecurityScheme) map[string]runtime.Authenticator {
+	_ = "STUB: not implemented"
+
+	// Authorizer returns the registered authorizer
 	return nil
 }
 
-// Authorizer returns the registered authorizer
 func (o *SpiderpoolAgentAPIAPI) Authorizer() runtime.Authorizer {
-	return nil
+	_ = "STUB: not implemented"
+
+	// ConsumersFor gets the consumers for the specified media types.
+	// MIME type parameters are ignored here.
+	return *new(runtime.Authorizer)
 }
 
-// ConsumersFor gets the consumers for the specified media types.
-// MIME type parameters are ignored here.
 func (o *SpiderpoolAgentAPIAPI) ConsumersFor(mediaTypes []string) map[string]runtime.Consumer {
-	result := make(map[string]runtime.Consumer, len(mediaTypes))
-	for _, mt := range mediaTypes {
-		switch mt {
-		case "application/json":
-			result["application/json"] = o.JSONConsumer
-		}
-
-		if c, ok := o.customConsumers[mt]; ok {
-			result[mt] = c
-		}
-	}
-	return result
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ProducersFor gets the producers for the specified media types.
 // MIME type parameters are ignored here.
 func (o *SpiderpoolAgentAPIAPI) ProducersFor(mediaTypes []string) map[string]runtime.Producer {
-	result := make(map[string]runtime.Producer, len(mediaTypes))
-	for _, mt := range mediaTypes {
-		switch mt {
-		case "application/json":
-			result["application/json"] = o.JSONProducer
-		}
-
-		if p, ok := o.customProducers[mt]; ok {
-			result[mt] = p
-		}
-	}
-	return result
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // HandlerFor gets a http.Handler for the provided operation method and path
 func (o *SpiderpoolAgentAPIAPI) HandlerFor(method, path string) (http.Handler, bool) {
-	if o.handlers == nil {
-		return nil, false
-	}
-	um := strings.ToUpper(method)
-	if _, ok := o.handlers[um]; !ok {
-		return nil, false
-	}
-	if path == "/" {
-		path = ""
-	}
-	h, ok := o.handlers[um][path]
-	return h, ok
+	_ = "STUB: not implemented"
+	return *new(http.Handler), false
 }
 
 // Context returns the middleware context for the spiderpool agent API API
 func (o *SpiderpoolAgentAPIAPI) Context() *middleware.Context {
-	if o.context == nil {
-		o.context = middleware.NewRoutableContext(o.spec, o, nil)
-	}
-
-	return o.context
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (o *SpiderpoolAgentAPIAPI) initHandlerCache() {
-	o.Context() // don't care about the result, just that the initialization happened
-	if o.handlers == nil {
-		o.handlers = make(map[string]map[string]http.Handler)
-	}
-
-	if o.handlers["DELETE"] == nil {
-		o.handlers["DELETE"] = make(map[string]http.Handler)
-	}
-	o.handlers["DELETE"]["/ipam/ip"] = daemonset.NewDeleteIpamIP(o.context, o.DaemonsetDeleteIpamIPHandler)
-	if o.handlers["DELETE"] == nil {
-		o.handlers["DELETE"] = make(map[string]http.Handler)
-	}
-	o.handlers["DELETE"]["/ipam/ips"] = daemonset.NewDeleteIpamIps(o.context, o.DaemonsetDeleteIpamIpsHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/coordinator/config"] = daemonset.NewGetCoordinatorConfig(o.context, o.DaemonsetGetCoordinatorConfigHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/ipam/healthy"] = connectivity.NewGetIpamHealthy(o.context, o.ConnectivityGetIpamHealthyHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/runtime/liveness"] = runtimeops.NewGetRuntimeLiveness(o.context, o.RuntimeGetRuntimeLivenessHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/runtime/readiness"] = runtimeops.NewGetRuntimeReadiness(o.context, o.RuntimeGetRuntimeReadinessHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/runtime/startup"] = runtimeops.NewGetRuntimeStartup(o.context, o.RuntimeGetRuntimeStartupHandler)
-	if o.handlers["GET"] == nil {
-		o.handlers["GET"] = make(map[string]http.Handler)
-	}
-	o.handlers["GET"]["/workloadendpoint"] = daemonset.NewGetWorkloadendpoint(o.context, o.DaemonsetGetWorkloadendpointHandler)
-	if o.handlers["POST"] == nil {
-		o.handlers["POST"] = make(map[string]http.Handler)
-	}
-	o.handlers["POST"]["/ipam/ip"] = daemonset.NewPostIpamIP(o.context, o.DaemonsetPostIpamIPHandler)
-	if o.handlers["POST"] == nil {
-		o.handlers["POST"] = make(map[string]http.Handler)
-	}
-	o.handlers["POST"]["/ipam/ips"] = daemonset.NewPostIpamIps(o.context, o.DaemonsetPostIpamIpsHandler)
+	_ = "STUB: not implemented"
+	// don't care about the result, just that the initialization happened
+	return
 }
 
 // Serve creates a http handler to serve the API over HTTP
 // can be used directly in http.ListenAndServe(":8000", api.Serve(nil))
 func (o *SpiderpoolAgentAPIAPI) Serve(builder middleware.Builder) http.Handler {
-	o.Init()
-
-	if o.Middleware != nil {
-		return o.Middleware(builder)
-	}
-	if o.useSwaggerUI {
-		return o.context.APIHandlerSwaggerUI(builder)
-	}
-	return o.context.APIHandler(builder)
+	_ = "STUB: not implemented"
+	return *new(http.Handler)
 }
 
 // Init allows you to just initialize the handler cache, you can then recompose the middleware as you see fit
-func (o *SpiderpoolAgentAPIAPI) Init() {
-	if len(o.handlers) == 0 {
-		o.initHandlerCache()
-	}
-}
+func (o *SpiderpoolAgentAPIAPI) Init() { _ = "STUB: not implemented"; return }
 
 // RegisterConsumer allows you to add (or override) a consumer for a media type.
 func (o *SpiderpoolAgentAPIAPI) RegisterConsumer(mediaType string, consumer runtime.Consumer) {
-	o.customConsumers[mediaType] = consumer
+	_ = "STUB: not implemented"
+	return
 }
 
 // RegisterProducer allows you to add (or override) a producer for a media type.
 func (o *SpiderpoolAgentAPIAPI) RegisterProducer(mediaType string, producer runtime.Producer) {
-	o.customProducers[mediaType] = producer
+	_ = "STUB: not implemented"
+	return
 }
 
 // AddMiddlewareFor adds a http middleware to existing handler
 func (o *SpiderpoolAgentAPIAPI) AddMiddlewareFor(method, path string, builder middleware.Builder) {
-	um := strings.ToUpper(method)
-	if path == "/" {
-		path = ""
-	}
-	o.Init()
-	if h, ok := o.handlers[um][path]; ok {
-		o.handlers[method][path] = builder(h)
-	}
+	_ = "STUB: not implemented"
+	return
 }

@@ -4,12 +4,7 @@
 package networking
 
 import (
-	"errors"
-	"fmt"
 	"net"
-	"os"
-	"regexp"
-	"strings"
 
 	current "github.com/containernetworking/cni/pkg/types/100"
 	"github.com/containernetworking/plugins/pkg/ns"
@@ -18,246 +13,76 @@ import (
 
 // GetIPFamilyByResult return IPFamily by parse CNI Result
 func GetIPFamilyByResult(prevResult *current.Result) (int, error) {
-	if len(prevResult.Interfaces) == 0 {
-		return -1, fmt.Errorf("can't found any interface from prevResult")
-	}
-
-	ipFamily := -1
-	enableIpv4, enableIpv6 := false, false
-	for _, v := range prevResult.IPs {
-		if v.Address.IP.To4() != nil {
-			enableIpv4 = true
-			ipFamily = netlink.FAMILY_V4
-		} else {
-			enableIpv6 = true
-			ipFamily = netlink.FAMILY_V6
-		}
-	}
-
-	if ipFamily < 0 {
-		return ipFamily, fmt.Errorf("failed to get pod's ip family: no found ips")
-	}
-
-	if enableIpv4 && enableIpv6 {
-		return netlink.FAMILY_ALL, nil
-	}
-
-	return ipFamily, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func GetGatewayIP(addrs []netlink.Addr) (v4Gw, v6Gw net.IP, err error) {
-	for _, addr := range addrs {
-		routes, err := netlink.RouteGet(addr.IP)
-		if err != nil {
-			return nil, nil, fmt.Errorf("failed to RouteGet Pod IP(%s): %w", addr.IP.String(), err)
-		}
-
-		if len(routes) > 0 {
-			if addr.IP.To4() != nil && v4Gw == nil {
-				v4Gw = routes[0].Src
-			}
-			if addr.IP.To4() == nil && v6Gw == nil {
-				v6Gw = routes[0].Src
-			}
-		}
-	}
-	return
+	_ = "STUB: not implemented"
+	return *new(net.IP), *new(net.IP), nil
 }
 
 // IPAddressByName returns all IP addresses of the given pod's interface
 // group by ipFamily
 func IPAddressByName(netns ns.NetNS, interfacenName string, ipFamily int) ([]netlink.Addr, error) {
-	var err error
-	ipAddress := make([]netlink.Addr, 0, 2)
-	err = netns.Do(func(_ ns.NetNS) error {
-		ipAddress, err = GetAddersByName(interfacenName, ipFamily)
-		return err
-	})
-	if err != nil {
-		return nil, err
-	}
-	return ipAddress, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // IPAddressOnNode return all ip addresses on the node, filter by ipFamily
 // skipping any interfaces whose name matches any of the exclusion list regexes
 func GetAllIPAddress(ipFamily int, excludeInterface []string) ([]netlink.Addr, error) {
-	var err error
-	var excludeRegexp *regexp.Regexp
-
-	if excludeInterface != nil {
-		if excludeRegexp, err = regexp.Compile("(" + strings.Join(excludeInterface, ")|(") + ")"); err != nil {
-			return nil, err
-		}
-	}
-
-	links, err := netlink.LinkList()
-	if err != nil {
-		return nil, err
-	}
-
-	var allIPAddress []netlink.Addr
-	for idx := range links {
-		iLink := links[idx]
-
-		if excludeRegexp != nil && excludeRegexp.MatchString(iLink.Attrs().Name) {
-			continue
-		}
-
-		ipAddress, err := GetAddersByLink(iLink, ipFamily)
-		if err != nil {
-			return nil, err
-		}
-		allIPAddress = append(allIPAddress, ipAddress...)
-	}
-	return allIPAddress, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetAddersByName return all unicast ip address of interface, filter by ipFamily
 func GetAddersByName(iface string, ipfamily int) ([]netlink.Addr, error) {
-	link, err := netlink.LinkByName(iface)
-	if err != nil {
-		return nil, err
-	}
-	return getAdders(link, ipfamily)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetAddersByLink return all unicast ip address of interface, filter by interface,ipFamily
 func GetAddersByLink(link netlink.Link, ipfamily int) ([]netlink.Addr, error) {
-	return getAdders(link, ipfamily)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func getAdders(link netlink.Link, ipfamily int) ([]netlink.Addr, error) {
-	var ipAddress []netlink.Addr
-	address, err := netlink.AddrList(link, ipfamily)
-	if err != nil {
-		return nil, err
-	}
-
-	for _, addr := range address {
-		if addr.IP.IsMulticast() || addr.IP.IsLinkLocalUnicast() {
-			continue
-		}
-		if addr.IP.To4() != nil && (ipfamily == netlink.FAMILY_V4 || ipfamily == netlink.FAMILY_ALL) {
-			ipAddress = append(ipAddress, addr)
-		}
-		if addr.IP.To4() == nil && (ipfamily == netlink.FAMILY_V6 || ipfamily == netlink.FAMILY_ALL) {
-			ipAddress = append(ipAddress, addr)
-		}
-	}
-	return ipAddress, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func CheckInterfaceExist(netns ns.NetNS, iface string) (bool, error) {
-	var exist bool
-	var err error
-	if netns != nil {
-		err = netns.Do(func(_ ns.NetNS) error {
-			exist, err = isInterfaceExist(iface)
-			return err
-		})
-		return exist, err
-	}
-	return isInterfaceExist(iface)
+	_ = "STUB: not implemented"
+	return false, nil
 }
 
-func isInterfaceExist(iface string) (bool, error) {
-	_, err := netlink.LinkByName(iface)
-	if err == nil {
-		return true, nil
-	}
-
-	var netErr netlink.LinkNotFoundError
-	if errors.As(err, &netErr) {
-		return false, nil
-	}
-	return false, err
-}
+func isInterfaceExist(iface string) (bool, error) { _ = "STUB: not implemented"; return false, nil }
 
 func GetUPLinkList(netns ns.NetNS) ([]netlink.Link, error) {
-	var err error
-	var links []netlink.Link
-	if netns != nil {
-		if err := netns.Do(func(nn ns.NetNS) error {
-			links, err = netlink.LinkList()
-			return err
-		}); err != nil {
-			return nil, err
-		}
-	}
-
-	// only include devices in up|broadcast|multicast state
-	// include:
-	//   example: eth0/net1, flag: up|broadcast|multicast
-	// exclude:
-	//   lo, flags: up|loopback
-	//   tunl0: flags: 0
-	res := make([]netlink.Link, 0)
-	for _, link := range links {
-		if link.Attrs().Flags&net.FlagUp == 0 {
-			continue
-		}
-
-		if link.Attrs().Flags&net.FlagBroadcast == 0 {
-			continue
-		}
-
-		if link.Attrs().Flags&net.FlagMulticast == 0 {
-			continue
-		}
-
-		res = append(res, link)
-	}
-	return res, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// only include devices in up|broadcast|multicast state
+// include:
+//   example: eth0/net1, flag: up|broadcast|multicast
+// exclude:
+//   lo, flags: up|loopback
+//   tunl0: flags: 0
 
 func LinkSetBondSlave(slave string, bond *netlink.Bond) error {
-	l, err := netlink.LinkByName(slave)
-	if err != nil {
-		return fmt.Errorf("failed to LinkByName slave %s: %w", slave, err)
-	}
-
-	if err = netlink.LinkSetBondSlave(l, bond); err != nil {
-		return fmt.Errorf("failed to LinkSetBondSlave: %w", err)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func LinkSetTxqueueLen(iface string, txQueneLen int) error {
-	link, err := netlink.LinkByName(iface)
-	if err != nil {
-		return err
-	}
+func LinkSetTxqueueLen(iface string, txQueneLen int) error { _ = "STUB: not implemented"; return nil }
 
-	return netlink.LinkSetTxQLen(link, txQueneLen)
-}
+func LinkAdd(link netlink.Link) error { _ = "STUB: not implemented"; return nil }
 
-func LinkAdd(link netlink.Link) error {
-	return linkAddAndSetUp(link)
-}
-
-func linkAddAndSetUp(link netlink.Link) error {
-	var err error
-	if err = netlink.LinkAdd(link); err != nil && os.IsNotExist(err) {
-		return fmt.Errorf("failed to LinkAdd %s: %w", link.Attrs().Name, err)
-	}
-
-	if err = netlink.LinkSetUp(link); err != nil {
-		return fmt.Errorf("failed to set %s up: %w", link.Attrs().Name, err)
-	}
-	return nil
-}
+func linkAddAndSetUp(link netlink.Link) error { _ = "STUB: not implemented"; return nil }
 
 // IPNetEqual returns true iff both IPNet are equal
 // Copyright Authors of vishvananda/netlink
-func IPNetEqual(ipn1 *net.IPNet, ipn2 *net.IPNet) bool {
-	if ipn1 == ipn2 {
-		return true
-	}
-	if ipn1 == nil || ipn2 == nil {
-		return false
-	}
-	m1, _ := ipn1.Mask.Size()
-	m2, _ := ipn2.Mask.Size()
-	return m1 == m2 && ipn1.IP.Equal(ipn2.IP)
-}
+func IPNetEqual(ipn1 *net.IPNet, ipn2 *net.IPNet) bool { _ = "STUB: not implemented"; return false }

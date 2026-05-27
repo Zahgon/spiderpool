@@ -9,15 +9,14 @@ package daemonset
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new daemonset API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
-	return &Client{transport: transport, formats: formats}
+	_ = "STUB: not implemented"
+	return *new(ClientService)
 }
 
 /*
@@ -54,39 +53,13 @@ DeleteIpamIP deletes ip from spiderpool daemon
 Send a request to daemonset to ask for an ip deleting
 */
 func (a *Client) DeleteIpamIP(params *DeleteIpamIPParams, opts ...ClientOption) (*DeleteIpamIPOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDeleteIpamIPParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "DeleteIpamIP",
-		Method:             "DELETE",
-		PathPattern:        "/ipam/ip",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DeleteIpamIPReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DeleteIpamIPOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DeleteIpamIP: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 DeleteIpamIps deletes multiple ip as a batch
@@ -94,39 +67,13 @@ DeleteIpamIps deletes multiple ip as a batch
 Delete multiple ip for a pod, case for spiderflat compent
 */
 func (a *Client) DeleteIpamIps(params *DeleteIpamIpsParams, opts ...ClientOption) (*DeleteIpamIpsOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDeleteIpamIpsParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "DeleteIpamIps",
-		Method:             "DELETE",
-		PathPattern:        "/ipam/ips",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DeleteIpamIpsReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DeleteIpamIpsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DeleteIpamIps: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 GetCoordinatorConfig gets coordinator config
@@ -134,39 +81,13 @@ GetCoordinatorConfig gets coordinator config
 Send a request to daemonset to get coordinator config
 */
 func (a *Client) GetCoordinatorConfig(params *GetCoordinatorConfigParams, opts ...ClientOption) (*GetCoordinatorConfigOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetCoordinatorConfigParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "GetCoordinatorConfig",
-		Method:             "GET",
-		PathPattern:        "/coordinator/config",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &GetCoordinatorConfigReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetCoordinatorConfigOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetCoordinatorConfig: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 	GetWorkloadendpoint gets workloadendpoint status
@@ -178,39 +99,13 @@ allocation information via Unix Socket. The `mac` and `vlan` fields are optional
 included when populated during IP allocation.
 */
 func (a *Client) GetWorkloadendpoint(params *GetWorkloadendpointParams, opts ...ClientOption) (*GetWorkloadendpointOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetWorkloadendpointParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "GetWorkloadendpoint",
-		Method:             "GET",
-		PathPattern:        "/workloadendpoint",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &GetWorkloadendpointReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetWorkloadendpointOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetWorkloadendpoint: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 PostIpamIP gets ip from spiderpool daemon
@@ -218,39 +113,13 @@ PostIpamIP gets ip from spiderpool daemon
 Send a request to daemonset to ask for an ip assignment
 */
 func (a *Client) PostIpamIP(params *PostIpamIPParams, opts ...ClientOption) (*PostIpamIPOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewPostIpamIPParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "PostIpamIP",
-		Method:             "POST",
-		PathPattern:        "/ipam/ip",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &PostIpamIPReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*PostIpamIPOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIpamIP: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 PostIpamIps assigns multiple ip as a batch
@@ -258,41 +127,13 @@ PostIpamIps assigns multiple ip as a batch
 Assign multiple ip for a pod, case for spiderflat compent
 */
 func (a *Client) PostIpamIps(params *PostIpamIpsParams, opts ...ClientOption) (*PostIpamIpsOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewPostIpamIpsParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "PostIpamIps",
-		Method:             "POST",
-		PathPattern:        "/ipam/ips",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &PostIpamIpsReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*PostIpamIpsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIpamIps: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 // SetTransport changes the transport on the client
-func (a *Client) SetTransport(transport runtime.ClientTransport) {
-	a.transport = transport
-}
+func (a *Client) SetTransport(transport runtime.ClientTransport) { _ = "STUB: not implemented"; return }

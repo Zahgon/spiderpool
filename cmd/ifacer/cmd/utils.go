@@ -4,7 +4,6 @@
 package cmd
 
 import (
-	"fmt"
 	"net"
 
 	"github.com/vishvananda/netlink"
@@ -46,238 +45,138 @@ type BondOptions struct {
 type BondOptionFunc func(bond *netlink.Bond)
 
 func ActiveSlaveOption(activeSlave int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.ActiveSlave = activeSlave
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func AdActorSystemOption(adActorSystem net.HardwareAddr) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.AdActorSystem = adActorSystem
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func AdActorSysPrioOption(adActorSysPrio int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.AdActorSysPrio = adActorSysPrio
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func AdSelectOption(adSelect int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.AdSelect = netlink.BondAdSelect(adSelect)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func AdUserPortKeyOption(adUserPortKey int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.AdUserPortKey = adUserPortKey
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func AllSlavesActiveOption(allSlavesActive int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.AllSlavesActive = allSlavesActive
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func ArpIntervalOption(arpInterval int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.ArpInterval = arpInterval
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func ArpIPTargetsOption(arpIPTargets []net.IP) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.ArpIpTargets = arpIPTargets
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func ArpValidateOption(arpValidate int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.ArpValidate = netlink.BondArpValidate(arpValidate)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func ArpAllTargetsOption(arpAllTargets int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.ArpAllTargets = netlink.BondArpAllTargets(arpAllTargets)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func DownDelayOption(downDelay int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.DownDelay = downDelay
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func FailOverMacOption(failOverMac int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.FailOverMac = netlink.BondFailOverMac(failOverMac)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func LacpRateOption(lacpRate int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.LacpRate = netlink.BondLacpRate(lacpRate)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func MiimonOption(miimon int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.Miimon = miimon
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func MinLinksOption(minLinks int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.MinLinks = minLinks
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func PacketsPerSlaveOption(packetsPerSlave int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.PacketsPerSlave = packetsPerSlave
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func PrimaryOption(primary int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.Primary = primary
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func PrimaryReselectOption(primaryReselect int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.PrimaryReselect = netlink.BondPrimaryReselect(primaryReselect)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func TlbDynamicLbOption(tlbDynamicLb int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.TlbDynamicLb = tlbDynamicLb
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func UpDelayOption(upDelay int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.UpDelay = upDelay
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func UseCarrierOption(useCarrier int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.UseCarrier = useCarrier
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func XmitHashPolicyOption(xmitHashPolicy int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.XmitHashPolicy = netlink.BondXmitHashPolicy(xmitHashPolicy)
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func LpIntervalOption(lpInterval int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.LpInterval = lpInterval
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func ResendIgmpOption(resendIgmp int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.ResendIgmp = resendIgmp
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func NumPeerNotifOption(numPeerNotif int) BondOptionFunc {
-	return func(bond *netlink.Bond) {
-		bond.NumPeerNotif = numPeerNotif
-	}
+	_ = "STUB: not implemented"
+	return *new(BondOptionFunc)
 }
 
 func GetAllIntBondOptions(bondOptions *BondOptions, bondOptionFuncs []BondOptionFunc) []BondOptionFunc {
-	if bondOptions.ArpAllTargets > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, ArpAllTargetsOption(bondOptions.ArpAllTargets))
-	}
-	if bondOptions.MinLinks > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, MinLinksOption(bondOptions.MinLinks))
-	}
-	if bondOptions.AdActorSysPrio > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, AdActorSysPrioOption(bondOptions.AdActorSysPrio))
-	}
-	if bondOptions.ArpInterval > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, ArpIntervalOption(bondOptions.ArpInterval))
-	}
-	if bondOptions.AdSelect > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, AdSelectOption(bondOptions.AdSelect))
-	}
-	if bondOptions.AdUserPortKey > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, AdUserPortKeyOption(bondOptions.AdUserPortKey))
-	}
-	if bondOptions.ArpValidate > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, ArpValidateOption(bondOptions.ArpValidate))
-	}
-	if bondOptions.AllSlavesActive > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, AllSlavesActiveOption(bondOptions.AllSlavesActive))
-	}
-	if bondOptions.DownDelay > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, DownDelayOption(bondOptions.DownDelay))
-	}
-	if bondOptions.FailOverMac > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, FailOverMacOption(bondOptions.FailOverMac))
-	}
-	if bondOptions.LacpRate > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, LacpRateOption(bondOptions.LacpRate))
-	}
-	if bondOptions.Miimon > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, MiimonOption(bondOptions.Miimon))
-	}
-	if bondOptions.PacketsPerSlave > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, PacketsPerSlaveOption(bondOptions.PacketsPerSlave))
-	}
-	if bondOptions.PrimaryReselect > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, PrimaryReselectOption(bondOptions.PrimaryReselect))
-	}
-	if bondOptions.TlbDynamicLb > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, TlbDynamicLbOption(bondOptions.TlbDynamicLb))
-	}
-	if bondOptions.UpDelay > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, UpDelayOption(bondOptions.UpDelay))
-	}
-	if bondOptions.UseCarrier > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, UseCarrierOption(bondOptions.UseCarrier))
-	}
-	if bondOptions.XmitHashPolicy > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, XmitHashPolicyOption(bondOptions.XmitHashPolicy))
-	}
-	if bondOptions.LpInterval > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, LpIntervalOption(bondOptions.LpInterval))
-	}
-	if bondOptions.ResendIgmp > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, ResendIgmpOption(bondOptions.ResendIgmp))
-	}
-	if bondOptions.NumPeerNotif > 0 {
-		bondOptionFuncs = append(bondOptionFuncs, NumPeerNotifOption(bondOptions.NumPeerNotif))
-	}
-	return bondOptionFuncs
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func getVlanIfaceName(master string, vlanID int) string {
-	return fmt.Sprintf("%s.%d", master, vlanID)
-}
+func getVlanIfaceName(master string, vlanID int) string { _ = "STUB: not implemented"; return "" }
 
 func checkInterfaceWithSameVlan(vlanID int, vlanInterface string) error {
-	links, err := netlink.LinkList()
-	if err != nil {
-		return fmt.Errorf("failed to LinkList: %w", err)
-	}
-
-	for _, link := range links {
-		if link.Type() == "vlan" {
-			if vlan, ok := link.(*netlink.Vlan); ok && vlan.VlanId == vlanID && vlan.Name != vlanInterface {
-				return fmt.Errorf("cannot have multiple different vlan interfaces with the same vlanId %v on node at the same time", vlanID)
-			}
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

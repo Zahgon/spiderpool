@@ -5,7 +5,6 @@ package applicationinformers
 
 import (
 	"context"
-	"fmt"
 
 	"go.uber.org/zap"
 )
@@ -23,14 +22,6 @@ type Controller struct {
 }
 
 func NewApplicationController(reconcile AppInformersAddOrUpdateFunc, cleanup APPInformersDelFunc, logger *zap.Logger) (*Controller, error) {
-	if reconcile == nil {
-		return nil, fmt.Errorf("the controllers informers reconcile function must be specified")
-	}
-	if cleanup == nil {
-		return nil, fmt.Errorf("the controllers informers cleanup function must be specified")
-	}
-
-	controllersLogger = logger
-
-	return &Controller{reconcileFunc: reconcile, cleanupFunc: cleanup}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

@@ -28,18 +28,15 @@ type DeleteIpamIPOK struct {
 }
 
 // NewDeleteIpamIPOK creates DeleteIpamIPOK with default headers values
-func NewDeleteIpamIPOK() *DeleteIpamIPOK {
-
-	return &DeleteIpamIPOK{}
-}
+func NewDeleteIpamIPOK() *DeleteIpamIPOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *DeleteIpamIPOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // DeleteIpamIPFailureCode is the HTTP code returned for type DeleteIpamIPFailure
 const DeleteIpamIPFailureCode int = 500
@@ -58,28 +55,21 @@ type DeleteIpamIPFailure struct {
 }
 
 // NewDeleteIpamIPFailure creates DeleteIpamIPFailure with default headers values
-func NewDeleteIpamIPFailure() *DeleteIpamIPFailure {
-
-	return &DeleteIpamIPFailure{}
-}
+func NewDeleteIpamIPFailure() *DeleteIpamIPFailure { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the delete ipam Ip failure response
 func (o *DeleteIpamIPFailure) WithPayload(payload models.Error) *DeleteIpamIPFailure {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the delete ipam Ip failure response
-func (o *DeleteIpamIPFailure) SetPayload(payload models.Error) {
-	o.Payload = payload
-}
+func (o *DeleteIpamIPFailure) SetPayload(payload models.Error) { _ = "STUB: not implemented"; return }
 
 // WriteResponse to the client
 func (o *DeleteIpamIPFailure) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(500)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this

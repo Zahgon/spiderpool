@@ -11,19 +11,16 @@ package daemonset
 import (
 	"net/http"
 
-	"github.com/go-openapi/errors"
-	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/validate"
 )
 
 // NewGetWorkloadendpointParams creates a new GetWorkloadendpointParams object
 //
 // There are no default values defined in the spec.
 func NewGetWorkloadendpointParams() GetWorkloadendpointParams {
-
-	return GetWorkloadendpointParams{}
+	_ = "STUB: not implemented"
+	return *new(GetWorkloadendpointParams)
 }
 
 // GetWorkloadendpointParams contains all the bound params for the get workloadendpoint operation
@@ -52,65 +49,24 @@ type GetWorkloadendpointParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewGetWorkloadendpointParams() beforehand.
 func (o *GetWorkloadendpointParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
-	var res []error
-
-	o.HTTPRequest = r
-
-	qs := runtime.Values(r.URL.Query())
-
-	qPodName, qhkPodName, _ := qs.GetOK("podName")
-	if err := o.bindPodName(qPodName, qhkPodName, route.Formats); err != nil {
-		res = append(res, err)
-	}
-
-	qPodNamespace, qhkPodNamespace, _ := qs.GetOK("podNamespace")
-	if err := o.bindPodNamespace(qPodNamespace, qhkPodNamespace, route.Formats); err != nil {
-		res = append(res, err)
-	}
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // bindPodName binds and validates parameter PodName from query.
 func (o *GetWorkloadendpointParams) bindPodName(rawData []string, hasKey bool, formats strfmt.Registry) error {
-	if !hasKey {
-		return errors.Required("podName", "query", rawData)
-	}
-	var raw string
-	if len(rawData) > 0 {
-		raw = rawData[len(rawData)-1]
-	}
-
-	// Required: true
-	// AllowEmptyValue: false
-
-	if err := validate.RequiredString("podName", "query", raw); err != nil {
-		return err
-	}
-	o.PodName = raw
-
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// Required: true
+// AllowEmptyValue: false
 
 // bindPodNamespace binds and validates parameter PodNamespace from query.
 func (o *GetWorkloadendpointParams) bindPodNamespace(rawData []string, hasKey bool, formats strfmt.Registry) error {
-	if !hasKey {
-		return errors.Required("podNamespace", "query", rawData)
-	}
-	var raw string
-	if len(rawData) > 0 {
-		raw = rawData[len(rawData)-1]
-	}
-
-	// Required: true
-	// AllowEmptyValue: false
-
-	if err := validate.RequiredString("podNamespace", "query", raw); err != nil {
-		return err
-	}
-	o.PodNamespace = raw
-
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// Required: true
+// AllowEmptyValue: false

@@ -10,15 +10,6 @@ import (
 )
 
 func DeleteWebhookConfiguration(ctx context.Context, c client.Client, name string, obj client.Object) error {
-	err := c.Get(ctx, client.ObjectKey{Name: name}, obj)
-	if err != nil {
-		return err
-	}
-
-	err = c.Delete(ctx, obj)
-	if err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }

@@ -7,10 +7,7 @@ import (
 
 	"github.com/spidernet-io/spiderpool/pkg/constant"
 	crdclientset "github.com/spidernet-io/spiderpool/pkg/k8s/client/clientset/versioned"
-	"github.com/spidernet-io/spiderpool/pkg/logutils"
 	"github.com/spidernet-io/spiderpool/pkg/namespacemanager"
-	"go.uber.org/zap"
-	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -43,25 +40,11 @@ type PWebhook struct {
 //
 // Returns an error if initialization fails.
 func InitPodWebhook(mgr ctrl.Manager, nsManager namespacemanager.NamespaceManager) error {
-	spiderClient, err := crdclientset.NewForConfig(ctrl.GetConfigOrDie())
-	if err != nil {
-		return err
-	}
-
-	pw := &PWebhook{
-		spiderClient: spiderClient,
-		nsManager:    nsManager,
-	}
-
-	// setup mutating webhook for pods
-	if err = ctrl.NewWebhookManagedBy(mgr).
-		For(&corev1.Pod{}).
-		WithDefaulter(pw).
-		Complete(); err != nil {
-		return err
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// setup mutating webhook for pods
 
 // Default implements the defaulting webhook for pods.
 // It injects network resources into the pod if it has the appropriate annotation.
@@ -71,45 +54,29 @@ func InitPodWebhook(mgr ctrl.Manager, nsManager namespacemanager.NamespaceManage
 //
 // Returns an error if defaulting fails.
 func (pw *PWebhook) Default(ctx context.Context, obj runtime.Object) error {
-	logger := logutils.FromContext(ctx)
-	pod := obj.(*corev1.Pod)
-	mutateLogger := logger.Named("PodMutating").With(
-		zap.String("Pod", pod.GenerateName))
-	mutateLogger.Sugar().Debugf("Request Pod: %+v", *pod)
-
-	needInject, err := needPodNetworkInjection(ctx, pw.nsManager, pod)
-	if err != nil {
-		mutateLogger.Sugar().Errorf("Failed to resolve injection annotations for pod %s/%s: %v", pod.Namespace, pod.GenerateName, err)
-		return err
-	}
-
-	if !needInject {
-		return nil
-	}
-
-	err = podNetworkMutatingWebhook(ctx, pw.spiderClient, pw.nsManager, pod)
-	if err != nil {
-		mutateLogger.Sugar().Errorf("Failed to inject network resources for pod %s/%s: %v", pod.Namespace, pod.GenerateName, err)
-		return err
-	}
-	mutateLogger.Sugar().Debugf("Pod %s/%s network resources injected, Pod: %v", pod.Namespace, pod.GenerateName, pod)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // ValidateCreate implements the validation webhook for pod creation.
 // Currently, it performs no validation and always returns nil.
 func (pw *PWebhook) ValidateCreate(ctx context.Context, obj runtime.Object) (admission.Warnings, error) {
-	return nil, nil
+	_ = "STUB: not implemented"
+
+	// ValidateUpdate implements the validation webhook for pod updates.
+	// Currently, it performs no validation and always returns nil.
+	return *new(admission.Warnings), nil
 }
 
-// ValidateUpdate implements the validation webhook for pod updates.
-// Currently, it performs no validation and always returns nil.
 func (pw *PWebhook) ValidateUpdate(ctx context.Context, oldObj, newObj runtime.Object) (admission.Warnings, error) {
-	return nil, nil
+	_ = "STUB: not implemented"
+
+	// ValidateDelete implements the validation webhook for pod deletion.
+	// Currently, it performs no validation and always returns nil.
+	return *new(admission.Warnings), nil
 }
 
-// ValidateDelete implements the validation webhook for pod deletion.
-// Currently, it performs no validation and always returns nil.
 func (pw *PWebhook) ValidateDelete(ctx context.Context, obj runtime.Object) (admission.Warnings, error) {
-	return nil, nil
+	_ = "STUB: not implemented"
+	return *new(admission.Warnings), nil
 }

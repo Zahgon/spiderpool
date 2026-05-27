@@ -11,10 +11,7 @@ package models
 import (
 	"context"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // Route IPAM CNI types Route
@@ -36,73 +33,26 @@ type Route struct {
 }
 
 // Validate validates this route
-func (m *Route) Validate(formats strfmt.Registry) error {
-	var res []error
+func (m *Route) Validate(formats strfmt.Registry) error { _ = "STUB: not implemented"; return nil }
 
-	if err := m.validateDst(formats); err != nil {
-		res = append(res, err)
-	}
+func (m *Route) validateDst(formats strfmt.Registry) error { _ = "STUB: not implemented"; return nil }
 
-	if err := m.validateGw(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateIfName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-func (m *Route) validateDst(formats strfmt.Registry) error {
-
-	if err := validate.Required("dst", "body", m.Dst); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Route) validateGw(formats strfmt.Registry) error {
-
-	if err := validate.Required("gw", "body", m.Gw); err != nil {
-		return err
-	}
-
-	return nil
-}
+func (m *Route) validateGw(formats strfmt.Registry) error { _ = "STUB: not implemented"; return nil }
 
 func (m *Route) validateIfName(formats strfmt.Registry) error {
-
-	if err := validate.Required("ifName", "body", m.IfName); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // ContextValidate validates this route based on context it is used
 func (m *Route) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+
+	// MarshalBinary interface implementation
 	return nil
 }
 
-// MarshalBinary interface implementation
-func (m *Route) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
+func (m *Route) MarshalBinary() ([]byte, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // UnmarshalBinary interface implementation
-func (m *Route) UnmarshalBinary(b []byte) error {
-	var res Route
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
+func (m *Route) UnmarshalBinary(b []byte) error { _ = "STUB: not implemented"; return nil }

@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
@@ -25,34 +23,27 @@ import (
 // Default values are not hydrated, since defaults are normally applied by the API server side.
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
-func NewPostIpamGcIpsParams() *PostIpamGcIpsParams {
-	return &PostIpamGcIpsParams{
-		timeout: cr.DefaultTimeout,
-	}
-}
+func NewPostIpamGcIpsParams() *PostIpamGcIpsParams { _ = "STUB: not implemented"; return nil }
 
 // NewPostIpamGcIpsParamsWithTimeout creates a new PostIpamGcIpsParams object
 // with the ability to set a timeout on a request.
 func NewPostIpamGcIpsParamsWithTimeout(timeout time.Duration) *PostIpamGcIpsParams {
-	return &PostIpamGcIpsParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewPostIpamGcIpsParamsWithContext creates a new PostIpamGcIpsParams object
 // with the ability to set a context for a request.
 func NewPostIpamGcIpsParamsWithContext(ctx context.Context) *PostIpamGcIpsParams {
-	return &PostIpamGcIpsParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewPostIpamGcIpsParamsWithHTTPClient creates a new PostIpamGcIpsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPostIpamGcIpsParamsWithHTTPClient(client *http.Client) *PostIpamGcIpsParams {
-	return &PostIpamGcIpsParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -72,60 +63,53 @@ type PostIpamGcIpsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PostIpamGcIpsParams) WithDefaults() *PostIpamGcIpsParams {
-	o.SetDefaults()
-	return o
+	_ = "STUB: not implemented"
+	return nil
+
+	// SetDefaults hydrates default values in the post ipam gc ips params (not the query body).
+	//
+	// All values with no default are reset to their zero value.
 }
 
-// SetDefaults hydrates default values in the post ipam gc ips params (not the query body).
-//
-// All values with no default are reset to their zero value.
 func (o *PostIpamGcIpsParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the post ipam gc ips params
 func (o *PostIpamGcIpsParams) WithTimeout(timeout time.Duration) *PostIpamGcIpsParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the post ipam gc ips params
-func (o *PostIpamGcIpsParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
-}
+func (o *PostIpamGcIpsParams) SetTimeout(timeout time.Duration) { _ = "STUB: not implemented"; return }
 
 // WithContext adds the context to the post ipam gc ips params
 func (o *PostIpamGcIpsParams) WithContext(ctx context.Context) *PostIpamGcIpsParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the post ipam gc ips params
 func (o *PostIpamGcIpsParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the post ipam gc ips params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the post ipam gc ips params
 func (o *PostIpamGcIpsParams) WithHTTPClient(client *http.Client) *PostIpamGcIpsParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the post ipam gc ips params
-func (o *PostIpamGcIpsParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
-}
+func (o *PostIpamGcIpsParams) SetHTTPClient(client *http.Client) { _ = "STUB: not implemented"; return }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PostIpamGcIpsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

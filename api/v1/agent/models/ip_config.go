@@ -12,10 +12,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // IPConfig IPAM IPs struct, contains ifName, Address and Gateway
@@ -57,58 +54,21 @@ type IPConfig struct {
 }
 
 // Validate validates this Ip config
-func (m *IPConfig) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateAddress(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateMac(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateNic(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVersion(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
+func (m *IPConfig) Validate(formats strfmt.Registry) error { _ = "STUB: not implemented"; return nil }
 
 func (m *IPConfig) validateAddress(formats strfmt.Registry) error {
-
-	if err := validate.Required("address", "body", m.Address); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IPConfig) validateMac(formats strfmt.Registry) error {
-	if swag.IsZero(m.Mac) { // not required
-		return nil
-	}
-
-	if err := validate.Pattern("mac", "body", m.Mac, `^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$`); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
+	// not required
 }
 
 func (m *IPConfig) validateNic(formats strfmt.Registry) error {
-
-	if err := validate.Required("nic", "body", m.Nic); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -126,45 +86,26 @@ func init() {
 
 // prop value enum
 func (m *IPConfig) validateVersionEnum(path, location string, value int64) error {
-	if err := validate.EnumCase(path, location, value, ipConfigTypeVersionPropEnum, true); err != nil {
-		return err
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *IPConfig) validateVersion(formats strfmt.Registry) error {
-
-	if err := validate.Required("version", "body", m.Version); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateVersionEnum("version", "body", *m.Version); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// value enum
 
 // ContextValidate validates this Ip config based on context it is used
 func (m *IPConfig) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+
+	// MarshalBinary interface implementation
 	return nil
 }
 
-// MarshalBinary interface implementation
-func (m *IPConfig) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
+func (m *IPConfig) MarshalBinary() ([]byte, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // UnmarshalBinary interface implementation
-func (m *IPConfig) UnmarshalBinary(b []byte) error {
-	var res IPConfig
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
+func (m *IPConfig) UnmarshalBinary(b []byte) error { _ = "STUB: not implemented"; return nil }

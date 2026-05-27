@@ -4,13 +4,7 @@
 package sysctl
 
 import (
-	"fmt"
-	"os"
-	"path/filepath"
-	"strings"
-
 	"github.com/containernetworking/plugins/pkg/ns"
-	"github.com/containernetworking/plugins/pkg/utils/sysctl"
 )
 
 var (
@@ -69,53 +63,23 @@ var DefaultSysctlConfig = []struct {
 
 // SetSysctlRPFilter sets rp_filter value for host netns and specify netns.
 func SetSysctlRPFilter(netns ns.NetNS, value int32) error {
+	_ = "STUB: not implemented"
 	// set pod rp_filter
-	return netns.Do(func(_ ns.NetNS) error {
-		return SetSysctl(SysctlRPFilter, fmt.Sprintf("%v", value))
-	})
+	return nil
 }
 
 // EnableIpv6Sysctl enable ipv6 for specify netns
-func EnableIpv6Sysctl(value int32) error {
-	return SetSysctl(SysctlEnableIPv6, fmt.Sprintf("%v", value))
-}
+func EnableIpv6Sysctl(value int32) error { _ = "STUB: not implemented"; return nil }
 
 func SetSysctl(sysConfig string, value string) error {
+	_ = "STUB: not implemented"
 	// sysConfig: net.ipv6.neigh.default.gc_thresh3
 	// to: net/ipv6/neigh/default/gc_thresh3
-	sysConfig = strings.ReplaceAll(sysConfig, ".", "/")
-
-	_, err := os.Stat(filepath.Join("/proc/sys", sysConfig))
-	if err != nil {
-		return err
-	}
-
-	if _, err := sysctl.Sysctl(sysConfig, value); err != nil {
-		return err
-	}
-
 	return nil
 }
 
-func EnableIPv6ForInterfaces(ifaces []string) error {
-	disableIPv6SysctlTemplate := "net/ipv6/conf/%s/disable_ipv6"
-	for _, iface := range ifaces {
-		ipv6SysctlValueName := fmt.Sprintf(disableIPv6SysctlTemplate, iface)
+func EnableIPv6ForInterfaces(ifaces []string) error { _ = "STUB: not implemented"; return nil }
 
-		// Read current sysctl value
-		value, err := sysctl.Sysctl(ipv6SysctlValueName)
-		if err != nil {
-			continue
-		}
-		if value == "0" {
-			continue
-		}
+// Read current sysctl value
 
-		// Write sysctl to enable IPv6
-		_, err = sysctl.Sysctl(ipv6SysctlValueName, "0")
-		if err != nil {
-			return fmt.Errorf("failed to enable IPv6 for interface %q (%s=%s): %w", iface, ipv6SysctlValueName, value, err)
-		}
-	}
-	return nil
-}
+// Write sysctl to enable IPv6

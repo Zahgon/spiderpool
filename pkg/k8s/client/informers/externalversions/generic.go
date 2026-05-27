@@ -6,9 +6,6 @@
 package externalversions
 
 import (
-	"fmt"
-
-	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )
@@ -27,29 +24,22 @@ type genericInformer struct {
 
 // Informer returns the SharedIndexInformer.
 func (f *genericInformer) Informer() cache.SharedIndexInformer {
-	return f.informer
+	_ = "STUB: not implemented"
+
+	// Lister returns the GenericLister.
+	return *new(cache.SharedIndexInformer)
 }
 
-// Lister returns the GenericLister.
 func (f *genericInformer) Lister() cache.GenericLister {
-	return cache.NewGenericLister(f.Informer().GetIndexer(), f.resource)
+	_ = "STUB: not implemented"
+	return *new(cache.GenericLister)
 }
 
 // ForResource gives generic access to a shared informer of the matching type
 // TODO extend this to unknown resources with a client pool
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
-	switch resource {
+	_ = "STUB: not implemented"
+
 	// Group=spiderpool.spidernet.io, Version=v2beta1
-	case v2beta1.SchemeGroupVersion.WithResource("spidercoordinators"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Spiderpool().V2beta1().SpiderCoordinators().Informer()}, nil
-	case v2beta1.SchemeGroupVersion.WithResource("spiderippools"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Spiderpool().V2beta1().SpiderIPPools().Informer()}, nil
-	case v2beta1.SchemeGroupVersion.WithResource("spidermultusconfigs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Spiderpool().V2beta1().SpiderMultusConfigs().Informer()}, nil
-	case v2beta1.SchemeGroupVersion.WithResource("spidersubnets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Spiderpool().V2beta1().SpiderSubnets().Informer()}, nil
-
-	}
-
-	return nil, fmt.Errorf("no informer found for %v", resource)
+	return *new(GenericInformer), nil
 }

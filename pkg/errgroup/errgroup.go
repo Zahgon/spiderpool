@@ -12,8 +12,6 @@ package errgroup
 
 import (
 	"context"
-	"fmt"
-	"runtime"
 	"sync"
 
 	"github.com/containernetworking/plugins/pkg/ns"
@@ -37,12 +35,7 @@ type Group struct {
 	err     error
 }
 
-func (g *Group) done() {
-	if g.sem != nil {
-		<-g.sem
-	}
-	g.wg.Done()
-}
+func (g *Group) done() { _ = "STUB: not implemented"; return }
 
 // WithContext returns a new Group and an associated Context derived from ctx.
 //
@@ -50,19 +43,13 @@ func (g *Group) done() {
 // returns a non-nil error or the first time Wait returns, whichever occurs
 // first.
 func WithContext(ctx context.Context) (*Group, context.Context) {
-	ctx, cancel := context.WithCancelCause(ctx)
-	return &Group{cancel: cancel}, ctx
+	_ = "STUB: not implemented"
+	return nil, *new(context.Context)
 }
 
 // Wait blocks until all function calls from the Go method have returned, then
 // returns the first non-nil error (if any) from them.
-func (g *Group) Wait() error {
-	g.wg.Wait()
-	if g.cancel != nil {
-		g.cancel(g.err)
-	}
-	return g.err
-}
+func (g *Group) Wait() error { _ = "STUB: not implemented"; return nil }
 
 // Go calls the given function in a new goroutine.
 // It blocks until the new goroutine can be added without the number of
@@ -79,44 +66,13 @@ func (g *Group) Wait() error {
 // see https://github.com/golang/go/wiki/LockOSThread and
 // https://www.weave.works/blog/linux-namespaces-golang-followup
 // to more details.
-func (g *Group) Go(srcNs, targetNs ns.NetNS, f func() error) {
-	if g.sem != nil {
-		g.sem <- token{}
-	}
+func (g *Group) Go(srcNs, targetNs ns.NetNS, f func() error) { _ = "STUB: not implemented"; return }
 
-	g.wg.Add(1)
-	go func() {
-		defer g.done()
-		runtime.LockOSThread()
+// switch to pod's netns
 
-		// switch to pod's netns
-		if err := targetNs.Set(); err != nil {
-			g.errOnce.Do(func() {
-				g.err = fmt.Errorf("failed to switch to pod's netns: %w", err)
-				if g.cancel != nil {
-					g.cancel(g.err)
-				}
-			})
-		}
+// switch back
 
-		defer func() {
-			err := srcNs.Set() // switch back
-			if err == nil {
-				// Unlock the current thread only when we successfully switched back
-				// to the original namespace; otherwise leave the thread locked which
-				// will force the runtime to scrap the current thread, that is maybe
-				// not as optimal but at least always safe to do.
-				runtime.UnlockOSThread()
-			}
-		}()
-
-		if err := f(); err != nil {
-			g.errOnce.Do(func() {
-				g.err = err
-				if g.cancel != nil {
-					g.cancel(g.err)
-				}
-			})
-		}
-	}()
-}
+// Unlock the current thread only when we successfully switched back
+// to the original namespace; otherwise leave the thread locked which
+// will force the runtime to scrap the current thread, that is maybe
+// not as optimal but at least always safe to do.

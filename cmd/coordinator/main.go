@@ -23,6 +23,4 @@ func main() {
 	skel.PluginMain(cmd.CmdAdd, cmdCheck, cmd.CmdDel, cniSpecVersion.All, "Coordinator")
 }
 
-func cmdCheck(args *skel.CmdArgs) error {
-	return nil
-}
+func cmdCheck(args *skel.CmdArgs) error { _ = "STUB: not implemented"; return nil }

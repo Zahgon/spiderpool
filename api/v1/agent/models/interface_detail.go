@@ -10,12 +10,8 @@ package models
 
 import (
 	"context"
-	"strconv"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // InterfaceDetail Network interface allocation details
@@ -58,121 +54,45 @@ type InterfaceDetail struct {
 
 // Validate validates this interface detail
 func (m *InterfaceDetail) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateInterface(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateMac(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateRoutes(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *InterfaceDetail) validateInterface(formats strfmt.Registry) error {
-
-	if err := validate.Required("interface", "body", m.Interface); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *InterfaceDetail) validateMac(formats strfmt.Registry) error {
-	if swag.IsZero(m.Mac) { // not required
-		return nil
-	}
-
-	if err := validate.Pattern("mac", "body", m.Mac, `^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$`); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
+	// not required
 }
 
 func (m *InterfaceDetail) validateRoutes(formats strfmt.Registry) error {
-	if swag.IsZero(m.Routes) { // not required
-		return nil
-	}
-
-	for i := 0; i < len(m.Routes); i++ {
-		if swag.IsZero(m.Routes[i]) { // not required
-			continue
-		}
-
-		if m.Routes[i] != nil {
-			if err := m.Routes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("routes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("routes" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
+	_ = "STUB: not implemented"
 	return nil
+	// not required
 }
+
+// not required
 
 // ContextValidate validate this interface detail based on the context it is used
 func (m *InterfaceDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.contextValidateRoutes(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *InterfaceDetail) contextValidateRoutes(ctx context.Context, formats strfmt.Registry) error {
-
-	for i := 0; i < len(m.Routes); i++ {
-
-		if m.Routes[i] != nil {
-			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("routes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("routes" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *InterfaceDetail) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnmarshalBinary interface implementation
-func (m *InterfaceDetail) UnmarshalBinary(b []byte) error {
-	var res InterfaceDetail
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
+func (m *InterfaceDetail) UnmarshalBinary(b []byte) error { _ = "STUB: not implemented"; return nil }

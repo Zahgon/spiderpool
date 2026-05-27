@@ -20,18 +20,10 @@
 package multuscniconfig
 
 import (
-	"encoding/json"
-	"fmt"
-	"net"
-	"regexp"
-	"strings"
-	"syscall"
-
 	netv1 "github.com/k8snetworkplumbingwg/network-attachment-definition-client/pkg/apis/k8s.cni.cncf.io/v1"
 
 	coordinatorcmd "github.com/spidernet-io/spiderpool/cmd/coordinator/cmd"
 	spiderpoolcmd "github.com/spidernet-io/spiderpool/cmd/spiderpool/cmd"
-	"github.com/spidernet-io/spiderpool/pkg/constant"
 	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
 )
 
@@ -126,180 +118,55 @@ type CoordinatorConfig struct {
 }
 
 func ParsePodNetworkAnnotation(podNetworks, defaultNamespace string) ([]*netv1.NetworkSelectionElement, error) {
-	var networks []*netv1.NetworkSelectionElement
-
-	if podNetworks == "" {
-		return nil, fmt.Errorf("parsePodNetworkAnnotation: %s, %s", podNetworks, defaultNamespace)
-	}
-
-	// Match Multus / network-attachment-definition-client ParseNetworkAnnotation: any of `[`, `{`, `"`
-	// indicates JSON (including pretty-printed arrays that do not start with `[{"`).
-	if strings.ContainsAny(strings.TrimSpace(podNetworks), "[{\"") {
-		if err := json.Unmarshal([]byte(podNetworks), &networks); err != nil {
-			return nil, fmt.Errorf("parsePodNetworkAnnotation: failed to parse pod Network Attachment Selection Annotation JSON format: %w", err)
-		}
-	} else {
-		// Comma-delimited list of network attachment object names
-		for _, item := range strings.Split(podNetworks, ",") {
-			// Remove leading and trailing whitespace.
-			item = strings.TrimSpace(item)
-
-			// Parse network name (i.e. <namespace>/<network name>@<ifname>)
-			netNsName, networkName, netIfName, err := ParsePodNetworkObjectName(item)
-			if err != nil {
-				return nil, fmt.Errorf("parsePodNetworkAnnotation: %w", err)
-			}
-
-			networks = append(networks, &netv1.NetworkSelectionElement{
-				Name:             networkName,
-				Namespace:        netNsName,
-				InterfaceRequest: netIfName,
-			})
-		}
-	}
-
-	for _, n := range networks {
-		if n.Namespace == "" {
-			n.Namespace = defaultNamespace
-		}
-		if n.MacRequest != "" {
-			// validate MAC address
-			if _, err := net.ParseMAC(n.MacRequest); err != nil {
-				return nil, fmt.Errorf("parsePodNetworkAnnotation: failed to mac: %w", err)
-			}
-		}
-		if n.InfinibandGUIDRequest != "" {
-			// validate GUID address
-			if _, err := net.ParseMAC(n.InfinibandGUIDRequest); err != nil {
-				return nil, fmt.Errorf("parsePodNetworkAnnotation: failed to validate infiniband GUID: %w", err)
-			}
-		}
-		if n.IPRequest != nil {
-			for _, ip := range n.IPRequest {
-				// validate IP address
-				if strings.Contains(ip, "/") {
-					if _, _, err := net.ParseCIDR(ip); err != nil {
-						return nil, fmt.Errorf("failed to parse CIDR %q: %w", ip, err)
-					}
-				} else if net.ParseIP(ip) == nil {
-					return nil, fmt.Errorf("failed to parse IP address %q", ip)
-				}
-			}
-		}
-
-		// compatibility pre v3.2, will be removed in v4.0
-		// if n.DeprecatedInterfaceRequest != "" && n.InterfaceRequest == "" {
-		//	n.InterfaceRequest = n.DeprecatedInterfaceRequest
-		// }
-	}
-
-	return networks, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// Match Multus / network-attachment-definition-client ParseNetworkAnnotation: any of `[`, `{`, `"`
+// indicates JSON (including pretty-printed arrays that do not start with `[{"`).
+
+// Comma-delimited list of network attachment object names
+
+// Remove leading and trailing whitespace.
+
+// Parse network name (i.e. <namespace>/<network name>@<ifname>)
+
+// validate MAC address
+
+// validate GUID address
+
+// validate IP address
+
+// compatibility pre v3.2, will be removed in v4.0
+// if n.DeprecatedInterfaceRequest != "" && n.InterfaceRequest == "" {
+//	n.InterfaceRequest = n.DeprecatedInterfaceRequest
+// }
 
 func ParsePodNetworkObjectName(podnetwork string) (string, string, string, error) {
-	var netNsName string
-	var netIfName string
-	var networkName string
-
-	slashItems := strings.Split(podnetwork, "/")
-	if len(slashItems) == 2 {
-		netNsName = strings.TrimSpace(slashItems[0])
-		networkName = slashItems[1]
-	} else if len(slashItems) == 1 {
-		networkName = slashItems[0]
-	} else {
-		return "", "", "", fmt.Errorf("parsePodNetworkObjectName: Invalid network object (failed at '/')")
-	}
-
-	atItems := strings.Split(networkName, "@")
-	networkName = strings.TrimSpace(atItems[0])
-	if len(atItems) == 2 {
-		netIfName = strings.TrimSpace(atItems[1])
-	} else if len(atItems) != 1 {
-		return "", "", "", fmt.Errorf("parsePodNetworkObjectName: Invalid network object (failed at '@')")
-	}
-
-	// Check and see if each item matches the specification for valid attachment name.
-	// "Valid attachment names must be comprised of units of the DNS-1123 label format"
-	// [a-z0-9]([-a-z0-9]*[a-z0-9])?
-	// It must start and end alphanumerically.
-	expr := regexp.MustCompile("^[a-z0-9]([-a-z0-9]*[a-z0-9])?$")
-	allItems := []string{netNsName, networkName}
-	for i := range allItems {
-		matched := expr.MatchString(allItems[i])
-		if !matched && len([]rune(allItems[i])) > 0 {
-			return "", "", "", fmt.Errorf("parsePodNetworkObjectName: Failed to parse: one or more items did not match comma-delimited format (must consist of lower case alphanumeric characters). Must start and end with an alphanumeric character), mismatch @ '%v'", allItems[i])
-		}
-	}
-
-	// Validate interface name: must be shorter than IFNAMSIZ (typically 16) and
-	// must not contain spaces or forward slashes, matching upstream multus-cni.
-	if len(netIfName) > 0 {
-		if len(netIfName) > (syscall.IFNAMSIZ-1) || strings.ContainsAny(netIfName, " \t\n\v\f\r/") {
-			return "", "", "", fmt.Errorf("parsePodNetworkObjectName: Failed to parse interface name: must be less than %d chars and not contain '/' or spaces. interface name '%s'", syscall.IFNAMSIZ-1, netIfName)
-		}
-	}
-
-	return netNsName, networkName, netIfName, nil
+	_ = "STUB: not implemented"
+	return "", "", "", nil
 }
+
+// Check and see if each item matches the specification for valid attachment name.
+// "Valid attachment names must be comprised of units of the DNS-1123 label format"
+// [a-z0-9]([-a-z0-9]*[a-z0-9])?
+// It must start and end alphanumerically.
+
+// Validate interface name: must be shorter than IFNAMSIZ (typically 16) and
+// must not contain spaces or forward slashes, matching upstream multus-cni.
 
 // ResourceName returns the appropriate resource name based on the CNI type and configuration
 // of the given SpiderMultusConfig.
-func ResourceName(smc *v2beta1.SpiderMultusConfig) string {
-	switch *smc.Spec.CniType {
-	case constant.MacvlanCNI:
-		// For Macvlan CNI, return RDMA resource name if RDMA is enabled
-		if smc.Spec.MacvlanConfig != nil && smc.Spec.MacvlanConfig.RdmaResourceName != nil {
-			return *smc.Spec.MacvlanConfig.RdmaResourceName
-		}
-	case constant.IPVlanCNI:
-		if smc.Spec.IPVlanConfig != nil && smc.Spec.IPVlanConfig.RdmaResourceName != nil {
-			return *smc.Spec.IPVlanConfig.RdmaResourceName
-		}
-	case constant.VlanCNI:
-		if smc.Spec.VlanConfig != nil && smc.Spec.VlanConfig.RdmaResourceName != nil {
-			return *smc.Spec.VlanConfig.RdmaResourceName
-		}
-	case constant.SriovCNI:
-		if smc.Spec.SriovConfig != nil && smc.Spec.SriovConfig.ResourceName != nil {
-			return *smc.Spec.SriovConfig.ResourceName
-		}
-	case constant.IBSriovCNI:
-		if smc.Spec.IbSriovConfig != nil && smc.Spec.IbSriovConfig.ResourceName != nil {
-			return *smc.Spec.IbSriovConfig.ResourceName
-		}
-	}
-	return ""
-}
+func ResourceName(smc *v2beta1.SpiderMultusConfig) string { _ = "STUB: not implemented"; return "" }
+
+// For Macvlan CNI, return RDMA resource name if RDMA is enabled
 
 func ValidateRdmaResouce(name, namespace, rdmaResourceName string, ippools *v2beta1.SpiderpoolPools) error {
-	if rdmaResourceName == "" {
-		return fmt.Errorf("rdmaResourceName can not empty for spidermultusconfig %s/%s", namespace, name)
-	}
-
-	if ippools == nil {
-		return fmt.Errorf("no any ippools configured for spidermultusconfig %s/%s", namespace, name)
-	}
-
-	if len(ippools.IPv4IPPool)+len(ippools.IPv6IPPool) == 0 {
-		return fmt.Errorf("no any ippools configured for spidermultusconfig %s/%s", namespace, name)
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func ValidateNetworkResouce(name, namespace, resourceName string, ippools *v2beta1.SpiderpoolPools) error {
-	if len(resourceName) == 0 {
-		return nil
-	}
-
-	if ippools == nil {
-		return fmt.Errorf("no any ippools configured for spidermultusconfig %s/%s", namespace, name)
-	}
-
-	if len(ippools.IPv4IPPool)+len(ippools.IPv6IPPool) == 0 {
-		return fmt.Errorf("no any ippools configured for spidermultusconfig %s/%s", namespace, name)
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }

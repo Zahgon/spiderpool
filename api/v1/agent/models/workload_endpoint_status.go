@@ -10,12 +10,8 @@ package models
 
 import (
 	"context"
-	"strconv"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // WorkloadEndpointStatus Pod network allocation status
@@ -46,145 +42,56 @@ type WorkloadEndpointStatus struct {
 
 // Validate validates this workload endpoint status
 func (m *WorkloadEndpointStatus) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateInterfaces(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateNode(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodNamespace(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePodUID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *WorkloadEndpointStatus) validateInterfaces(formats strfmt.Registry) error {
-
-	if err := validate.Required("interfaces", "body", m.Interfaces); err != nil {
-		return err
-	}
-
-	for i := 0; i < len(m.Interfaces); i++ {
-		if swag.IsZero(m.Interfaces[i]) { // not required
-			continue
-		}
-
-		if m.Interfaces[i] != nil {
-			if err := m.Interfaces[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("interfaces" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("interfaces" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
+// not required
+
 func (m *WorkloadEndpointStatus) validateNode(formats strfmt.Registry) error {
-
-	if err := validate.Required("node", "body", m.Node); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *WorkloadEndpointStatus) validatePodName(formats strfmt.Registry) error {
-
-	if err := validate.Required("podName", "body", m.PodName); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *WorkloadEndpointStatus) validatePodNamespace(formats strfmt.Registry) error {
-
-	if err := validate.Required("podNamespace", "body", m.PodNamespace); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *WorkloadEndpointStatus) validatePodUID(formats strfmt.Registry) error {
-
-	if err := validate.Required("podUID", "body", m.PodUID); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // ContextValidate validate this workload endpoint status based on the context it is used
 func (m *WorkloadEndpointStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.contextValidateInterfaces(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *WorkloadEndpointStatus) contextValidateInterfaces(ctx context.Context, formats strfmt.Registry) error {
-
-	for i := 0; i < len(m.Interfaces); i++ {
-
-		if m.Interfaces[i] != nil {
-			if err := m.Interfaces[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("interfaces" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("interfaces" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *WorkloadEndpointStatus) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnmarshalBinary interface implementation
 func (m *WorkloadEndpointStatus) UnmarshalBinary(b []byte) error {
-	var res WorkloadEndpointStatus
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
+	_ = "STUB: not implemented"
 	return nil
 }

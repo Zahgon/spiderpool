@@ -9,9 +9,6 @@ package daemonset
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-	"io"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
@@ -25,28 +22,12 @@ type GetCoordinatorConfigReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetCoordinatorConfigReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewGetCoordinatorConfigOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewGetCoordinatorConfigFailure()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewGetCoordinatorConfigOK creates a GetCoordinatorConfigOK with default headers values
-func NewGetCoordinatorConfigOK() *GetCoordinatorConfigOK {
-	return &GetCoordinatorConfigOK{}
-}
+func NewGetCoordinatorConfigOK() *GetCoordinatorConfigOK { _ = "STUB: not implemented"; return nil }
 
 /*
 GetCoordinatorConfigOK describes a response with status code 200, with default header values.
@@ -59,61 +40,62 @@ type GetCoordinatorConfigOK struct {
 
 // IsSuccess returns true when this get coordinator config o k response has a 2xx status code
 func (o *GetCoordinatorConfigOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get coordinator config o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this get coordinator config o k response has a 3xx status code
 func (o *GetCoordinatorConfigOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get coordinator config o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get coordinator config o k response has a 4xx status code
 func (o *GetCoordinatorConfigOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get coordinator config o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get coordinator config o k response has a 5xx status code
 func (o *GetCoordinatorConfigOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get coordinator config o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this get coordinator config o k response a status code equal to that given
 func (o *GetCoordinatorConfigOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the get coordinator config o k response
+	return false
 }
 
-// Code gets the status code for the get coordinator config o k response
-func (o *GetCoordinatorConfigOK) Code() int {
-	return 200
-}
+func (o *GetCoordinatorConfigOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetCoordinatorConfigOK) Error() string {
-	return fmt.Sprintf("[GET /coordinator/config][%d] getCoordinatorConfigOK  %+v", 200, o.Payload)
-}
+func (o *GetCoordinatorConfigOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetCoordinatorConfigOK) String() string {
-	return fmt.Sprintf("[GET /coordinator/config][%d] getCoordinatorConfigOK  %+v", 200, o.Payload)
-}
+func (o *GetCoordinatorConfigOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetCoordinatorConfigOK) GetPayload() *models.CoordinatorConfig {
-	return o.Payload
-}
-
-func (o *GetCoordinatorConfigOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	o.Payload = new(models.CoordinatorConfig)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
+func (o *GetCoordinatorConfigOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+	return nil
+}
+
+// response payload
+
 // NewGetCoordinatorConfigFailure creates a GetCoordinatorConfigFailure with default headers values
 func NewGetCoordinatorConfigFailure() *GetCoordinatorConfigFailure {
-	return &GetCoordinatorConfigFailure{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -127,52 +109,54 @@ type GetCoordinatorConfigFailure struct {
 
 // IsSuccess returns true when this get coordinator config failure response has a 2xx status code
 func (o *GetCoordinatorConfigFailure) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get coordinator config failure response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get coordinator config failure response has a 3xx status code
 func (o *GetCoordinatorConfigFailure) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get coordinator config failure response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get coordinator config failure response has a 4xx status code
 func (o *GetCoordinatorConfigFailure) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get coordinator config failure response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get coordinator config failure response has a 5xx status code
 func (o *GetCoordinatorConfigFailure) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get coordinator config failure response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this get coordinator config failure response a status code equal to that given
 func (o *GetCoordinatorConfigFailure) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get coordinator config failure response
 }
 
-// Code gets the status code for the get coordinator config failure response
-func (o *GetCoordinatorConfigFailure) Code() int {
-	return 500
-}
+func (o *GetCoordinatorConfigFailure) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetCoordinatorConfigFailure) Error() string {
-	return fmt.Sprintf("[GET /coordinator/config][%d] getCoordinatorConfigFailure  %+v", 500, o.Payload)
-}
+func (o *GetCoordinatorConfigFailure) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetCoordinatorConfigFailure) String() string {
-	return fmt.Sprintf("[GET /coordinator/config][%d] getCoordinatorConfigFailure  %+v", 500, o.Payload)
-}
+func (o *GetCoordinatorConfigFailure) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetCoordinatorConfigFailure) GetPayload() models.Error {
-	return o.Payload
+	_ = "STUB: not implemented"
+	return *new(models.Error)
 }
 
 func (o *GetCoordinatorConfigFailure) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
 	return nil
 }

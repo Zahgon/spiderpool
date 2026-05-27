@@ -9,15 +9,14 @@ package controller
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new controller API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
-	return &Client{transport: transport, formats: formats}
+	_ = "STUB: not implemented"
+	return *new(ClientService)
 }
 
 /*
@@ -48,39 +47,13 @@ GetIpamStatus gets status
 Get ipam status for spiderpool controller cli debug usage
 */
 func (a *Client) GetIpamStatus(params *GetIpamStatusParams, opts ...ClientOption) (*GetIpamStatusOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetIpamStatusParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "GetIpamStatus",
-		Method:             "GET",
-		PathPattern:        "/ipam/status",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &GetIpamStatusReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetIpamStatusOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIpamStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 PostIpamGcIps triggers gc
@@ -88,39 +61,13 @@ PostIpamGcIps triggers gc
 Trigger global gc or specific ip gc with the param
 */
 func (a *Client) PostIpamGcIps(params *PostIpamGcIpsParams, opts ...ClientOption) (*PostIpamGcIpsOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewPostIpamGcIpsParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "PostIpamGcIps",
-		Method:             "POST",
-		PathPattern:        "/ipam/gc_ips",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &PostIpamGcIpsReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*PostIpamGcIpsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIpamGcIps: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 /*
 PutIpamIP forces set ip
@@ -128,41 +75,13 @@ PutIpamIP forces set ip
 Force set ip for spiderpool controller cli debug usage
 */
 func (a *Client) PutIpamIP(params *PutIpamIPParams, opts ...ClientOption) (*PutIpamIPOK, error) {
+	_ = "STUB: not implemented"
 	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewPutIpamIPParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "PutIpamIP",
-		Method:             "PUT",
-		PathPattern:        "/ipam/ip",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &PutIpamIPReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*PutIpamIPOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PutIpamIP: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	return nil, nil
 }
+
+// unexpected success response
+// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 
 // SetTransport changes the transport on the client
-func (a *Client) SetTransport(transport runtime.ClientTransport) {
-	a.transport = transport
-}
+func (a *Client) SetTransport(transport runtime.ClientTransport) { _ = "STUB: not implemented"; return }

@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
@@ -26,33 +24,29 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetWorkloadendpointParams() *GetWorkloadendpointParams {
-	return &GetWorkloadendpointParams{
-		timeout: cr.DefaultTimeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetWorkloadendpointParamsWithTimeout creates a new GetWorkloadendpointParams object
 // with the ability to set a timeout on a request.
 func NewGetWorkloadendpointParamsWithTimeout(timeout time.Duration) *GetWorkloadendpointParams {
-	return &GetWorkloadendpointParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetWorkloadendpointParamsWithContext creates a new GetWorkloadendpointParams object
 // with the ability to set a context for a request.
 func NewGetWorkloadendpointParamsWithContext(ctx context.Context) *GetWorkloadendpointParams {
-	return &GetWorkloadendpointParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetWorkloadendpointParamsWithHTTPClient creates a new GetWorkloadendpointParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetWorkloadendpointParamsWithHTTPClient(client *http.Client) *GetWorkloadendpointParams {
-	return &GetWorkloadendpointParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -85,102 +79,86 @@ type GetWorkloadendpointParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetWorkloadendpointParams) WithDefaults() *GetWorkloadendpointParams {
-	o.SetDefaults()
-	return o
+	_ = "STUB: not implemented"
+	return nil
+
+	// SetDefaults hydrates default values in the get workloadendpoint params (not the query body).
+	//
+	// All values with no default are reset to their zero value.
 }
 
-// SetDefaults hydrates default values in the get workloadendpoint params (not the query body).
-//
-// All values with no default are reset to their zero value.
 func (o *GetWorkloadendpointParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) WithTimeout(timeout time.Duration) *GetWorkloadendpointParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
+	_ = "STUB: not implemented"
+	return
+
+	// WithContext adds the context to the get workloadendpoint params
 }
 
-// WithContext adds the context to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) WithContext(ctx context.Context) *GetWorkloadendpointParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the get workloadendpoint params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) WithHTTPClient(client *http.Client) *GetWorkloadendpointParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
+	_ = "STUB: not implemented"
+	return
+
+	// WithPodName adds the podName to the get workloadendpoint params
 }
 
-// WithPodName adds the podName to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) WithPodName(podName string) *GetWorkloadendpointParams {
-	o.SetPodName(podName)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPodName adds the podName to the get workloadendpoint params
-func (o *GetWorkloadendpointParams) SetPodName(podName string) {
-	o.PodName = podName
-}
+func (o *GetWorkloadendpointParams) SetPodName(podName string) { _ = "STUB: not implemented"; return }
 
 // WithPodNamespace adds the podNamespace to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) WithPodNamespace(podNamespace string) *GetWorkloadendpointParams {
-	o.SetPodNamespace(podNamespace)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPodNamespace adds the podNamespace to the get workloadendpoint params
 func (o *GetWorkloadendpointParams) SetPodNamespace(podNamespace string) {
-	o.PodNamespace = podNamespace
+	_ = "STUB: not implemented"
+	return
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetWorkloadendpointParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-
-	// query param podName
-	qrPodName := o.PodName
-	qPodName := qrPodName
-	if qPodName != "" {
-
-		if err := r.SetQueryParam("podName", qPodName); err != nil {
-			return err
-		}
-	}
-
-	// query param podNamespace
-	qrPodNamespace := o.PodNamespace
-	qPodNamespace := qrPodNamespace
-	if qPodNamespace != "" {
-
-		if err := r.SetQueryParam("podNamespace", qPodNamespace); err != nil {
-			return err
-		}
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// query param podName
+
+// query param podNamespace

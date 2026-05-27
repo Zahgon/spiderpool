@@ -26,18 +26,15 @@ type GetRuntimeStartupOK struct {
 }
 
 // NewGetRuntimeStartupOK creates GetRuntimeStartupOK with default headers values
-func NewGetRuntimeStartupOK() *GetRuntimeStartupOK {
-
-	return &GetRuntimeStartupOK{}
-}
+func NewGetRuntimeStartupOK() *GetRuntimeStartupOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *GetRuntimeStartupOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // GetRuntimeStartupInternalServerErrorCode is the HTTP code returned for type GetRuntimeStartupInternalServerError
 const GetRuntimeStartupInternalServerErrorCode int = 500
@@ -52,14 +49,14 @@ type GetRuntimeStartupInternalServerError struct {
 
 // NewGetRuntimeStartupInternalServerError creates GetRuntimeStartupInternalServerError with default headers values
 func NewGetRuntimeStartupInternalServerError() *GetRuntimeStartupInternalServerError {
-
-	return &GetRuntimeStartupInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WriteResponse to the client
 func (o *GetRuntimeStartupInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(500)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses

@@ -19,17 +19,20 @@ type PostIpamGcIpsHandlerFunc func(PostIpamGcIpsParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn PostIpamGcIpsHandlerFunc) Handle(params PostIpamGcIpsParams) middleware.Responder {
-	return fn(params)
+	_ = "STUB: not implemented"
+
+	// PostIpamGcIpsHandler interface for that can handle valid post ipam gc ips params
+	return *new(middleware.Responder)
 }
 
-// PostIpamGcIpsHandler interface for that can handle valid post ipam gc ips params
 type PostIpamGcIpsHandler interface {
 	Handle(PostIpamGcIpsParams) middleware.Responder
 }
 
 // NewPostIpamGcIps creates a new http.Handler for the post ipam gc ips operation
 func NewPostIpamGcIps(ctx *middleware.Context, handler PostIpamGcIpsHandler) *PostIpamGcIps {
-	return &PostIpamGcIps{Context: ctx, Handler: handler}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -45,17 +48,10 @@ type PostIpamGcIps struct {
 }
 
 func (o *PostIpamGcIps) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	route, rCtx, _ := o.Context.RouteInfo(r)
-	if rCtx != nil {
-		*r = *rCtx
-	}
-	var Params = NewPostIpamGcIpsParams()
-	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
-		o.Context.Respond(rw, r, route.Produces, route, err)
-		return
-	}
-
-	res := o.Handler.Handle(Params) // actually handle the request
-	o.Context.Respond(rw, r, route.Produces, route, res)
-
+	_ = "STUB: not implemented"
+	return
 }
+
+// bind params
+
+// actually handle the request

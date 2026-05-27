@@ -9,8 +9,6 @@ package runtime
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
@@ -22,28 +20,12 @@ type GetRuntimeLivenessReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetRuntimeLivenessReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewGetRuntimeLivenessOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewGetRuntimeLivenessInternalServerError()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewGetRuntimeLivenessOK creates a GetRuntimeLivenessOK with default headers values
-func NewGetRuntimeLivenessOK() *GetRuntimeLivenessOK {
-	return &GetRuntimeLivenessOK{}
-}
+func NewGetRuntimeLivenessOK() *GetRuntimeLivenessOK { _ = "STUB: not implemented"; return nil }
 
 /*
 GetRuntimeLivenessOK describes a response with status code 200, with default header values.
@@ -55,50 +37,56 @@ type GetRuntimeLivenessOK struct {
 
 // IsSuccess returns true when this get runtime liveness o k response has a 2xx status code
 func (o *GetRuntimeLivenessOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get runtime liveness o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this get runtime liveness o k response has a 3xx status code
 func (o *GetRuntimeLivenessOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get runtime liveness o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get runtime liveness o k response has a 4xx status code
 func (o *GetRuntimeLivenessOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get runtime liveness o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get runtime liveness o k response has a 5xx status code
 func (o *GetRuntimeLivenessOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get runtime liveness o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this get runtime liveness o k response a status code equal to that given
 func (o *GetRuntimeLivenessOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the get runtime liveness o k response
+	return false
 }
 
-// Code gets the status code for the get runtime liveness o k response
-func (o *GetRuntimeLivenessOK) Code() int {
-	return 200
-}
+func (o *GetRuntimeLivenessOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetRuntimeLivenessOK) Error() string {
-	return fmt.Sprintf("[GET /runtime/liveness][%d] getRuntimeLivenessOK ", 200)
-}
+func (o *GetRuntimeLivenessOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetRuntimeLivenessOK) String() string {
-	return fmt.Sprintf("[GET /runtime/liveness][%d] getRuntimeLivenessOK ", 200)
-}
+func (o *GetRuntimeLivenessOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetRuntimeLivenessOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
+	// NewGetRuntimeLivenessInternalServerError creates a GetRuntimeLivenessInternalServerError with default headers values
 	return nil
 }
 
-// NewGetRuntimeLivenessInternalServerError creates a GetRuntimeLivenessInternalServerError with default headers values
 func NewGetRuntimeLivenessInternalServerError() *GetRuntimeLivenessInternalServerError {
-	return &GetRuntimeLivenessInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -111,43 +99,53 @@ type GetRuntimeLivenessInternalServerError struct {
 
 // IsSuccess returns true when this get runtime liveness internal server error response has a 2xx status code
 func (o *GetRuntimeLivenessInternalServerError) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get runtime liveness internal server error response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get runtime liveness internal server error response has a 3xx status code
 func (o *GetRuntimeLivenessInternalServerError) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get runtime liveness internal server error response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get runtime liveness internal server error response has a 4xx status code
 func (o *GetRuntimeLivenessInternalServerError) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get runtime liveness internal server error response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get runtime liveness internal server error response has a 5xx status code
 func (o *GetRuntimeLivenessInternalServerError) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get runtime liveness internal server error response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this get runtime liveness internal server error response a status code equal to that given
 func (o *GetRuntimeLivenessInternalServerError) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get runtime liveness internal server error response
 }
 
-// Code gets the status code for the get runtime liveness internal server error response
-func (o *GetRuntimeLivenessInternalServerError) Code() int {
-	return 500
-}
+func (o *GetRuntimeLivenessInternalServerError) Code() int { _ = "STUB: not implemented"; return 0 }
 
 func (o *GetRuntimeLivenessInternalServerError) Error() string {
-	return fmt.Sprintf("[GET /runtime/liveness][%d] getRuntimeLivenessInternalServerError ", 500)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetRuntimeLivenessInternalServerError) String() string {
-	return fmt.Sprintf("[GET /runtime/liveness][%d] getRuntimeLivenessInternalServerError ", 500)
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (o *GetRuntimeLivenessInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
+	_ = "STUB: not implemented"
 	return nil
 }

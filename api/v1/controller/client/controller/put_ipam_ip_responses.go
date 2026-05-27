@@ -9,8 +9,6 @@ package controller
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
@@ -22,28 +20,12 @@ type PutIpamIPReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PutIpamIPReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewPutIpamIPOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewPutIpamIPInternalServerError()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewPutIpamIPOK creates a PutIpamIPOK with default headers values
-func NewPutIpamIPOK() *PutIpamIPOK {
-	return &PutIpamIPOK{}
-}
+func NewPutIpamIPOK() *PutIpamIPOK { _ = "STUB: not implemented"; return nil }
 
 /*
 PutIpamIPOK describes a response with status code 200, with default header values.
@@ -55,50 +37,56 @@ type PutIpamIPOK struct {
 
 // IsSuccess returns true when this put ipam Ip o k response has a 2xx status code
 func (o *PutIpamIPOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this put ipam Ip o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this put ipam Ip o k response has a 3xx status code
 func (o *PutIpamIPOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this put ipam Ip o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this put ipam Ip o k response has a 4xx status code
 func (o *PutIpamIPOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this put ipam Ip o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this put ipam Ip o k response has a 5xx status code
 func (o *PutIpamIPOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this put ipam Ip o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this put ipam Ip o k response a status code equal to that given
 func (o *PutIpamIPOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the put ipam Ip o k response
+	return false
 }
 
-// Code gets the status code for the put ipam Ip o k response
-func (o *PutIpamIPOK) Code() int {
-	return 200
-}
+func (o *PutIpamIPOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *PutIpamIPOK) Error() string {
-	return fmt.Sprintf("[PUT /ipam/ip][%d] putIpamIpOK ", 200)
-}
+func (o *PutIpamIPOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *PutIpamIPOK) String() string {
-	return fmt.Sprintf("[PUT /ipam/ip][%d] putIpamIpOK ", 200)
-}
+func (o *PutIpamIPOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *PutIpamIPOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
+	// NewPutIpamIPInternalServerError creates a PutIpamIPInternalServerError with default headers values
 	return nil
 }
 
-// NewPutIpamIPInternalServerError creates a PutIpamIPInternalServerError with default headers values
 func NewPutIpamIPInternalServerError() *PutIpamIPInternalServerError {
-	return &PutIpamIPInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -111,43 +99,47 @@ type PutIpamIPInternalServerError struct {
 
 // IsSuccess returns true when this put ipam Ip internal server error response has a 2xx status code
 func (o *PutIpamIPInternalServerError) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this put ipam Ip internal server error response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this put ipam Ip internal server error response has a 3xx status code
 func (o *PutIpamIPInternalServerError) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this put ipam Ip internal server error response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this put ipam Ip internal server error response has a 4xx status code
 func (o *PutIpamIPInternalServerError) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this put ipam Ip internal server error response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this put ipam Ip internal server error response has a 5xx status code
 func (o *PutIpamIPInternalServerError) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this put ipam Ip internal server error response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this put ipam Ip internal server error response a status code equal to that given
 func (o *PutIpamIPInternalServerError) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the put ipam Ip internal server error response
 }
 
-// Code gets the status code for the put ipam Ip internal server error response
-func (o *PutIpamIPInternalServerError) Code() int {
-	return 500
-}
+func (o *PutIpamIPInternalServerError) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *PutIpamIPInternalServerError) Error() string {
-	return fmt.Sprintf("[PUT /ipam/ip][%d] putIpamIpInternalServerError ", 500)
-}
+func (o *PutIpamIPInternalServerError) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *PutIpamIPInternalServerError) String() string {
-	return fmt.Sprintf("[PUT /ipam/ip][%d] putIpamIpInternalServerError ", 500)
-}
+func (o *PutIpamIPInternalServerError) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *PutIpamIPInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
+	_ = "STUB: not implemented"
 	return nil
 }

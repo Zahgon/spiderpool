@@ -33,33 +33,28 @@ type GetCoordinatorConfigOK struct {
 }
 
 // NewGetCoordinatorConfigOK creates GetCoordinatorConfigOK with default headers values
-func NewGetCoordinatorConfigOK() *GetCoordinatorConfigOK {
-
-	return &GetCoordinatorConfigOK{}
-}
+func NewGetCoordinatorConfigOK() *GetCoordinatorConfigOK { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the get coordinator config o k response
 func (o *GetCoordinatorConfigOK) WithPayload(payload *models.CoordinatorConfig) *GetCoordinatorConfigOK {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the get coordinator config o k response
 func (o *GetCoordinatorConfigOK) SetPayload(payload *models.CoordinatorConfig) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *GetCoordinatorConfigOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(200)
-	if o.Payload != nil {
-		payload := o.Payload
-		if err := producer.Produce(rw, payload); err != nil {
-			panic(err) // let the recovery middleware deal with this
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // GetCoordinatorConfigFailureCode is the HTTP code returned for type GetCoordinatorConfigFailure
 const GetCoordinatorConfigFailureCode int = 500
@@ -79,27 +74,27 @@ type GetCoordinatorConfigFailure struct {
 
 // NewGetCoordinatorConfigFailure creates GetCoordinatorConfigFailure with default headers values
 func NewGetCoordinatorConfigFailure() *GetCoordinatorConfigFailure {
-
-	return &GetCoordinatorConfigFailure{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WithPayload adds the payload to the get coordinator config failure response
 func (o *GetCoordinatorConfigFailure) WithPayload(payload models.Error) *GetCoordinatorConfigFailure {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the get coordinator config failure response
 func (o *GetCoordinatorConfigFailure) SetPayload(payload models.Error) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *GetCoordinatorConfigFailure) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(500)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this

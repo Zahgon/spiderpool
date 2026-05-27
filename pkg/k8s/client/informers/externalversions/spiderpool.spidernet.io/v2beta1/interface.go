@@ -29,25 +29,30 @@ type version struct {
 
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
-	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+	_ = "STUB: not implemented"
+	return *new(Interface)
 }
 
 // SpiderCoordinators returns a SpiderCoordinatorInformer.
 func (v *version) SpiderCoordinators() SpiderCoordinatorInformer {
-	return &spiderCoordinatorInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
+	_ = "STUB: not implemented"
+	return *new(SpiderCoordinatorInformer)
 }
 
 // SpiderIPPools returns a SpiderIPPoolInformer.
 func (v *version) SpiderIPPools() SpiderIPPoolInformer {
-	return &spiderIPPoolInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
+	_ = "STUB: not implemented"
+	return *new(SpiderIPPoolInformer)
 }
 
 // SpiderMultusConfigs returns a SpiderMultusConfigInformer.
 func (v *version) SpiderMultusConfigs() SpiderMultusConfigInformer {
-	return &spiderMultusConfigInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+	_ = "STUB: not implemented"
+	return *new(SpiderMultusConfigInformer)
 }
 
 // SpiderSubnets returns a SpiderSubnetInformer.
 func (v *version) SpiderSubnets() SpiderSubnetInformer {
-	return &spiderSubnetInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
+	_ = "STUB: not implemented"
+	return *new(SpiderSubnetInformer)
 }

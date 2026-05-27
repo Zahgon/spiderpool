@@ -3,11 +3,6 @@
 
 package common
 
-import (
-	"os"
-	"strings"
-)
-
 const (
 	ENV_INSTALL_OVERLAY          = "INSTALL_OVERLAY_CNI"
 	E2E_SPIDERPOOL_ENABLE_SUBNET = "E2E_SPIDERPOOL_ENABLE_SUBNET"
@@ -16,31 +11,14 @@ const (
 	ENABLE_DRA                   = "E2E_SPIDERPOOL_ENABLE_DRA"
 )
 
-func checkBoolEnv(name string) bool {
-	t := os.Getenv(name)
-	if strings.ToLower(t) != "true" {
-		return false
-	} else {
-		return true
-	}
-}
+func checkBoolEnv(name string) bool { _ = "STUB: not implemented"; return false }
 
-func CheckRunOverlayCNI() bool {
-	return checkBoolEnv(ENV_INSTALL_OVERLAY)
-}
+func CheckRunOverlayCNI() bool { _ = "STUB: not implemented"; return false }
 
-func IsDRAEnabled() bool {
-	return checkBoolEnv(ENABLE_DRA)
-}
+func IsDRAEnabled() bool { _ = "STUB: not implemented"; return false }
 
-func CheckSubnetFeatureOn() bool {
-	return checkBoolEnv(E2E_SPIDERPOOL_ENABLE_SUBNET)
-}
+func CheckSubnetFeatureOn() bool { _ = "STUB: not implemented"; return false }
 
-func CheckCalicoFeatureOn() bool {
-	return checkBoolEnv(INSTALL_CALICO)
-}
+func CheckCalicoFeatureOn() bool { _ = "STUB: not implemented"; return false }
 
-func CheckCiliumFeatureOn() bool {
-	return checkBoolEnv(INSTALL_CILIUM)
-}
+func CheckCiliumFeatureOn() bool { _ = "STUB: not implemented"; return false }

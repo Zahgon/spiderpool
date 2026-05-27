@@ -11,7 +11,6 @@ package daemonset
 import (
 	"net/http"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime/middleware"
 )
 
@@ -19,8 +18,8 @@ import (
 //
 // There are no default values defined in the spec.
 func NewPostIpamIpsParams() PostIpamIpsParams {
-
-	return PostIpamIpsParams{}
+	_ = "STUB: not implemented"
+	return *new(PostIpamIpsParams)
 }
 
 // PostIpamIpsParams contains all the bound params for the post ipam ips operation
@@ -38,12 +37,6 @@ type PostIpamIpsParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewPostIpamIpsParams() beforehand.
 func (o *PostIpamIpsParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
-	var res []error
-
-	o.HTTPRequest = r
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

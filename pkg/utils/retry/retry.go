@@ -7,7 +7,6 @@ import (
 	"context"
 	"time"
 
-	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/util/wait"
 )
 
@@ -26,20 +25,11 @@ var DefaultBackoff = wait.Backoff{
 }
 
 func OnErrorWithContext(ctx context.Context, backoff wait.Backoff, retriable func(error) bool, f func(context.Context) error) error {
-	err := wait.ExponentialBackoffWithContext(ctx, backoff, func(context.Context) (bool, error) {
-		err := f(ctx)
-		switch {
-		case err == nil:
-			return true, nil
-		case retriable(err):
-			return false, nil
-		default:
-			return false, err
-		}
-	})
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func RetryOnConflictWithContext(ctx context.Context, backoff wait.Backoff, f func(context.Context) error) error {
-	return OnErrorWithContext(ctx, backoff, apierrors.IsConflict, f)
+	_ = "STUB: not implemented"
+	return nil
 }

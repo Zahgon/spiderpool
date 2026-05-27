@@ -6,16 +6,11 @@
 package v2beta1
 
 import (
-	"context"
 	time "time"
 
-	spiderpoolspidernetiov2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/apis/spiderpool.spidernet.io/v2beta1"
 	versioned "github.com/spidernet-io/spiderpool/pkg/k8s/client/clientset/versioned"
 	internalinterfaces "github.com/spidernet-io/spiderpool/pkg/k8s/client/informers/externalversions/internalinterfaces"
 	v2beta1 "github.com/spidernet-io/spiderpool/pkg/k8s/client/listers/spiderpool.spidernet.io/v2beta1"
-	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	runtime "k8s.io/apimachinery/pkg/runtime"
-	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
 )
 
@@ -36,42 +31,29 @@ type spiderMultusConfigInformer struct {
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
 func NewSpiderMultusConfigInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
-	return NewFilteredSpiderMultusConfigInformer(client, namespace, resyncPeriod, indexers, nil)
+	_ = "STUB: not implemented"
+	return *new(cache.SharedIndexInformer)
 }
 
 // NewFilteredSpiderMultusConfigInformer constructs a new informer for SpiderMultusConfig type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
 func NewFilteredSpiderMultusConfigInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
-	return cache.NewSharedIndexInformer(
-		&cache.ListWatch{
-			ListFunc: func(options v1.ListOptions) (runtime.Object, error) {
-				if tweakListOptions != nil {
-					tweakListOptions(&options)
-				}
-				return client.SpiderpoolV2beta1().SpiderMultusConfigs(namespace).List(context.TODO(), options)
-			},
-			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
-				if tweakListOptions != nil {
-					tweakListOptions(&options)
-				}
-				return client.SpiderpoolV2beta1().SpiderMultusConfigs(namespace).Watch(context.TODO(), options)
-			},
-		},
-		&spiderpoolspidernetiov2beta1.SpiderMultusConfig{},
-		resyncPeriod,
-		indexers,
-	)
+	_ = "STUB: not implemented"
+	return *new(cache.SharedIndexInformer)
 }
 
 func (f *spiderMultusConfigInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
-	return NewFilteredSpiderMultusConfigInformer(client, f.namespace, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
+	_ = "STUB: not implemented"
+	return *new(cache.SharedIndexInformer)
 }
 
 func (f *spiderMultusConfigInformer) Informer() cache.SharedIndexInformer {
-	return f.factory.InformerFor(&spiderpoolspidernetiov2beta1.SpiderMultusConfig{}, f.defaultInformer)
+	_ = "STUB: not implemented"
+	return *new(cache.SharedIndexInformer)
 }
 
 func (f *spiderMultusConfigInformer) Lister() v2beta1.SpiderMultusConfigLister {
-	return v2beta1.NewSpiderMultusConfigLister(f.Informer().GetIndexer())
+	_ = "STUB: not implemented"
+	return *new(v2beta1.SpiderMultusConfigLister)
 }

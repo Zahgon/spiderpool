@@ -26,18 +26,15 @@ type GetRuntimeReadinessOK struct {
 }
 
 // NewGetRuntimeReadinessOK creates GetRuntimeReadinessOK with default headers values
-func NewGetRuntimeReadinessOK() *GetRuntimeReadinessOK {
-
-	return &GetRuntimeReadinessOK{}
-}
+func NewGetRuntimeReadinessOK() *GetRuntimeReadinessOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *GetRuntimeReadinessOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // GetRuntimeReadinessInternalServerErrorCode is the HTTP code returned for type GetRuntimeReadinessInternalServerError
 const GetRuntimeReadinessInternalServerErrorCode int = 500
@@ -52,14 +49,14 @@ type GetRuntimeReadinessInternalServerError struct {
 
 // NewGetRuntimeReadinessInternalServerError creates GetRuntimeReadinessInternalServerError with default headers values
 func NewGetRuntimeReadinessInternalServerError() *GetRuntimeReadinessInternalServerError {
-
-	return &GetRuntimeReadinessInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WriteResponse to the client
 func (o *GetRuntimeReadinessInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(500)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses

@@ -19,17 +19,20 @@ type DeleteIpamIPHandlerFunc func(DeleteIpamIPParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn DeleteIpamIPHandlerFunc) Handle(params DeleteIpamIPParams) middleware.Responder {
-	return fn(params)
+	_ = "STUB: not implemented"
+
+	// DeleteIpamIPHandler interface for that can handle valid delete ipam IP params
+	return *new(middleware.Responder)
 }
 
-// DeleteIpamIPHandler interface for that can handle valid delete ipam IP params
 type DeleteIpamIPHandler interface {
 	Handle(DeleteIpamIPParams) middleware.Responder
 }
 
 // NewDeleteIpamIP creates a new http.Handler for the delete ipam IP operation
 func NewDeleteIpamIP(ctx *middleware.Context, handler DeleteIpamIPHandler) *DeleteIpamIP {
-	return &DeleteIpamIP{Context: ctx, Handler: handler}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -45,17 +48,10 @@ type DeleteIpamIP struct {
 }
 
 func (o *DeleteIpamIP) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	route, rCtx, _ := o.Context.RouteInfo(r)
-	if rCtx != nil {
-		*r = *rCtx
-	}
-	var Params = NewDeleteIpamIPParams()
-	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
-		o.Context.Respond(rw, r, route.Produces, route, err)
-		return
-	}
-
-	res := o.Handler.Handle(Params) // actually handle the request
-	o.Context.Respond(rw, r, route.Produces, route, res)
-
+	_ = "STUB: not implemented"
+	return
 }
+
+// bind params
+
+// actually handle the request

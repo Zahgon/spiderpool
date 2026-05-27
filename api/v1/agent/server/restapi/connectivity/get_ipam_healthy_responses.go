@@ -26,18 +26,15 @@ type GetIpamHealthyOK struct {
 }
 
 // NewGetIpamHealthyOK creates GetIpamHealthyOK with default headers values
-func NewGetIpamHealthyOK() *GetIpamHealthyOK {
-
-	return &GetIpamHealthyOK{}
-}
+func NewGetIpamHealthyOK() *GetIpamHealthyOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *GetIpamHealthyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // GetIpamHealthyInternalServerErrorCode is the HTTP code returned for type GetIpamHealthyInternalServerError
 const GetIpamHealthyInternalServerErrorCode int = 500
@@ -52,14 +49,14 @@ type GetIpamHealthyInternalServerError struct {
 
 // NewGetIpamHealthyInternalServerError creates GetIpamHealthyInternalServerError with default headers values
 func NewGetIpamHealthyInternalServerError() *GetIpamHealthyInternalServerError {
-
-	return &GetIpamHealthyInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // WriteResponse to the client
 func (o *GetIpamHealthyInternalServerError) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(500)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses

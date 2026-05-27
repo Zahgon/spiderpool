@@ -28,18 +28,15 @@ type PostIpamIpsOK struct {
 }
 
 // NewPostIpamIpsOK creates PostIpamIpsOK with default headers values
-func NewPostIpamIpsOK() *PostIpamIpsOK {
-
-	return &PostIpamIpsOK{}
-}
+func NewPostIpamIpsOK() *PostIpamIpsOK { _ = "STUB: not implemented"; return nil }
 
 // WriteResponse to the client
 func (o *PostIpamIpsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(200)
+	_ = "STUB: not implemented"
+	return
 }
+
+//Remove Content-Type on empty responses
 
 // PostIpamIpsFailureCode is the HTTP code returned for type PostIpamIpsFailure
 const PostIpamIpsFailureCode int = 500
@@ -58,28 +55,21 @@ type PostIpamIpsFailure struct {
 }
 
 // NewPostIpamIpsFailure creates PostIpamIpsFailure with default headers values
-func NewPostIpamIpsFailure() *PostIpamIpsFailure {
-
-	return &PostIpamIpsFailure{}
-}
+func NewPostIpamIpsFailure() *PostIpamIpsFailure { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the post ipam ips failure response
 func (o *PostIpamIpsFailure) WithPayload(payload models.Error) *PostIpamIpsFailure {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the post ipam ips failure response
-func (o *PostIpamIpsFailure) SetPayload(payload models.Error) {
-	o.Payload = payload
-}
+func (o *PostIpamIpsFailure) SetPayload(payload models.Error) { _ = "STUB: not implemented"; return }
 
 // WriteResponse to the client
 func (o *PostIpamIpsFailure) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(500)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this

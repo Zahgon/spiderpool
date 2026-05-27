@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
 	"github.com/spidernet-io/spiderpool/api/v1/agent/models"
@@ -27,34 +25,27 @@ import (
 // Default values are not hydrated, since defaults are normally applied by the API server side.
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
-func NewPostIpamIPParams() *PostIpamIPParams {
-	return &PostIpamIPParams{
-		timeout: cr.DefaultTimeout,
-	}
-}
+func NewPostIpamIPParams() *PostIpamIPParams { _ = "STUB: not implemented"; return nil }
 
 // NewPostIpamIPParamsWithTimeout creates a new PostIpamIPParams object
 // with the ability to set a timeout on a request.
 func NewPostIpamIPParamsWithTimeout(timeout time.Duration) *PostIpamIPParams {
-	return &PostIpamIPParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewPostIpamIPParamsWithContext creates a new PostIpamIPParams object
 // with the ability to set a context for a request.
 func NewPostIpamIPParamsWithContext(ctx context.Context) *PostIpamIPParams {
-	return &PostIpamIPParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewPostIpamIPParamsWithHTTPClient creates a new PostIpamIPParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPostIpamIPParamsWithHTTPClient(client *http.Client) *PostIpamIPParams {
-	return &PostIpamIPParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -77,77 +68,62 @@ type PostIpamIPParams struct {
 // WithDefaults hydrates default values in the post ipam IP params (not the query body).
 //
 // All values with no default are reset to their zero value.
-func (o *PostIpamIPParams) WithDefaults() *PostIpamIPParams {
-	o.SetDefaults()
-	return o
-}
+func (o *PostIpamIPParams) WithDefaults() *PostIpamIPParams { _ = "STUB: not implemented"; return nil }
 
 // SetDefaults hydrates default values in the post ipam IP params (not the query body).
 //
 // All values with no default are reset to their zero value.
 func (o *PostIpamIPParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the post ipam IP params
 func (o *PostIpamIPParams) WithTimeout(timeout time.Duration) *PostIpamIPParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the post ipam IP params
-func (o *PostIpamIPParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
-}
+func (o *PostIpamIPParams) SetTimeout(timeout time.Duration) { _ = "STUB: not implemented"; return }
 
 // WithContext adds the context to the post ipam IP params
 func (o *PostIpamIPParams) WithContext(ctx context.Context) *PostIpamIPParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the post ipam IP params
 func (o *PostIpamIPParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the post ipam IP params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the post ipam IP params
 func (o *PostIpamIPParams) WithHTTPClient(client *http.Client) *PostIpamIPParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the post ipam IP params
-func (o *PostIpamIPParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
-}
+func (o *PostIpamIPParams) SetHTTPClient(client *http.Client) { _ = "STUB: not implemented"; return }
 
 // WithIpamAddArgs adds the ipamAddArgs to the post ipam IP params
 func (o *PostIpamIPParams) WithIpamAddArgs(ipamAddArgs *models.IpamAddArgs) *PostIpamIPParams {
-	o.SetIpamAddArgs(ipamAddArgs)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetIpamAddArgs adds the ipamAddArgs to the post ipam IP params
 func (o *PostIpamIPParams) SetIpamAddArgs(ipamAddArgs *models.IpamAddArgs) {
-	o.IpamAddArgs = ipamAddArgs
+	_ = "STUB: not implemented"
+	return
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PostIpamIPParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-	if o.IpamAddArgs != nil {
-		if err := r.SetBodyParam(o.IpamAddArgs); err != nil {
-			return err
-		}
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

@@ -22,11 +22,4 @@ type IPAndUID struct {
 
 type PoolNameToIPAndUIDs map[string][]IPAndUID
 
-func (pius *PoolNameToIPAndUIDs) Pools() []string {
-	var pools []string
-	for pool := range *pius {
-		pools = append(pools, pool)
-	}
-
-	return pools
-}
+func (pius *PoolNameToIPAndUIDs) Pools() []string { _ = "STUB: not implemented"; return nil }

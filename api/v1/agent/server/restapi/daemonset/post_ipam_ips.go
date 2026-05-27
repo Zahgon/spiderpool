@@ -19,17 +19,20 @@ type PostIpamIpsHandlerFunc func(PostIpamIpsParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn PostIpamIpsHandlerFunc) Handle(params PostIpamIpsParams) middleware.Responder {
-	return fn(params)
+	_ = "STUB: not implemented"
+
+	// PostIpamIpsHandler interface for that can handle valid post ipam ips params
+	return *new(middleware.Responder)
 }
 
-// PostIpamIpsHandler interface for that can handle valid post ipam ips params
 type PostIpamIpsHandler interface {
 	Handle(PostIpamIpsParams) middleware.Responder
 }
 
 // NewPostIpamIps creates a new http.Handler for the post ipam ips operation
 func NewPostIpamIps(ctx *middleware.Context, handler PostIpamIpsHandler) *PostIpamIps {
-	return &PostIpamIps{Context: ctx, Handler: handler}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -45,17 +48,10 @@ type PostIpamIps struct {
 }
 
 func (o *PostIpamIps) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	route, rCtx, _ := o.Context.RouteInfo(r)
-	if rCtx != nil {
-		*r = *rCtx
-	}
-	var Params = NewPostIpamIpsParams()
-	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
-		o.Context.Respond(rw, r, route.Produces, route, err)
-		return
-	}
-
-	res := o.Handler.Handle(Params) // actually handle the request
-	o.Context.Respond(rw, r, route.Produces, route, res)
-
+	_ = "STUB: not implemented"
+	return
 }
+
+// bind params
+
+// actually handle the request

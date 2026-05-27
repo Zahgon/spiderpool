@@ -12,10 +12,6 @@ type LimiterConfig struct {
 }
 
 func setDefaultsForLimiterConfig(config LimiterConfig) LimiterConfig {
-	if config.MaxQueueSize == nil {
-		maxQueueSize := defaultMaxQueueSize
-		config.MaxQueueSize = &maxQueueSize
-	}
-
-	return config
+	_ = "STUB: not implemented"
+	return *new(LimiterConfig)
 }

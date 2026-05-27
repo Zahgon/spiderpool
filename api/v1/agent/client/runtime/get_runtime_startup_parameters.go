@@ -13,9 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
-	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 )
 
@@ -25,34 +23,27 @@ import (
 // Default values are not hydrated, since defaults are normally applied by the API server side.
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
-func NewGetRuntimeStartupParams() *GetRuntimeStartupParams {
-	return &GetRuntimeStartupParams{
-		timeout: cr.DefaultTimeout,
-	}
-}
+func NewGetRuntimeStartupParams() *GetRuntimeStartupParams { _ = "STUB: not implemented"; return nil }
 
 // NewGetRuntimeStartupParamsWithTimeout creates a new GetRuntimeStartupParams object
 // with the ability to set a timeout on a request.
 func NewGetRuntimeStartupParamsWithTimeout(timeout time.Duration) *GetRuntimeStartupParams {
-	return &GetRuntimeStartupParams{
-		timeout: timeout,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetRuntimeStartupParamsWithContext creates a new GetRuntimeStartupParams object
 // with the ability to set a context for a request.
 func NewGetRuntimeStartupParamsWithContext(ctx context.Context) *GetRuntimeStartupParams {
-	return &GetRuntimeStartupParams{
-		Context: ctx,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // NewGetRuntimeStartupParamsWithHTTPClient creates a new GetRuntimeStartupParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetRuntimeStartupParamsWithHTTPClient(client *http.Client) *GetRuntimeStartupParams {
-	return &GetRuntimeStartupParams{
-		HTTPClient: client,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -72,60 +63,61 @@ type GetRuntimeStartupParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetRuntimeStartupParams) WithDefaults() *GetRuntimeStartupParams {
-	o.SetDefaults()
-	return o
+	_ = "STUB: not implemented"
+	return nil
+
+	// SetDefaults hydrates default values in the get runtime startup params (not the query body).
+	//
+	// All values with no default are reset to their zero value.
 }
 
-// SetDefaults hydrates default values in the get runtime startup params (not the query body).
-//
-// All values with no default are reset to their zero value.
 func (o *GetRuntimeStartupParams) SetDefaults() {
+	_ = "STUB: not implemented"
 	// no default values defined for this parameter
+	return
 }
 
 // WithTimeout adds the timeout to the get runtime startup params
 func (o *GetRuntimeStartupParams) WithTimeout(timeout time.Duration) *GetRuntimeStartupParams {
-	o.SetTimeout(timeout)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTimeout adds the timeout to the get runtime startup params
 func (o *GetRuntimeStartupParams) SetTimeout(timeout time.Duration) {
-	o.timeout = timeout
+	_ = "STUB: not implemented"
+	return
+
+	// WithContext adds the context to the get runtime startup params
 }
 
-// WithContext adds the context to the get runtime startup params
 func (o *GetRuntimeStartupParams) WithContext(ctx context.Context) *GetRuntimeStartupParams {
-	o.SetContext(ctx)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetContext adds the context to the get runtime startup params
 func (o *GetRuntimeStartupParams) SetContext(ctx context.Context) {
-	o.Context = ctx
+	_ = "STUB: not implemented"
+
+	// WithHTTPClient adds the HTTPClient to the get runtime startup params
+	return
 }
 
-// WithHTTPClient adds the HTTPClient to the get runtime startup params
 func (o *GetRuntimeStartupParams) WithHTTPClient(client *http.Client) *GetRuntimeStartupParams {
-	o.SetHTTPClient(client)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHTTPClient adds the HTTPClient to the get runtime startup params
 func (o *GetRuntimeStartupParams) SetHTTPClient(client *http.Client) {
-	o.HTTPClient = client
+	_ = "STUB: not implemented"
+	return
+
+	// WriteToRequest writes these params to a swagger request
 }
 
-// WriteToRequest writes these params to a swagger request
 func (o *GetRuntimeStartupParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
-	if err := r.SetTimeout(o.timeout); err != nil {
-		return err
-	}
-	var res []error
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }

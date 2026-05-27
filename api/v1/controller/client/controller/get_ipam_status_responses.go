@@ -9,8 +9,6 @@ package controller
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
@@ -22,28 +20,12 @@ type GetIpamStatusReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetIpamStatusReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
-	switch response.Code() {
-	case 200:
-		result := NewGetIpamStatusOK()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return result, nil
-	case 500:
-		result := NewGetIpamStatusInternalServerError()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewGetIpamStatusOK creates a GetIpamStatusOK with default headers values
-func NewGetIpamStatusOK() *GetIpamStatusOK {
-	return &GetIpamStatusOK{}
-}
+func NewGetIpamStatusOK() *GetIpamStatusOK { _ = "STUB: not implemented"; return nil }
 
 /*
 GetIpamStatusOK describes a response with status code 200, with default header values.
@@ -55,50 +37,56 @@ type GetIpamStatusOK struct {
 
 // IsSuccess returns true when this get ipam status o k response has a 2xx status code
 func (o *GetIpamStatusOK) IsSuccess() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get ipam status o k response has a 3xx status code
+	return false
 }
 
-// IsRedirect returns true when this get ipam status o k response has a 3xx status code
 func (o *GetIpamStatusOK) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get ipam status o k response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get ipam status o k response has a 4xx status code
 func (o *GetIpamStatusOK) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get ipam status o k response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get ipam status o k response has a 5xx status code
 func (o *GetIpamStatusOK) IsServerError() bool {
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get ipam status o k response a status code equal to that given
 	return false
 }
 
-// IsCode returns true when this get ipam status o k response a status code equal to that given
 func (o *GetIpamStatusOK) IsCode(code int) bool {
-	return code == 200
+	_ = "STUB: not implemented"
+
+	// Code gets the status code for the get ipam status o k response
+	return false
 }
 
-// Code gets the status code for the get ipam status o k response
-func (o *GetIpamStatusOK) Code() int {
-	return 200
-}
+func (o *GetIpamStatusOK) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetIpamStatusOK) Error() string {
-	return fmt.Sprintf("[GET /ipam/status][%d] getIpamStatusOK ", 200)
-}
+func (o *GetIpamStatusOK) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetIpamStatusOK) String() string {
-	return fmt.Sprintf("[GET /ipam/status][%d] getIpamStatusOK ", 200)
-}
+func (o *GetIpamStatusOK) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetIpamStatusOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
 
+	// NewGetIpamStatusInternalServerError creates a GetIpamStatusInternalServerError with default headers values
 	return nil
 }
 
-// NewGetIpamStatusInternalServerError creates a GetIpamStatusInternalServerError with default headers values
 func NewGetIpamStatusInternalServerError() *GetIpamStatusInternalServerError {
-	return &GetIpamStatusInternalServerError{}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -111,43 +99,47 @@ type GetIpamStatusInternalServerError struct {
 
 // IsSuccess returns true when this get ipam status internal server error response has a 2xx status code
 func (o *GetIpamStatusInternalServerError) IsSuccess() bool {
+	_ = "STUB: not implemented"
+
+	// IsRedirect returns true when this get ipam status internal server error response has a 3xx status code
 	return false
 }
 
-// IsRedirect returns true when this get ipam status internal server error response has a 3xx status code
 func (o *GetIpamStatusInternalServerError) IsRedirect() bool {
+	_ = "STUB: not implemented"
+
+	// IsClientError returns true when this get ipam status internal server error response has a 4xx status code
 	return false
 }
 
-// IsClientError returns true when this get ipam status internal server error response has a 4xx status code
 func (o *GetIpamStatusInternalServerError) IsClientError() bool {
+	_ = "STUB: not implemented"
+
+	// IsServerError returns true when this get ipam status internal server error response has a 5xx status code
 	return false
 }
 
-// IsServerError returns true when this get ipam status internal server error response has a 5xx status code
 func (o *GetIpamStatusInternalServerError) IsServerError() bool {
-	return true
+	_ = "STUB: not implemented"
+
+	// IsCode returns true when this get ipam status internal server error response a status code equal to that given
+	return false
 }
 
-// IsCode returns true when this get ipam status internal server error response a status code equal to that given
 func (o *GetIpamStatusInternalServerError) IsCode(code int) bool {
-	return code == 500
+	_ = "STUB: not implemented"
+	return false
+
+	// Code gets the status code for the get ipam status internal server error response
 }
 
-// Code gets the status code for the get ipam status internal server error response
-func (o *GetIpamStatusInternalServerError) Code() int {
-	return 500
-}
+func (o *GetIpamStatusInternalServerError) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (o *GetIpamStatusInternalServerError) Error() string {
-	return fmt.Sprintf("[GET /ipam/status][%d] getIpamStatusInternalServerError ", 500)
-}
+func (o *GetIpamStatusInternalServerError) Error() string { _ = "STUB: not implemented"; return "" }
 
-func (o *GetIpamStatusInternalServerError) String() string {
-	return fmt.Sprintf("[GET /ipam/status][%d] getIpamStatusInternalServerError ", 500)
-}
+func (o *GetIpamStatusInternalServerError) String() string { _ = "STUB: not implemented"; return "" }
 
 func (o *GetIpamStatusInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
+	_ = "STUB: not implemented"
 	return nil
 }

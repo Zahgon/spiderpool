@@ -14,14 +14,10 @@ type internalRWMutex struct {
 	sync.RWMutex
 }
 
-func (i *internalRWMutex) UnlockIgnoreTime() {
-	i.Unlock()
-}
+func (i *internalRWMutex) UnlockIgnoreTime() { _ = "STUB: not implemented"; return }
 
 type internalMutex struct {
 	sync.Mutex
 }
 
-func (i *internalMutex) UnlockIgnoreTime() {
-	i.Unlock()
-}
+func (i *internalMutex) UnlockIgnoreTime() { _ = "STUB: not implemented"; return }

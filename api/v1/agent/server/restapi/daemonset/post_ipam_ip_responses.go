@@ -33,33 +33,28 @@ type PostIpamIPOK struct {
 }
 
 // NewPostIpamIPOK creates PostIpamIPOK with default headers values
-func NewPostIpamIPOK() *PostIpamIPOK {
-
-	return &PostIpamIPOK{}
-}
+func NewPostIpamIPOK() *PostIpamIPOK { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the post ipam Ip o k response
 func (o *PostIpamIPOK) WithPayload(payload *models.IpamAddResponse) *PostIpamIPOK {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the post ipam Ip o k response
 func (o *PostIpamIPOK) SetPayload(payload *models.IpamAddResponse) {
-	o.Payload = payload
+	_ = "STUB: not implemented"
+	return
+
+	// WriteResponse to the client
 }
 
-// WriteResponse to the client
 func (o *PostIpamIPOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(200)
-	if o.Payload != nil {
-		payload := o.Payload
-		if err := producer.Produce(rw, payload); err != nil {
-			panic(err) // let the recovery middleware deal with this
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this
 
 // PostIpamIPFailureCode is the HTTP code returned for type PostIpamIPFailure
 const PostIpamIPFailureCode int = 500
@@ -78,28 +73,21 @@ type PostIpamIPFailure struct {
 }
 
 // NewPostIpamIPFailure creates PostIpamIPFailure with default headers values
-func NewPostIpamIPFailure() *PostIpamIPFailure {
-
-	return &PostIpamIPFailure{}
-}
+func NewPostIpamIPFailure() *PostIpamIPFailure { _ = "STUB: not implemented"; return nil }
 
 // WithPayload adds the payload to the post ipam Ip failure response
 func (o *PostIpamIPFailure) WithPayload(payload models.Error) *PostIpamIPFailure {
-	o.Payload = payload
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetPayload sets the payload to the post ipam Ip failure response
-func (o *PostIpamIPFailure) SetPayload(payload models.Error) {
-	o.Payload = payload
-}
+func (o *PostIpamIPFailure) SetPayload(payload models.Error) { _ = "STUB: not implemented"; return }
 
 // WriteResponse to the client
 func (o *PostIpamIPFailure) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.WriteHeader(500)
-	payload := o.Payload
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// let the recovery middleware deal with this

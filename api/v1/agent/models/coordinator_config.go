@@ -11,10 +11,7 @@ package models
 import (
 	"context"
 
-	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // CoordinatorConfig Coordinator config
@@ -62,85 +59,42 @@ type CoordinatorConfig struct {
 
 // Validate validates this coordinator config
 func (m *CoordinatorConfig) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateMode(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateOverlayPodCIDR(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateServiceCIDR(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTunePodRoutes(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *CoordinatorConfig) validateMode(formats strfmt.Registry) error {
-
-	if err := validate.Required("mode", "body", m.Mode); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *CoordinatorConfig) validateOverlayPodCIDR(formats strfmt.Registry) error {
-
-	if err := validate.Required("overlayPodCIDR", "body", m.OverlayPodCIDR); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *CoordinatorConfig) validateServiceCIDR(formats strfmt.Registry) error {
-
-	if err := validate.Required("serviceCIDR", "body", m.ServiceCIDR); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (m *CoordinatorConfig) validateTunePodRoutes(formats strfmt.Registry) error {
-
-	if err := validate.Required("tunePodRoutes", "body", m.TunePodRoutes); err != nil {
-		return err
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // ContextValidate validates this coordinator config based on context it is used
 func (m *CoordinatorConfig) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	_ = "STUB: not implemented"
+
+	// MarshalBinary interface implementation
 	return nil
 }
 
-// MarshalBinary interface implementation
 func (m *CoordinatorConfig) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnmarshalBinary interface implementation
-func (m *CoordinatorConfig) UnmarshalBinary(b []byte) error {
-	var res CoordinatorConfig
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
+func (m *CoordinatorConfig) UnmarshalBinary(b []byte) error { _ = "STUB: not implemented"; return nil }

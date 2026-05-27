@@ -19,17 +19,20 @@ type GetCoordinatorConfigHandlerFunc func(GetCoordinatorConfigParams) middleware
 
 // Handle executing the request and returning a response
 func (fn GetCoordinatorConfigHandlerFunc) Handle(params GetCoordinatorConfigParams) middleware.Responder {
-	return fn(params)
+	_ = "STUB: not implemented"
+
+	// GetCoordinatorConfigHandler interface for that can handle valid get coordinator config params
+	return *new(middleware.Responder)
 }
 
-// GetCoordinatorConfigHandler interface for that can handle valid get coordinator config params
 type GetCoordinatorConfigHandler interface {
 	Handle(GetCoordinatorConfigParams) middleware.Responder
 }
 
 // NewGetCoordinatorConfig creates a new http.Handler for the get coordinator config operation
 func NewGetCoordinatorConfig(ctx *middleware.Context, handler GetCoordinatorConfigHandler) *GetCoordinatorConfig {
-	return &GetCoordinatorConfig{Context: ctx, Handler: handler}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 /*
@@ -45,17 +48,10 @@ type GetCoordinatorConfig struct {
 }
 
 func (o *GetCoordinatorConfig) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	route, rCtx, _ := o.Context.RouteInfo(r)
-	if rCtx != nil {
-		*r = *rCtx
-	}
-	var Params = NewGetCoordinatorConfigParams()
-	if err := o.Context.BindValidRequest(r, route, &Params); err != nil { // bind params
-		o.Context.Respond(rw, r, route.Produces, route, err)
-		return
-	}
-
-	res := o.Handler.Handle(Params) // actually handle the request
-	o.Context.Respond(rw, r, route.Produces, route, res)
-
+	_ = "STUB: not implemented"
+	return
 }
+
+// bind params
+
+// actually handle the request
